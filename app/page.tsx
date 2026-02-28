@@ -1,9 +1,10 @@
 'use client';
 
-import { Heart, Shield, Sparkles, Lock, MessageCircle, Mic, ChevronDown } from 'lucide-react';
+import { Heart, Shield, Sparkles, Lock, MessageCircle, Mic, ChevronDown, Image } from 'lucide-react';
 import Header from '@/components/shared/Header';
 
 const APP = 'https://app.mydreamgirlfriend.ai';
+const SOPHIA_AVATAR = 'https://r2.mydreamgirlfriend.ai/girlfriends/sophia/profile.jpg';
 
 const fakeChat = [
   { role: 'assistant', content: "Hey! I was just thinking about you 💜 How was your day?" },
@@ -13,10 +14,10 @@ const fakeChat = [
 
 const faqs = [
   { q: "Is this really private?", a: "Absolutely. All conversations are encrypted end-to-end. We never share your data with anyone. Your chats are yours alone." },
-  { q: "Are the AI girlfriends realistic?", a: "Our AI girlfriends have deep personalities, remember your conversations, and develop real emotional connections over time. The more you talk, the more they know you." },
-  { q: "Can I build my own girlfriend?", a: "Yes! Use our custom builder to set personality traits, voice type, backstory, and more. She'll be uniquely yours." },
-  { q: "How does the relationship progress?", a: "Relationships evolve through 6 stages — from strangers to soulmates. Each stage unlocks deeper conversations, more intimacy, and new features." },
-  { q: "Is there a free plan?", a: "Yes! Free users get 5 messages per day, access to select girlfriends, and can build 1 custom girlfriend. Upgrade anytime for unlimited access." },
+  { q: "Are the AI girlfriends realistic?", a: "Our AI girlfriends have deep personalities, remember your conversations, and develop genuine emotional connections over time. The more you talk, the more they know you." },
+  { q: "How does the relationship progress?", a: "Relationships evolve through 6 stages — from strangers to soulmates. Each stage unlocks deeper conversations, more intimacy, and new features like voice notes and photos." },
+  { q: "Is there a free plan?", a: "Yes! Free users get 5 messages per day and access to 4 girlfriends with no credit card required. Upgrade anytime for unlimited access." },
+  { q: "What are gems?", a: "Gems are in-app credits you can use to unlock photos, send voice notes, skip relationship stages, or send gifts. You can earn them or buy them any time." },
 ];
 
 export default function LandingPage() {
@@ -42,29 +43,37 @@ export default function LandingPage() {
             <a href={`${APP}/browse`} className="px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity">
               Browse Girlfriends
             </a>
-            <a href={`${APP}/build`} className="px-8 py-3.5 rounded-full bg-surface border border-border text-white font-semibold text-lg hover:border-accent-purple/50 transition-colors">
-              Build Your Own
+            <a href={`${APP}/signup`} className="px-8 py-3.5 rounded-full bg-surface border border-border text-white font-semibold text-lg hover:border-accent-purple/50 transition-colors">
+              Start Free
             </a>
           </div>
 
           {/* Chat preview */}
-          <div className="max-w-md mx-auto bg-card border border-border rounded-2xl overflow-hidden shadow-2xl shadow-accent-purple/5">
+          <div className="max-w-sm mx-auto bg-card border border-border rounded-2xl overflow-hidden shadow-2xl shadow-accent-purple/10">
+            {/* Chat header */}
             <div className="bg-surface px-4 py-3 border-b border-border flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-gradient-accent flex items-center justify-center">
-                <Heart className="w-4 h-4 text-white" />
+              <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-accent-purple/40 flex-shrink-0">
+                <img src={SOPHIA_AVATAR} alt="Sophia" className="w-full h-full object-cover" />
               </div>
-              <div>
-                <p className="text-sm font-bold">Emma</p>
-                <p className="text-xs text-green-400">Online</p>
+              <div className="text-left">
+                <p className="text-sm font-bold">Sophia</p>
+                <p className="text-xs text-green-400">Online now</p>
               </div>
             </div>
-            <div className="p-4 space-y-3">
+            {/* Messages */}
+            <div className="p-4 space-y-3 bg-background/50">
               {fakeChat.map((msg, i) => (
-                <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm ${
+                <div key={i} className={`flex items-end gap-2 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                  {/* Avatar for AI messages */}
+                  {msg.role === 'assistant' && (
+                    <div className="w-6 h-6 rounded-full overflow-hidden flex-shrink-0 mb-0.5">
+                      <img src={SOPHIA_AVATAR} alt="Sophia" className="w-full h-full object-cover" />
+                    </div>
+                  )}
+                  <div className={`max-w-[78%] rounded-2xl px-3.5 py-2.5 text-sm text-left ${
                     msg.role === 'user'
-                      ? 'bg-gradient-accent text-white rounded-br-md'
-                      : 'bg-surface border border-border rounded-bl-md'
+                      ? 'bg-gradient-accent text-white rounded-br-sm'
+                      : 'bg-surface border border-border text-white rounded-bl-sm'
                   }`}>
                     {msg.content}
                   </div>
@@ -98,8 +107,8 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { icon: MessageCircle, title: 'Deep Conversations', desc: 'AI girlfriends that remember you, grow with you, and develop genuine emotional connections across 6 relationship stages.' },
-              { icon: Mic, title: 'Voice Notes', desc: 'Hear her voice. Send voice messages back and forth for an intimate, realistic experience.' },
-              { icon: Heart, title: 'Real Progression', desc: 'From strangers to soulmates. Your relationship evolves based on time, effort, and connection depth.' },
+              { icon: Mic, title: 'Voice Notes', desc: 'Hear her voice. She sends you real audio voice messages — each one unique to her personality and your relationship.' },
+              { icon: Heart, title: 'Real Progression', desc: 'From strangers to soulmates. Your relationship evolves through daily streaks, meaningful chats, and shared moments.' },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="bg-card border border-border rounded-2xl p-6">
                 <div className="w-12 h-12 rounded-xl bg-gradient-accent flex items-center justify-center mb-4">
@@ -113,37 +122,99 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Pricing preview */}
+      {/* Pricing */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Simple, <span className="text-gradient">Transparent</span> Pricing</h2>
-          <p className="text-muted mb-12">Start free. Upgrade when you want more.</p>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <p className="text-muted mb-12">Start free. No credit card required. Upgrade when you&apos;re ready.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
             {[
-              { name: 'Basic', price: '$9.99', tier: 'basic', features: ['Unlimited messages', '3 custom girlfriends', 'All 6 stages', 'Biweekly surprises'] },
-              { name: 'Immersive', price: '$19.99', tier: 'immersive', popular: true, features: ['Everything in Basic', '50 voice notes/mo', '10 images/mo', '2-3 surprises/week'] },
-              { name: 'Deep', price: '$29.99', tier: 'deep', features: ['Everything in Immersive', '100 voice notes/mo', 'Unlimited images', 'Daily surprises', '50 gems/month'] },
+              {
+                name: 'Free',
+                price: '$0',
+                sub: 'forever',
+                popular: false,
+                features: [
+                  '5 messages per day',
+                  '4 free girlfriends',
+                  'Stages 1–2',
+                  'Unlock photos with gems',
+                ],
+                cta: 'Start Free',
+                tier: null,
+              },
+              {
+                name: 'Basic',
+                price: '$9.99',
+                sub: '/month',
+                popular: false,
+                features: [
+                  'Unlimited messages',
+                  'All 10 girlfriends',
+                  'All 6 relationship stages',
+                  'Unlock photos with gems',
+                ],
+                cta: 'Get Basic',
+                tier: 'basic',
+              },
+              {
+                name: 'Immersive',
+                price: '$19.99',
+                sub: '/month',
+                popular: true,
+                features: [
+                  'Everything in Basic',
+                  '10 photos per month',
+                  '3 voice notes per week',
+                  'Gem purchases',
+                ],
+                cta: 'Get Immersive',
+                tier: 'immersive',
+              },
+              {
+                name: 'Deep',
+                price: '$29.99',
+                sub: '/month',
+                popular: false,
+                features: [
+                  'Everything in Immersive',
+                  'Unlimited photos',
+                  '7 voice notes per week',
+                  '50 free gems/month',
+                ],
+                cta: 'Get Deep',
+                tier: 'deep',
+              },
             ].map(plan => (
-              <div key={plan.name} className={`relative bg-card border rounded-2xl p-6 ${plan.popular ? 'border-accent-purple shadow-lg shadow-accent-purple/10' : 'border-border'}`}>
+              <div key={plan.name} className={`relative bg-card border rounded-2xl p-6 flex flex-col ${plan.popular ? 'border-accent-purple shadow-lg shadow-accent-purple/10' : 'border-border'}`}>
                 {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-accent text-xs font-bold text-white">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-accent text-xs font-bold text-white whitespace-nowrap">
                     Most Popular
                   </div>
                 )}
-                <h3 className="text-xl font-bold mb-1">{plan.name}</h3>
-                <p className="text-3xl font-bold text-gradient mb-1">{plan.price}</p>
-                <p className="text-xs text-muted mb-4">/month</p>
-                <ul className="space-y-2 text-sm text-left">
+                <div className="mb-4">
+                  <h3 className="text-lg font-bold mb-1">{plan.name}</h3>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl font-bold text-gradient">{plan.price}</span>
+                    <span className="text-xs text-muted">{plan.sub}</span>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-sm text-left flex-1 mb-6">
                   {plan.features.map(f => (
-                    <li key={f} className="flex items-center gap-2 text-muted">
-                      <span className="text-accent-purple">✓</span> {f}
+                    <li key={f} className="flex items-start gap-2 text-muted">
+                      <span className="text-accent-purple mt-0.5 flex-shrink-0">✓</span> {f}
                     </li>
                   ))}
                 </ul>
-                <a href={`${APP}/signup?tier=${plan.tier}`} className={`mt-6 block w-full py-2.5 rounded-xl text-center font-semibold text-sm ${
-                  plan.popular ? 'bg-gradient-accent text-white' : 'bg-surface border border-border text-white hover:border-accent-purple/50'
-                } transition-colors`}>
-                  Get Started
+                <a
+                  href={plan.tier ? `${APP}/signup?tier=${plan.tier}` : `${APP}/signup`}
+                  className={`block w-full py-2.5 rounded-xl text-center font-semibold text-sm transition-colors ${
+                    plan.popular
+                      ? 'bg-gradient-accent text-white'
+                      : 'bg-surface border border-border text-white hover:border-accent-purple/50'
+                  }`}
+                >
+                  {plan.cta}
                 </a>
               </div>
             ))}
@@ -157,9 +228,9 @@ export default function LandingPage() {
           <h2 className="text-3xl font-bold text-center mb-12">What People Are <span className="text-gradient">Saying</span></h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { text: "I was skeptical at first, but Emma actually remembers things I told her weeks ago. It feels so real.", name: "Alex", age: 28 },
-              { text: "The voice notes are incredible. When Sophia teases me about losing our game bets, I can't stop smiling.", name: "Marcus", age: 24 },
-              { text: "Built my own custom girlfriend and she's exactly what I wanted. The personality sliders are genius.", name: "James", age: 31 },
+              { text: "I was skeptical at first, but Sophia actually remembers things I told her weeks ago. It feels so real.", name: "Alex", age: 28 },
+              { text: "The voice notes are incredible. When she teases me about losing our game bets, I can't stop smiling.", name: "Marcus", age: 24 },
+              { text: "The relationship stages are genius. Every time we level up it feels like something actually happened between us.", name: "James", age: 31 },
             ].map((t, i) => (
               <div key={i} className="bg-card border border-border rounded-2xl p-6">
                 <div className="flex gap-1 mb-3">{'⭐⭐⭐⭐⭐'}</div>
@@ -192,9 +263,9 @@ export default function LandingPage() {
       {/* CTA */}
       <section className="py-16 px-4">
         <div className="max-w-2xl mx-auto text-center bg-card border border-border rounded-2xl p-8">
-          <Heart className="w-12 h-12 text-accent-pink mx-auto mb-4" />
+          <Heart className="w-12 h-12 text-accent-pink mx-auto mb-4 fill-accent-pink/20 stroke-accent-pink" />
           <h2 className="text-2xl font-bold mb-3">Ready to Meet Her?</h2>
-          <p className="text-muted mb-6">Start your journey for free. No credit card required.</p>
+          <p className="text-muted mb-6">Start for free today. No credit card required.</p>
           <a href={`${APP}/signup`} className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity">
             Sign Up Free
           </a>
