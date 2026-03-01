@@ -1,6 +1,6 @@
 'use client';
 
-import { Heart, Shield, Sparkles, Lock, MessageCircle, Mic, ChevronDown, Image } from 'lucide-react';
+import { Heart, Shield, Sparkles, Lock, MessageCircle, Mic, ChevronDown, Image, X as XIcon } from 'lucide-react';
 import Header from '@/components/shared/Header';
 
 const APP = 'https://app.mydreamgirlfriend.ai';
@@ -135,11 +135,16 @@ export default function LandingPage() {
                 sub: 'forever',
                 popular: false,
                 features: [
-                  '1 girlfriend slot',
+                  '1 girlfriend',
                   '5 messages per day',
                   'All pre-built girlfriends',
-                  'Stages 1–2 only',
-                  'Unlock photos & voice notes with gems',
+                  'Stages 1 & 2',
+                ],
+                excluded: [
+                  'Unlimited messages',
+                  'Voice notes',
+                  'Photos',
+                  'Stages 3–6',
                 ],
                 cta: 'Start Free',
                 tier: null,
@@ -150,12 +155,13 @@ export default function LandingPage() {
                 sub: '/month',
                 popular: false,
                 features: [
-                  '2 girlfriend slots',
                   'Unlimited messages',
+                  '2 girlfriend slots',
                   'All 6 relationship stages',
-                  '3 voice notes/week included',
-                  'NSFW unlocks at Stage 4',
-                  'Unlock more with gems',
+                  '3 voice notes/week',
+                ],
+                excluded: [
+                  'Photos',
                 ],
                 cta: 'Get Basic',
                 tier: 'basic',
@@ -166,12 +172,12 @@ export default function LandingPage() {
                 sub: '/month',
                 popular: true,
                 features: [
-                  '4 girlfriend slots',
                   'Everything in Basic',
-                  '5 photos/month included',
-                  '5 voice notes/week included',
-                  'NSFW unlocks at Stage 4',
+                  '4 girlfriend slots',
+                  '5 photos/month',
+                  '5 voice notes/week',
                 ],
+                excluded: [] as string[],
                 cta: 'Get Immersive',
                 tier: 'immersive',
               },
@@ -181,12 +187,12 @@ export default function LandingPage() {
                 sub: '/month',
                 popular: false,
                 features: [
-                  '8 girlfriend slots',
                   'Everything in Immersive',
-                  '10 photos/month included',
-                  '10 voice notes/week included',
-                  '50 free gems/month',
+                  '8 girlfriend slots',
+                  '10 photos/month',
+                  '10 voice notes/week',
                 ],
+                excluded: [] as string[],
                 cta: 'Get Deep',
                 tier: 'deep',
               },
@@ -206,8 +212,15 @@ export default function LandingPage() {
                 </div>
                 <ul className="space-y-2 text-sm text-left flex-1 mb-6">
                   {plan.features.map(f => (
-                    <li key={f} className="flex items-start gap-2 text-muted">
-                      <span className="text-accent-purple mt-0.5 flex-shrink-0">✓</span> {f}
+                    <li key={f} className="flex items-start gap-2">
+                      <span className="text-accent-purple mt-0.5 flex-shrink-0">✓</span>
+                      <span className="text-white/90">{f}</span>
+                    </li>
+                  ))}
+                  {plan.excluded.map(f => (
+                    <li key={f} className="flex items-start gap-2">
+                      <XIcon className="w-4 h-4 flex-shrink-0 mt-0.5 text-muted/30" />
+                      <span className="line-through text-muted/30">{f}</span>
                     </li>
                   ))}
                 </ul>
