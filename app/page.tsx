@@ -40,11 +40,11 @@ export default function LandingPage() {
             Deep personalities. Real emotions. Complete privacy.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <a href={`${APP}/browse`} className="px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity">
-              Browse Girlfriends
+            <a href={`${APP}/build`} className="px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity">
+              Build My Girlfriend ✨
             </a>
-            <a href={`${APP}/signup`} className="px-8 py-3.5 rounded-full bg-surface border border-border text-white font-semibold text-lg hover:border-accent-purple/50 transition-colors">
-              Start Free
+            <a href={`${APP}/browse`} className="px-8 py-3.5 rounded-full bg-surface border border-border text-white font-semibold text-lg hover:border-accent-purple/50 transition-colors">
+              or Browse Girls →
             </a>
           </div>
 
