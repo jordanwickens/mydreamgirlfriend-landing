@@ -337,9 +337,7 @@ export default function LandingPage() {
           </div>
           <div className="flex gap-6 text-sm text-muted">
             <a href={`${APP}/pricing`} className="hover:text-white transition-colors">Pricing</a>
-            <a href="/terms" className="hover:text-white transition-colors">Privacy</a>
-            <a href="/terms" className="hover:text-white transition-colors">Terms</a>
-            <a href="mailto:jordan@blackbearleads.com" className="hover:text-white transition-colors">Support</a>
+            <a href="/terms" className="hover:text-white transition-colors">Terms &amp; Policies</a>
           </div>
           <p className="text-xs text-muted">© 2026 Black Bear Leads Inc. — 18+ Only</p>
         </div>
