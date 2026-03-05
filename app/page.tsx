@@ -3,7 +3,7 @@
 import { Heart, Shield, Sparkles, Lock, MessageCircle, Mic, ChevronDown, X as XIcon, Star, Trophy, Users } from 'lucide-react';
 import Header from '@/components/shared/Header';
 
-const APP = 'https://app.mydreamgirlfriend.ai';
+const APP = process.env.NEXT_PUBLIC_APP_URL || 'https://app.mydreamgirlfriend.ai';
 const SOPHIA_AVATAR = 'https://r2.mydreamgirlfriend.ai/girlfriends/sophia/profile.jpg';
 
 const fakeChat = [
@@ -337,11 +337,11 @@ export default function LandingPage() {
           </div>
           <div className="flex gap-6 text-sm text-muted">
             <a href={`${APP}/pricing`} className="hover:text-white transition-colors">Pricing</a>
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
-            <a href="#" className="hover:text-white transition-colors">Support</a>
+            <a href="/terms" className="hover:text-white transition-colors">Privacy</a>
+            <a href="/terms" className="hover:text-white transition-colors">Terms</a>
+            <a href="mailto:jordan@blackbearleads.com" className="hover:text-white transition-colors">Support</a>
           </div>
-          <p className="text-xs text-muted">© 2026 MyDreamGirlfriend.ai — 18+ Only</p>
+          <p className="text-xs text-muted">© 2026 Black Bear Leads Inc. — 18+ Only</p>
         </div>
       </footer>
     </div>

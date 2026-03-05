@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Heart, Menu, X } from 'lucide-react';
 
-const APP = 'https://app.mydreamgirlfriend.ai';
+const APP = process.env.NEXT_PUBLIC_APP_URL || 'https://app.mydreamgirlfriend.ai';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
