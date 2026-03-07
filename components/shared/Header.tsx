@@ -17,7 +17,10 @@ export default function Header() {
         </a>
 
         <nav className="hidden md:flex items-center gap-6">
+          <a href="/features" className="text-muted hover:text-white transition-colors">Features</a>
           <a href={`${APP}/browse`} className="text-muted hover:text-white transition-colors">Browse</a>
+          <a href="/compare" className="text-muted hover:text-white transition-colors">Compare</a>
+          <a href="/blog" className="text-muted hover:text-white transition-colors">Blog</a>
           <a href={`${APP}/pricing`} className="text-muted hover:text-white transition-colors">Pricing</a>
           <a href={`${APP}/login`} className="text-muted hover:text-white transition-colors">Log In</a>
           <a href={`${APP}/signup`} className="px-4 py-2 rounded-full bg-gradient-accent text-white font-semibold text-sm hover:opacity-90 transition-opacity">
@@ -32,7 +35,10 @@ export default function Header() {
 
       {menuOpen && (
         <div className="md:hidden bg-surface border-b border-border px-4 py-4 space-y-3">
+          <a href="/features" className="block text-muted hover:text-white" onClick={() => setMenuOpen(false)}>Features</a>
           <a href={`${APP}/browse`} className="block text-muted hover:text-white" onClick={() => setMenuOpen(false)}>Browse</a>
+          <a href="/compare" className="block text-muted hover:text-white" onClick={() => setMenuOpen(false)}>Compare</a>
+          <a href="/blog" className="block text-muted hover:text-white" onClick={() => setMenuOpen(false)}>Blog</a>
           <a href={`${APP}/pricing`} className="block text-muted hover:text-white" onClick={() => setMenuOpen(false)}>Pricing</a>
           <a href={`${APP}/login`} className="block text-muted hover:text-white" onClick={() => setMenuOpen(false)}>Log In</a>
           <a href={`${APP}/signup`} className="block text-center px-4 py-2 rounded-full bg-gradient-accent text-white font-semibold" onClick={() => setMenuOpen(false)}>Sign Up Free</a>
