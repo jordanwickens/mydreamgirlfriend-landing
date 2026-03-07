@@ -2,3 +2,12 @@ node_modules
 .next
 out
 .env*
+.DS_Store
+
+# Strapi CMS
+cms/.tmp
+cms/.cache
+cms/build
+cms/dist
+cms/node_modules
+cms/.env*

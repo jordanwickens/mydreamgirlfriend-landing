@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comparison_pages",
+  "info": {
+    "singularName": "comparison-page",
+    "pluralName": "comparison-pages",
+    "displayName": "Comparison Page",
+    "description": "Competitor comparison pages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "competitor": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "metaDescription": {
+      "type": "text"
+    },
+    "h1": {
+      "type": "string",
+      "required": true
+    },
+    "intro": {
+      "type": "text",
+      "required": true
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.comparison-feature"
+    },
+    "verdict": {
+      "type": "text",
+      "required": true
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faq-item"
+    },
+    "datePublished": {
+      "type": "date"
+    },
+    "dateModified": {
+      "type": "date"
+    }
+  }
+}

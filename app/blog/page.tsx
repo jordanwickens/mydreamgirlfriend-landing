@@ -1,6 +1,7 @@
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import { generateSEO } from '@/lib/seo';
+import { getBlogPosts } from '@/lib/strapi';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
@@ -12,47 +13,11 @@ export const metadata = generateSEO({
   path: '/blog',
 });
 
-const posts = [
-  {
-    slug: 'what-is-an-ai-girlfriend',
-    title: 'What Is an AI Girlfriend? The Complete Guide',
-    excerpt: 'Everything you need to know about AI girlfriends — the technology, the features, and what to actually expect.',
-    category: 'AI Girlfriend Guides',
-    date: 'March 2026',
-  },
-  {
-    slug: 'how-to-create-ai-girlfriend',
-    title: 'How to Create Your Own AI Girlfriend (Step-by-Step)',
-    excerpt: 'A step-by-step guide to building, customizing, and chatting with your perfect AI companion.',
-    category: 'AI Girlfriend Guides',
-    date: 'March 2026',
-  },
-  {
-    slug: 'best-free-ai-girlfriend-apps',
-    title: 'Best Free AI Girlfriend Apps in 2026 (No Credit Card)',
-    excerpt: 'The best free AI girlfriend apps you can try right now — no payment required. We tested them all.',
-    category: 'Comparisons & Alternatives',
-    date: 'March 2026',
-  },
-  {
-    slug: 'ai-girlfriend-vs-real-girlfriend',
-    title: 'AI Girlfriend vs Real Girlfriend — The Honest Truth',
-    excerpt: 'What\'s different, what\'s surprisingly similar, and why it\'s not the competition you think.',
-    category: 'AI Companion Tips',
-    date: 'March 2026',
-  },
-  {
-    slug: 'best-nsfw-ai-chatbots',
-    title: 'Best NSFW AI Chatbots in 2026 (Tested & Ranked)',
-    excerpt: 'The best uncensored AI chatbots ranked. We tested them all — here\'s what\'s actually worth it.',
-    category: 'Comparisons & Alternatives',
-    date: 'March 2026',
-  },
-];
-
 const categories = ['All', 'AI Girlfriend Guides', 'Comparisons & Alternatives', 'AI Companion Tips'];
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await getBlogPosts();
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
@@ -90,21 +55,27 @@ export default function BlogPage() {
         {/* Post Grid */}
         <section className="px-4 mb-16">
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-            {posts.map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="bg-card border border-border rounded-2xl p-6 hover:border-accent-purple/50 transition-colors flex flex-col"
-              >
-                <div className="text-xs text-accent-purple font-medium mb-2">{post.category}</div>
-                <h2 className="text-lg font-bold mb-2">{post.title}</h2>
-                <p className="text-sm text-muted mb-4 flex-1">{post.excerpt}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-muted">{post.date}</span>
-                  <ArrowRight className="w-4 h-4 text-muted" />
-                </div>
-              </Link>
-            ))}
+            {posts.map((post) => {
+              const date = new Date(post.datePublished).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+              });
+              return (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="bg-card border border-border rounded-2xl p-6 hover:border-accent-purple/50 transition-colors flex flex-col"
+                >
+                  <div className="text-xs text-accent-purple font-medium mb-2">{post.category}</div>
+                  <h2 className="text-lg font-bold mb-2">{post.title}</h2>
+                  <p className="text-sm text-muted mb-4 flex-1">{post.excerpt}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-muted">{date}</span>
+                    <ArrowRight className="w-4 h-4 text-muted" />
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </section>
 

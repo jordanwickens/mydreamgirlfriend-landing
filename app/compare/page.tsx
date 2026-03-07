@@ -1,6 +1,7 @@
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import { generateSEO, generateItemListSchema } from '@/lib/seo';
+import { getComparisonPages } from '@/lib/strapi';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
@@ -11,27 +12,6 @@ export const metadata = generateSEO({
   description: 'See how MyDreamGirlfriend.ai compares to Candy AI, Replika, Character.ai & more. Feature-by-feature breakdowns and honest comparisons.',
   path: '/compare',
 });
-
-const comparisons = [
-  {
-    slug: 'candy-ai',
-    competitor: 'Candy AI',
-    tagline: 'Deeper customization, earned relationships, and end-to-end encryption vs the most popular AI girlfriend app.',
-    differentiator: '6-stage progression vs instant access',
-  },
-  {
-    slug: 'replika',
-    competitor: 'Replika',
-    tagline: 'Uncensored conversations, AI photos, and voice notes vs Replika\'s emotional support focus.',
-    differentiator: 'NSFW content + AI images vs SFW-only',
-  },
-  {
-    slug: 'character-ai',
-    competitor: 'Character.ai',
-    tagline: 'A real AI girlfriend experience with photos, voice, and intimacy vs Character.ai\'s roleplay library.',
-    differentiator: 'Girlfriend experience vs character roleplay',
-  },
-];
 
 const comparisonFeatures = [
   { feature: 'Relationship Progression', us: 'Yes (6 stages)', candyAi: 'No', replika: 'No', characterAi: 'No' },
@@ -44,7 +24,9 @@ const comparisonFeatures = [
   { feature: 'Free Tier', us: 'Yes', candyAi: 'Yes', replika: 'Yes', characterAi: 'Yes' },
 ];
 
-export default function ComparePage() {
+export default async function ComparePage() {
+  const comparisons = await getComparisonPages();
+
   const itemListSchema = generateItemListSchema(
     comparisons.map((c, i) => ({
       name: `MyDreamGirlfriend vs ${c.competitor}`,
@@ -119,10 +101,7 @@ export default function ComparePage() {
                       <h3 className="text-lg font-bold mb-2">
                         MyDreamGirlfriend vs {comp.competitor}
                       </h3>
-                      <p className="text-sm text-muted mb-3">{comp.tagline}</p>
-                      <div className="text-xs text-accent-purple font-medium">
-                        Key difference: {comp.differentiator}
-                      </div>
+                      <p className="text-sm text-muted mb-3">{comp.intro.slice(0, 150)}...</p>
                     </div>
                     <ArrowRight className="w-5 h-5 text-muted flex-shrink-0 mt-1" />
                   </div>
