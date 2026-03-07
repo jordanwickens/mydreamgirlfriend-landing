@@ -16,18 +16,24 @@ async function fetchStrapi<T>(
     url.searchParams.set(key, value);
   }
 
-  const res = await fetch(url.toString(), {
-    headers: {
-      Authorization: `Bearer ${STRAPI_API_TOKEN}`,
-    },
-    next: { tags: ['strapi'], revalidate: 3600 },
-  });
+  try {
+    const res = await fetch(url.toString(), {
+      headers: {
+        Authorization: `Bearer ${STRAPI_API_TOKEN}`,
+      },
+      next: { tags: ['strapi'], revalidate: 3600 },
+    });
 
-  if (!res.ok) {
-    throw new Error(`Strapi fetch failed: ${res.status} ${res.statusText} — ${path}`);
+    if (!res.ok) {
+      console.error(`Strapi fetch failed: ${res.status} ${res.statusText} — ${path}`);
+      return { data: [] } as T;
+    }
+
+    return res.json();
+  } catch (err) {
+    console.error(`Strapi unreachable (${path}):`, err instanceof Error ? err.message : err);
+    return { data: [] } as T;
   }
-
-  return res.json();
 }
 
 // ── Blog Posts ──────────────────────────────────────────────
