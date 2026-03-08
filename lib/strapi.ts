@@ -1,6 +1,5 @@
 import type {
   BlogPostAttributes,
-  ComparisonPageAttributes,
   StrapiResponse,
 } from './strapi-types';
 
@@ -63,28 +62,3 @@ export async function getBlogPostBySlug(slug: string) {
   return res.data[0] ?? null;
 }
 
-// ── Comparison Pages ───────────────────────────────────────
-
-export async function getComparisonPages() {
-  const res = await fetchStrapi<StrapiResponse<ComparisonPageAttributes>>(
-    '/comparison-pages',
-    {
-      'populate': '*',
-      'pagination[pageSize]': '100',
-      'status': 'published',
-    },
-  );
-  return res.data;
-}
-
-export async function getComparisonPageBySlug(slug: string) {
-  const res = await fetchStrapi<StrapiResponse<ComparisonPageAttributes>>(
-    '/comparison-pages',
-    {
-      'filters[slug][$eq]': slug,
-      'populate': '*',
-      'status': 'published',
-    },
-  );
-  return res.data[0] ?? null;
-}

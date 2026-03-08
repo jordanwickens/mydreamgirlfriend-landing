@@ -1,7 +1,7 @@
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import { generateSEO, generateItemListSchema } from '@/lib/seo';
-import { getComparisonPages } from '@/lib/strapi';
+import { getComparisonPagesLocal } from '@/lib/comparison-data';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
@@ -25,7 +25,7 @@ const comparisonFeatures = [
 ];
 
 export default async function ComparePage() {
-  const comparisons = await getComparisonPages();
+  const comparisons = getComparisonPagesLocal();
 
   const itemListSchema = generateItemListSchema(
     comparisons.map((c, i) => ({

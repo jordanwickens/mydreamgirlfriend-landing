@@ -3,21 +3,20 @@ import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import FAQ from '@/components/shared/FAQ';
 import { generateSEO, generateArticleSchema, generateFAQSchema } from '@/lib/seo';
-import { getComparisonPages, getComparisonPageBySlug } from '@/lib/strapi';
+import { getComparisonPagesLocal, getComparisonPageBySlugLocal } from '@/lib/comparison-data';
 import Link from 'next/link';
 import { Check } from 'lucide-react';
 import type { Metadata } from 'next';
 
 const APP = process.env.NEXT_PUBLIC_APP_URL || 'https://app.mydreamgirlfriend.ai';
 
-export async function generateStaticParams() {
-  const pages = await getComparisonPages();
-  return pages.map((p) => ({ slug: p.slug }));
+export function generateStaticParams() {
+  return getComparisonPagesLocal().map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const data = await getComparisonPageBySlug(slug);
+  const data = getComparisonPageBySlugLocal(slug);
   if (!data) return {};
   return generateSEO({
     title: data.title,
@@ -28,10 +27,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ComparisonPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const data = await getComparisonPageBySlug(slug);
+  const data = getComparisonPageBySlugLocal(slug);
   if (!data) notFound();
 
-  const allPages = await getComparisonPages();
+  const allPages = getComparisonPagesLocal();
   const otherPages = allPages.filter((c) => c.slug !== data.slug);
 
   const lastUpdated = data.dateModified || data.datePublished;
