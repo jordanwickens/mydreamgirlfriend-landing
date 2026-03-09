@@ -4,8 +4,7 @@ import { generateSEO } from '@/lib/seo';
 import { getBlogPosts } from '@/lib/strapi';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-
-const APP = process.env.NEXT_PUBLIC_APP_URL || 'https://app.mydreamgirlfriend.ai';
+import { appLinks } from '@/lib/links';
 
 export const metadata = generateSEO({
   title: 'Blog — AI Girlfriend Guides, Tips & News | MyDreamGirlfriend',
@@ -85,7 +84,7 @@ export default async function BlogPage() {
             <h2 className="text-2xl font-bold mb-3">Ready to Get Started?</h2>
             <p className="text-muted mb-6">Build your dream AI girlfriend today. Free to start.</p>
             <a
-              href={`${APP}/signup`}
+              href={appLinks.signup}
               className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity"
             >
               Sign Up Free

@@ -4,7 +4,13 @@ export default function Footer() {
   return (
     <footer className="border-t border-border bg-surface/50 mt-auto">
       <div className="max-w-6xl mx-auto px-4 py-8 text-center space-y-3">
-        <nav className="flex items-center justify-center text-sm">
+        <nav className="flex items-center justify-center gap-6 text-sm">
+          <Link href="/pricing" className="text-muted hover:text-white transition-colors">
+            Pricing
+          </Link>
+          <Link href="/blog" className="text-muted hover:text-white transition-colors">
+            Blog
+          </Link>
           <Link href="/terms" className="text-muted hover:text-white transition-colors">
             Terms &amp; Policies
           </Link>

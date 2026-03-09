@@ -4,8 +4,7 @@ import { generateSEO, generateItemListSchema } from '@/lib/seo';
 import { getComparisonPagesLocal } from '@/lib/comparison-data';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-
-const APP = process.env.NEXT_PUBLIC_APP_URL || 'https://app.mydreamgirlfriend.ai';
+import { appLinks } from '@/lib/links';
 
 export const metadata = generateSEO({
   title: 'Compare AI Girlfriend Apps — MyDreamGirlfriend vs Others',
@@ -117,7 +116,7 @@ export default async function ComparePage() {
             <h2 className="text-2xl font-bold mb-3">See for Yourself</h2>
             <p className="text-muted mb-6">Try MyDreamGirlfriend.ai free and compare it to anything else on the market.</p>
             <a
-              href={`${APP}/signup`}
+              href={appLinks.signup}
               className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity"
             >
               Try Free

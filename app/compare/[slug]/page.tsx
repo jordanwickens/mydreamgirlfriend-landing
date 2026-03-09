@@ -7,8 +7,7 @@ import { getComparisonPagesLocal, getComparisonPageBySlugLocal } from '@/lib/com
 import Link from 'next/link';
 import { Check } from 'lucide-react';
 import type { Metadata } from 'next';
-
-const APP = process.env.NEXT_PUBLIC_APP_URL || 'https://app.mydreamgirlfriend.ai';
+import { appLinks } from '@/lib/links';
 
 export function generateStaticParams() {
   return getComparisonPagesLocal().map((p) => ({ slug: p.slug }));
@@ -129,7 +128,7 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
             <p className="text-muted mb-6">See the difference for yourself. No credit card required.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
-                href={`${APP}/build`}
+                href={appLinks.build}
                 className="inline-block px-6 py-3 rounded-full bg-gradient-accent text-white font-semibold hover:opacity-90 transition-opacity"
               >
                 Build My Girlfriend

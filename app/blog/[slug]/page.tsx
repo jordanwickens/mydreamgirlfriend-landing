@@ -7,8 +7,7 @@ import { generateSEO, generateArticleSchema, generateFAQSchema } from '@/lib/seo
 import { getBlogPosts, getBlogPostBySlug } from '@/lib/strapi';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-
-const APP = process.env.NEXT_PUBLIC_APP_URL || 'https://app.mydreamgirlfriend.ai';
+import { appLinks } from '@/lib/links';
 
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
@@ -100,7 +99,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               {post.ctaText || 'Build your dream AI girlfriend today. Free to start.'}
             </p>
             <a
-              href={post.ctaButtonUrl || `${APP}/signup`}
+              href={post.ctaButtonUrl || appLinks.signup}
               className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity"
             >
               {post.ctaButtonText || 'Get Started Free'}

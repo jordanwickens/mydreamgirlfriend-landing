@@ -2,8 +2,7 @@ import FeaturePageLayout from '@/components/shared/FeaturePageLayout';
 import ContentSection from '@/components/shared/ContentSection';
 import { generateSEO, generateSoftwareAppSchema, generateFAQSchema } from '@/lib/seo';
 import Link from 'next/link';
-
-const APP = process.env.NEXT_PUBLIC_APP_URL || 'https://app.mydreamgirlfriend.ai';
+import { appLinks } from '@/lib/links';
 
 export const metadata = generateSEO({
   title: 'AI Girlfriend Creator — Build Your Dream Companion',
@@ -26,7 +25,7 @@ export default function CharacterCreatorPage() {
       subtitle="Create her from scratch. Choose every detail — appearance, personality, voice, and interests. She's built exactly the way you want."
       faqs={faqs}
       ctaText="Build My Girlfriend"
-      ctaHref={`${APP}/build`}
+      ctaHref={appLinks.build}
     >
       <script
         type="application/ld+json"

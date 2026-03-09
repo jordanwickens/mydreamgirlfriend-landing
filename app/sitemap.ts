@@ -17,6 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/features/character-creator`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/features/roleplay`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/features/personality-customization`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/best-ai-girlfriend-apps`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/compare`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },

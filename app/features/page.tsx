@@ -4,8 +4,7 @@ import Footer from '@/components/shared/Footer';
 import FeatureCard from '@/components/shared/FeatureCard';
 import FAQ from '@/components/shared/FAQ';
 import { generateSEO, generateSoftwareAppSchema, generateFAQSchema } from '@/lib/seo';
-
-const APP = process.env.NEXT_PUBLIC_APP_URL || 'https://app.mydreamgirlfriend.ai';
+import { appLinks } from '@/lib/links';
 
 export const metadata = generateSEO({
   title: 'AI Girlfriend Features — Everything She Can Do | MyDreamGirlfriend',
@@ -57,7 +56,7 @@ export default function FeaturesPage() {
               unlimited customization. She&apos;s built for you.
             </p>
             <a
-              href={`${APP}/build`}
+              href={appLinks.build}
               className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity"
             >
               Build My Girlfriend ✨
@@ -110,7 +109,7 @@ export default function FeaturesPage() {
             <h2 className="text-2xl font-bold mb-3">Ready to Meet Her?</h2>
             <p className="text-muted mb-6">Start for free today. No credit card required.</p>
             <a
-              href={`${APP}/signup`}
+              href={appLinks.signup}
               className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity"
             >
               Sign Up Free

@@ -2,8 +2,8 @@
 
 import { Heart, Shield, Sparkles, Lock, MessageCircle, Mic, ChevronDown, X as XIcon, Star, Trophy, Users } from 'lucide-react';
 import Header from '@/components/shared/Header';
-
-const APP = process.env.NEXT_PUBLIC_APP_URL || 'https://app.mydreamgirlfriend.ai';
+import Footer from '@/components/shared/Footer';
+import { appLinks } from '@/lib/links';
 const SOPHIA_AVATAR = 'https://r2.mydreamgirlfriend.ai/girlfriends/sophia/profile.jpg';
 
 const fakeChat = [
@@ -79,10 +79,10 @@ export default function LandingPage() {
             Deep personalities. Real emotions. Complete privacy.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <a href={`${APP}/build`} className="px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity">
+            <a href={appLinks.build} className="px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity">
               Build My Girlfriend ✨
             </a>
-            <a href={`${APP}/browse`} className="px-8 py-3.5 rounded-full bg-surface border border-border text-white font-semibold text-lg hover:border-accent-purple/50 transition-colors">
+            <a href={appLinks.browse} className="px-8 py-3.5 rounded-full bg-surface border border-border text-white font-semibold text-lg hover:border-accent-purple/50 transition-colors">
               or Browse Girls →
             </a>
           </div>
@@ -290,7 +290,7 @@ export default function LandingPage() {
                   ))}
                 </ul>
                 <a
-                  href={plan.tier ? `${APP}/signup?tier=${plan.tier}` : `${APP}/signup`}
+                  href={plan.tier ? appLinks.signupWithTier(plan.tier) : appLinks.signup}
                   className={`block w-full py-2.5 rounded-xl text-center font-semibold text-sm transition-colors ${
                     plan.popular
                       ? 'bg-gradient-accent text-white'
@@ -356,26 +356,13 @@ export default function LandingPage() {
           <Heart className="w-12 h-12 text-accent-pink mx-auto mb-4 fill-accent-pink/20 stroke-accent-pink" />
           <h2 className="text-2xl font-bold mb-3">Ready to Meet Her?</h2>
           <p className="text-muted mb-6">Start for free today. No credit card required.</p>
-          <a href={`${APP}/signup`} className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity">
+          <a href={appLinks.signup} className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity">
             Sign Up Free
           </a>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-8 px-4">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <Heart className="w-5 h-5 text-accent-pink fill-accent-pink" />
-            <span className="font-bold text-gradient">MyDreamGirlfriend</span>
-          </div>
-          <div className="flex gap-6 text-sm text-muted">
-            <a href={`${APP}/pricing`} className="hover:text-white transition-colors">Pricing</a>
-            <a href="/terms" className="hover:text-white transition-colors">Terms &amp; Policies</a>
-          </div>
-          <p className="text-xs text-muted">© 2026 Black Bear Leads Inc. — 18+ Only</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

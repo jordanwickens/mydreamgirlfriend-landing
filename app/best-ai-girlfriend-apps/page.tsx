@@ -4,8 +4,7 @@ import FAQ from '@/components/shared/FAQ';
 import { generateSEO, generateItemListSchema, generateFAQSchema } from '@/lib/seo';
 import Link from 'next/link';
 import { Star, Check, X as XIcon } from 'lucide-react';
-
-const APP = process.env.NEXT_PUBLIC_APP_URL || 'https://app.mydreamgirlfriend.ai';
+import { appLinks } from '@/lib/links';
 
 export const metadata = generateSEO({
   title: '7 Best AI Girlfriend Apps in 2026 (Tested & Ranked)',
@@ -228,7 +227,7 @@ export default function BestAIGirlfriendAppsPage() {
                 {app.best && (
                   <div className="mt-6 flex flex-col sm:flex-row gap-3">
                     <a
-                      href={`${APP}/build`}
+                      href={appLinks.build}
                       className="inline-block px-6 py-2.5 rounded-full bg-gradient-accent text-white font-semibold text-sm text-center hover:opacity-90 transition-opacity"
                     >
                       Build My Girlfriend ✨
@@ -270,7 +269,7 @@ export default function BestAIGirlfriendAppsPage() {
             <h2 className="text-2xl font-bold mb-3">Ready to Try #1?</h2>
             <p className="text-muted mb-6">Start free. No credit card required. See why MyDreamGirlfriend.ai is the top pick.</p>
             <a
-              href={`${APP}/signup`}
+              href={appLinks.signup}
               className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity"
             >
               Sign Up Free

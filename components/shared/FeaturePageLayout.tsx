@@ -3,8 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import FAQ from './FAQ';
 import type { FAQItem } from '@/lib/seo';
-
-const APP = process.env.NEXT_PUBLIC_APP_URL || 'https://app.mydreamgirlfriend.ai';
+import { appLinks } from '@/lib/links';
 
 interface FeaturePageLayoutProps {
   h1: string;
@@ -23,7 +22,7 @@ export default function FeaturePageLayout({
   ctaText = 'Build My Girlfriend',
   ctaHref,
 }: FeaturePageLayoutProps) {
-  const href = ctaHref || `${APP}/build`;
+  const href = ctaHref || appLinks.build;
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
@@ -65,7 +64,7 @@ export default function FeaturePageLayout({
             <h2 className="text-2xl font-bold mb-3">Ready to Try It?</h2>
             <p className="text-muted mb-6">Start for free. No credit card required.</p>
             <a
-              href={`${APP}/signup`}
+              href={appLinks.signup}
               className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity"
             >
               Sign Up Free
