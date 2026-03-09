@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { Check } from 'lucide-react';
 import type { Metadata } from 'next';
 import { appLinks } from '@/lib/links';
+import TrackedLink from '@/components/shared/TrackedLink';
 
 export function generateStaticParams() {
   return getComparisonPagesLocal().map((p) => ({ slug: p.slug }));
@@ -127,12 +128,14 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
             <h2 className="text-2xl font-bold mb-3">Try MyDreamGirlfriend Free</h2>
             <p className="text-muted mb-6">See the difference for yourself. No credit card required.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a
+              <TrackedLink
                 href={appLinks.build}
+                eventName="cta_build_girlfriend"
+                eventProps={{ location: 'compare', slug }}
                 className="inline-block px-6 py-3 rounded-full bg-gradient-accent text-white font-semibold hover:opacity-90 transition-opacity"
               >
                 Build My Girlfriend
-              </a>
+              </TrackedLink>
               <Link
                 href="/features"
                 className="inline-block px-6 py-3 rounded-full bg-surface border border-border text-white font-semibold hover:border-accent-purple/50 transition-colors"

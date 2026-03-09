@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import { appLinks } from '@/lib/links';
+import { trackCTA } from '@/components/shared/TrackedLink';
 const SOPHIA_AVATAR = 'https://r2.mydreamgirlfriend.ai/girlfriends/sophia/profile.jpg';
 
 const fakeChat = [
@@ -80,10 +81,10 @@ export default function LandingPage() {
             Deep personalities. Real emotions. Complete privacy.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <a href={appLinks.build} className="px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity">
+            <a href={appLinks.build} onClick={() => trackCTA('cta_build_girlfriend', { location: 'hero' })} className="px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity">
               Build My Girlfriend ✨
             </a>
-            <a href={appLinks.browse} className="px-8 py-3.5 rounded-full bg-surface border border-border text-white font-semibold text-lg hover:border-accent-purple/50 transition-colors">
+            <a href={appLinks.browse} onClick={() => trackCTA('cta_browse_girls', { location: 'hero' })} className="px-8 py-3.5 rounded-full bg-surface border border-border text-white font-semibold text-lg hover:border-accent-purple/50 transition-colors">
               or Browse Girls →
             </a>
           </div>
@@ -301,6 +302,7 @@ export default function LandingPage() {
                 </ul>
                 <a
                   href={plan.tier ? appLinks.signupWithTier(plan.tier) : appLinks.signup}
+                  onClick={() => trackCTA('cta_pricing_tier', { tier: plan.name.toLowerCase(), location: 'pricing' })}
                   className={`block w-full py-2.5 rounded-xl text-center font-semibold text-sm transition-colors ${
                     plan.popular
                       ? 'bg-gradient-accent text-white'
@@ -366,7 +368,7 @@ export default function LandingPage() {
           <Heart className="w-12 h-12 text-accent-pink mx-auto mb-4 fill-accent-pink/20 stroke-accent-pink" />
           <h2 className="text-2xl font-bold mb-3">Ready to Meet Her?</h2>
           <p className="text-muted mb-6">Start for free today. No credit card required.</p>
-          <a href={appLinks.signup} className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity">
+          <a href={appLinks.signup} onClick={() => trackCTA('cta_signup_free', { location: 'bottom_cta' })} className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity">
             Sign Up Free
           </a>
         </div>

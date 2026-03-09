@@ -7,6 +7,7 @@ import { getBlogPosts, getBlogPostBySlug } from '@/lib/blog';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { appLinks } from '@/lib/links';
+import TrackedLink from '@/components/shared/TrackedLink';
 
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
@@ -97,12 +98,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <p className="text-muted mb-6">
               {post.ctaText || 'Build your dream AI girlfriend today. Free to start.'}
             </p>
-            <a
+            <TrackedLink
               href={post.ctaButtonUrl || appLinks.signup}
+              eventName="cta_blog_signup"
+              eventProps={{ slug }}
               className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity"
             >
               {post.ctaButtonText || 'Get Started Free'}
-            </a>
+            </TrackedLink>
           </div>
         </section>
 

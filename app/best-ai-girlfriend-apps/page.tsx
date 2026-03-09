@@ -5,6 +5,7 @@ import { generateSEO, generateItemListSchema, generateFAQSchema } from '@/lib/se
 import Link from 'next/link';
 import { Star, Check, X as XIcon } from 'lucide-react';
 import { appLinks } from '@/lib/links';
+import TrackedLink from '@/components/shared/TrackedLink';
 
 export const metadata = generateSEO({
   title: '7 Best AI Girlfriend Apps in 2026 (Tested & Ranked)',
@@ -238,12 +239,14 @@ export default function BestAIGirlfriendAppsPage() {
 
                 {app.best && (
                   <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                    <a
+                    <TrackedLink
                       href={appLinks.build}
+                      eventName="cta_build_girlfriend"
+                      eventProps={{ location: 'best-apps' }}
                       className="inline-block px-6 py-2.5 rounded-full bg-gradient-accent text-white font-semibold text-sm text-center hover:opacity-90 transition-opacity"
                     >
                       Build My Girlfriend ✨
-                    </a>
+                    </TrackedLink>
                     <Link
                       href="/features"
                       className="inline-block px-6 py-2.5 rounded-full bg-surface border border-border text-white font-semibold text-sm text-center hover:border-accent-purple/50 transition-colors"
@@ -280,12 +283,14 @@ export default function BestAIGirlfriendAppsPage() {
           <div className="max-w-2xl mx-auto text-center bg-card border border-border rounded-2xl p-8">
             <h2 className="text-2xl font-bold mb-3">Ready to Try #1?</h2>
             <p className="text-muted mb-6">Start free. No credit card required. See why MyDreamGirlfriend.ai is the top pick.</p>
-            <a
+            <TrackedLink
               href={appLinks.signup}
+              eventName="cta_signup_free"
+              eventProps={{ location: 'best-apps-cta' }}
               className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity"
             >
               Sign Up Free
-            </a>
+            </TrackedLink>
           </div>
         </section>
 

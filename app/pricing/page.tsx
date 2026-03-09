@@ -3,6 +3,7 @@ import Footer from '@/components/shared/Footer';
 import FAQ from '@/components/shared/FAQ';
 import { generateSEO, generateFAQSchema } from '@/lib/seo';
 import { appLinks } from '@/lib/links';
+import TrackedLink from '@/components/shared/TrackedLink';
 import { X as XIcon } from 'lucide-react';
 
 export const metadata = generateSEO({
@@ -163,8 +164,10 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
-                <a
+                <TrackedLink
                   href={plan.tier ? appLinks.signupWithTier(plan.tier) : appLinks.signup}
+                  eventName="cta_pricing_tier"
+                  eventProps={{ tier: plan.name.toLowerCase(), location: 'pricing-page' }}
                   className={`block w-full py-2.5 rounded-xl text-center font-semibold text-sm transition-colors ${
                     plan.popular
                       ? 'bg-gradient-accent text-white'
@@ -172,7 +175,7 @@ export default function PricingPage() {
                   }`}
                 >
                   {plan.cta}
-                </a>
+                </TrackedLink>
               </div>
             ))}
           </div>
@@ -193,12 +196,14 @@ export default function PricingPage() {
           <div className="max-w-2xl mx-auto text-center bg-card border border-border rounded-2xl p-8">
             <h2 className="text-2xl font-bold mb-3">Ready to Get Started?</h2>
             <p className="text-muted mb-6">Start for free today. Upgrade anytime.</p>
-            <a
+            <TrackedLink
               href={appLinks.signup}
+              eventName="cta_signup_free"
+              eventProps={{ location: 'pricing-page-cta' }}
               className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity"
             >
               Sign Up Free
-            </a>
+            </TrackedLink>
           </div>
         </section>
       </main>
