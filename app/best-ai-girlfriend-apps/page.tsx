@@ -29,6 +29,7 @@ const apps = [
     rank: 2,
     name: 'Candy AI',
     url: 'https://candy.ai',
+    compareSlug: 'candy-ai',
     tagline: 'Popular choice with live action mode',
     description: 'Candy AI is one of the most popular AI girlfriend platforms with a large user base. They pioneered the live action mode feature and offer solid customization options. Good for users who want a polished, mainstream experience with regular feature updates.',
     pros: ['Large active community', 'Live action mode', 'Regular updates', 'Solid image generation'],
@@ -40,6 +41,7 @@ const apps = [
     rank: 3,
     name: 'Replika',
     url: 'https://replika.com',
+    compareSlug: 'replika',
     tagline: 'OG companion app, best free tier',
     description: 'Replika is the original AI companion app and still offers one of the most generous free tiers with unlimited chat messages. Best suited for users who prioritize emotional support and long-form conversation over visual content or NSFW features.',
     pros: ['Best free tier (unlimited messages)', 'Strong conversation memory', 'Established platform', 'Good emotional intelligence'],
@@ -62,6 +64,7 @@ const apps = [
     rank: 5,
     name: 'Character.ai',
     url: 'https://character.ai',
+    compareSlug: 'character-ai',
     tagline: 'Huge character library, SFW focused',
     description: 'Character.ai has the largest library of user-created characters and excels at roleplay with fictional characters. However, it\'s firmly SFW-only — no romantic or NSFW content allowed, which limits it for users seeking an actual AI girlfriend experience.',
     pros: ['Massive character library', 'Great roleplay variety', 'Strong conversational AI', 'Free to use'],
@@ -223,6 +226,15 @@ export default function BestAIGirlfriendAppsPage() {
                 <div className="text-sm text-muted">
                   <strong className="text-white">Pricing:</strong> {app.pricing}
                 </div>
+
+                {app.compareSlug && (
+                  <Link
+                    href={`/compare/${app.compareSlug}`}
+                    className="inline-block mt-3 text-sm text-accent-purple hover:underline transition-colors"
+                  >
+                    See detailed comparison vs MyDreamGirlfriend &rarr;
+                  </Link>
+                )}
 
                 {app.best && (
                   <div className="mt-6 flex flex-col sm:flex-row gap-3">

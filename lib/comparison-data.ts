@@ -1,4 +1,4 @@
-import type { ComparisonPageAttributes } from './strapi-types';
+import type { ComparisonPageAttributes } from './types';
 
 export const comparisonPages: ComparisonPageAttributes[] = [
   {

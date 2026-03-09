@@ -1,6 +1,7 @@
 'use client';
 
 import { Heart, Shield, Sparkles, Lock, MessageCircle, Mic, ChevronDown, X as XIcon, Star, Trophy, Users } from 'lucide-react';
+import Link from 'next/link';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import { appLinks } from '@/lib/links';
@@ -183,6 +184,15 @@ export default function LandingPage() {
                 <p className="text-sm text-muted">{desc}</p>
               </div>
             ))}
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
+            <Link href="/features" className="text-sm text-accent-purple hover:underline transition-colors">
+              Explore all features &rarr;
+            </Link>
+            <span className="text-border hidden sm:inline">|</span>
+            <Link href="/best-ai-girlfriend-apps" className="text-sm text-accent-purple hover:underline transition-colors">
+              See how we rank vs other apps &rarr;
+            </Link>
           </div>
         </div>
       </section>

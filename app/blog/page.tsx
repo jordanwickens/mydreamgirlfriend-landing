@@ -1,7 +1,7 @@
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import { generateSEO } from '@/lib/seo';
-import { getBlogPosts } from '@/lib/strapi';
+import { getBlogPosts } from '@/lib/blog';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { appLinks } from '@/lib/links';

@@ -2,9 +2,8 @@ import { notFound } from 'next/navigation';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import FAQ from '@/components/shared/FAQ';
-import RichTextRenderer from '@/components/shared/RichTextRenderer';
 import { generateSEO, generateArticleSchema, generateFAQSchema } from '@/lib/seo';
-import { getBlogPosts, getBlogPostBySlug } from '@/lib/strapi';
+import { getBlogPosts, getBlogPostBySlug } from '@/lib/blog';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { appLinks } from '@/lib/links';
@@ -60,8 +59,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         )}
 
         {/* Article Header */}
-        <section className="px-4 mb-12 text-center">
-          <div className="max-w-3xl mx-auto">
+        <section className="px-4 sm:px-6 lg:px-8 mb-12 text-center">
+          <div className="max-w-2xl mx-auto">
             <div className="text-sm text-accent-purple font-medium mb-3">{post.category}</div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">{post.title}</h1>
             <p className="text-sm text-muted/60">
@@ -71,16 +70,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </section>
 
         {/* Article Content */}
-        <article className="px-4">
-          <div className="max-w-3xl mx-auto">
-            <RichTextRenderer content={post.body} />
+        <article className="px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl prose prose-invert prose-sm sm:prose-base">
+            {post.content}
           </div>
         </article>
 
         {/* FAQ Section */}
         {post.faqs?.length > 0 && (
-          <section className="py-16 px-4 bg-surface/50 mt-16">
-            <div className="max-w-3xl mx-auto">
+          <section className="py-16 px-4 sm:px-6 lg:px-8 bg-surface/50 mt-16">
+            <div className="max-w-2xl mx-auto">
               <h2 className="text-3xl font-bold text-center mb-12">
                 Frequently <span className="text-gradient">Asked</span>
               </h2>
@@ -90,8 +89,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         )}
 
         {/* CTA */}
-        <section className="py-12 px-4">
-          <div className="max-w-2xl mx-auto text-center bg-card border border-border rounded-2xl p-8">
+        <section className="py-12 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center bg-card border border-border rounded-2xl p-6 sm:p-8">
             <h2 className="text-2xl font-bold mb-3">
               {post.ctaHeading || 'Ready to Get Started?'}
             </h2>
@@ -109,8 +108,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         {/* Related Posts */}
         {post.relatedSlugs && post.relatedSlugs.length > 0 && (
-          <section className="py-12 px-4">
-            <div className="max-w-3xl mx-auto">
+          <section className="py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto">
               <h2 className="text-2xl font-bold mb-6">Related Posts</h2>
               <div className="grid md:grid-cols-3 gap-4">
                 {post.relatedSlugs.map((relatedSlug) => (

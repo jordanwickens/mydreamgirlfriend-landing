@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { getBlogPosts } from '@/lib/strapi';
+import { getBlogPosts } from '@/lib/blog';
 import { getComparisonPagesLocal } from '@/lib/comparison-data';
 
 const BASE = 'https://mydreamgirlfriend.ai';
@@ -28,17 +28,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let blogPages: MetadataRoute.Sitemap = [];
   let comparePages: MetadataRoute.Sitemap = [];
 
-  try {
-    const posts = await getBlogPosts();
-    blogPages = posts.map((post) => ({
-      url: `${BASE}/blog/${post.slug}`,
-      lastModified: post.dateModified || post.datePublished || now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    }));
-  } catch {
-    // Strapi unreachable — omit dynamic blog entries
-  }
+  const posts = await getBlogPosts();
+  blogPages = posts.map((post) => ({
+    url: `${BASE}/blog/${post.slug}`,
+    lastModified: post.dateModified || post.datePublished || now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
 
   const comparisons = getComparisonPagesLocal();
   comparePages = comparisons.map((page) => ({

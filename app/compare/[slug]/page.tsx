@@ -175,6 +175,12 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
               >
                 All Comparisons
               </Link>
+              <Link
+                href="/best-ai-girlfriend-apps"
+                className="px-4 py-2 rounded-full bg-surface border border-border text-sm text-muted hover:text-white hover:border-accent-purple/50 transition-colors"
+              >
+                Best AI Girlfriend Apps
+              </Link>
             </div>
           </div>
         </section>
