@@ -163,8 +163,11 @@ async function publish(contentType: string, documentId: string) {
 }
 
 async function unpublish(contentType: string, documentId: string) {
-  const json = await apiRequest('PUT', `${contentType}/${documentId}?status=draft`, { data: {} });
-  console.log(JSON.stringify(json.data, null, 2));
+  // In Strapi v5 with draftAndPublish, DELETE ?status=published removes only the
+  // published version, keeping the draft. PUT ?status=draft only updates the draft
+  // without removing the published version.
+  const json = await apiRequest('DELETE', `${contentType}/${documentId}?status=published`);
+  console.log(JSON.stringify(json.data ?? { ok: true, documentId }, null, 2));
 }
 
 // ── CLI parsing ─────────────────────────────────────────────
