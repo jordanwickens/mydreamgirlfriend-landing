@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Create Your AI Companion | MyDreamGirlfriend</title>
+  <meta name="description" content="Design your perfect AI companion. Choose your starting point and begin building today.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Create Your AI Companion | MyDreamGirlfriend">
+  <meta property="og:description" content="Design your perfect AI companion. Choose your starting point and begin building today.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://mydreamgirlfriend.ai/og-default.png">
+  <link rel="dns-prefetch" href="https://connect.facebook.net">
+  <link rel="dns-prefetch" href="https://us.i.posthog.com">
+  <link rel="dns-prefetch" href="https://r2.mydreamgirlfriend.ai">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0a0a0f;
+      color: #f1f5f9;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Top bar */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px;
+    }
+
+    .top-bar svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    /* Main content */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 16px 32px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 6vw, 44px);
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    h1 .gradient {
+      background: linear-gradient(135deg, #c084fc, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      font-size: clamp(15px, 3.5vw, 18px);
+      text-align: center;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+
+    /* Cards container — always side by side */
+    .cards {
+      display: flex;
+      gap: 16px;
+      width: 100%;
+      max-width: 480px;
+      justify-content: center;
+    }
+
+    /* Individual card */
+    .card {
+      flex: 1;
+      max-width: 220px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #1a1a24;
+      border: 1px solid #2a2a3a;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .card:hover, .card:focus-visible {
+      transform: translateY(-4px);
+      border-color: #c084fc;
+      box-shadow: 0 8px 32px rgba(192, 132, 252, 0.15);
+    }
+
+    .card:active {
+      transform: translateY(-2px);
+    }
+
+    .card:focus-visible {
+      outline: 2px solid #c084fc;
+      outline-offset: 2px;
+    }
+
+    /* Card image area — gradient placeholder with silhouette */
+    .card-image {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-image.female {
+      background: linear-gradient(160deg, #2d1b4e 0%, #1a1a24 50%, #3b1538 100%);
+    }
+
+    .card-image.male {
+      background: linear-gradient(160deg, #1b2d4e 0%, #1a1a24 50%, #15383b 100%);
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-label {
+      padding: 18px 16px;
+      text-align: center;
+    }
+
+    .card-label h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .card-label p {
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    /* Loading overlay */
+    .loading-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 15, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .loading-overlay.active {
+      display: flex;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #2a2a3a;
+      border-top-color: #c084fc;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Fade in */
+    .fade-in {
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 16px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    footer a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    footer a:hover {
+      color: #c084fc;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4705360489690855');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4705360489690855&ev=PageView&noscript=1" alt=""></noscript>
+
+  <!-- PostHog -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_O9Qudq3OBw9qYxoSpLkyCVjwlIZUo3pqfrtsXuG2jra', {
+      api_host: 'https://us.i.posthog.com',
+      person_profiles: 'identified_only',
+      autocapture: false,
+      capture_pageview: true,
+      capture_pageleave: true,
+    });
+  </script>
+
+  <!-- Top bar -->
+  <div class="top-bar fade-in">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#heartGrad)"/>
+      <defs>
+        <linearGradient id="heartGrad" x1="2" y1="3" x2="22" y2="21" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#c084fc"/>
+          <stop offset="1" stop-color="#f472b6"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <!-- Main content -->
+  <main class="fade-in">
+    <h1><span class="gradient">Create My AI</span></h1>
+    <p class="subtitle">Pick Your Starting Point</p>
+
+    <div class="cards">
+      <!-- Female card -->
+      <div class="card" role="button" tabindex="0" aria-label="Create a female AI companion" onclick="handleSelection('female')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();handleSelection('female')}">
+        <div class="card-image female">
+          <img src="https://r2.mydreamgirlfriend.ai/lp/female-card.webp" alt="Female AI companion" width="600" height="800" loading="eager">
+        </div>
+        <div class="card-label">
+          <h2>Female</h2>
+          <p>AI Girlfriend</p>
+        </div>
+      </div>
+
+      <!-- Male card -->
+      <div class="card" role="button" tabindex="0" aria-label="Create a male AI companion" onclick="handleSelection('male')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();handleSelection('male')}">
+        <div class="card-image male">
+          <img src="https://r2.mydreamgirlfriend.ai/lp/male-card.webp" alt="Male AI companion" width="600" height="800" loading="eager">
+        </div>
+        <div class="card-label">
+          <h2>Male</h2>
+          <p>AI Boyfriend</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Loading overlay -->
+  <div class="loading-overlay" id="loadingOverlay" aria-live="assertive" aria-label="Loading">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://mydreamgirlfriend.ai/privacy">Privacy</a>
+      <a href="https://mydreamgirlfriend.ai/terms">Terms</a>
+    </div>
+    <p>&copy; 2026 MyDreamGirlfriend.ai</p>
+  </footer>
+
+  <script>
+    function getUrlParams() {
+      var params = {};
+      var searchParams = new URLSearchParams(window.location.search);
+      searchParams.forEach(function(value, key) {
+        params[key] = value;
+      });
+      return params;
+    }
+
+    function handleSelection(type) {
+      // Show loading overlay
+      document.getElementById('loadingOverlay').classList.add('active');
+
+      // Generate event ID for dedup between pixel + CAPI
+      var eventID = 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+
+      // Fire Meta Pixel Lead event with eventID
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', { content_name: 'companion_type_selection', content_category: type, source: 'lp1' }, { eventID: eventID });
+      }
+
+      // Fire server-side CAPI Lead event (fire-and-forget)
+      fetch('/api/meta/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: type, event_id: eventID, source_url: window.location.href }),
+      }).catch(function() {});
+
+      // Fire PostHog event
+      if (typeof posthog !== 'undefined' && posthog.capture) {
+        posthog.capture('lp_card_click', { type: type });
+      }
+
+      // Build redirect URL with all params preserved
+      var params = getUrlParams();
+      params.type = type;
+      params.lp = 'lp1';
+
+      var redirectUrl = 'https://app.mydreamgirlfriend.ai/build?' + new URLSearchParams(params).toString();
+
+      // Short delay to let pixels fire before redirect
+      setTimeout(function() {
+        window.location.href = redirectUrl;
+      }, 300);
+    }
+  </script>
+</body>
+</html>
