@@ -23,7 +23,7 @@ const features = [
 ];
 
 const faqs = [
-  { question: 'Are all features available on the free plan?', answer: 'Free users get AI chat (5 messages/day), access to pre-built girlfriends, and the first 2 relationship stages. Voice notes, photos, and stages 3-6 unlock with a paid plan.' },
+  { question: 'Are all features available on the free plan?', answer: 'Free users get AI chat (20 messages/day), access to pre-built girlfriends, and the first 2 relationship stages. Voice notes, photos, and stages 3-6 unlock with a paid plan.' },
   { question: 'How realistic are the conversations?', answer: 'Our AI uses advanced language models with persistent memory. She remembers your name, past conversations, inside jokes, and relationship milestones. The more you chat, the more personal it gets.' },
   { question: 'Is my data private?', answer: 'Absolutely. All conversations are encrypted end-to-end. We never share your data with anyone. Your chats, photos, and voice notes are yours alone.' },
   { question: 'Can I customize my girlfriend\'s appearance?', answer: 'Yes. The character creator lets you customize everything — hair, eyes, body type, style, ethnicity, and more. Or choose from our library of pre-built girlfriends.' },

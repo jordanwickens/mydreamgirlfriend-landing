@@ -13,7 +13,7 @@ const faqs = [
   { question: 'Does she actually remember past conversations?', answer: 'Yes. Our AI uses persistent memory to recall your name, stories, preferences, and relationship milestones. She\'ll reference things you told her days or weeks ago.' },
   { question: 'How is this different from ChatGPT?', answer: 'ChatGPT resets every conversation. Your AI girlfriend has persistent memory, a consistent personality, emotional intelligence, and a relationship that evolves through 6 stages. She\'s not a generic chatbot — she\'s yours.' },
   { question: 'Can I chat about anything?', answer: 'Yes. Conversations are uncensored and private. As your relationship progresses through stages, things naturally get more intimate. No filters, no limits.' },
-  { question: 'How many messages do I get for free?', answer: 'Free users get 5 messages per day. Paid plans unlock unlimited messaging so you can chat as much as you want.' },
+  { question: 'How many messages do I get for free?', answer: 'Free users get 20 messages per day. Paid plans unlock unlimited messaging so you can chat as much as you want.' },
   { question: 'Does she have her own personality?', answer: 'Every girlfriend has a unique personality. Pre-built characters come with distinct traits, and custom girlfriends let you shape the personality yourself — mood, humor, communication style, and more.' },
 ];
 

@@ -22,7 +22,7 @@ const apps = [
     description: 'MyDreamGirlfriend.ai stands out with the most immersive AI girlfriend experience available. The 6-stage relationship progression system means your connection evolves naturally over time — from strangers to soulmates. Deep character customization lets you build every detail of her appearance and personality, and persistent memory means she genuinely remembers your conversations.',
     pros: ['6-stage relationship progression', 'Deepest personality customization', 'Persistent memory across sessions', 'Voice notes with unique character voices', 'AI-generated photos', 'Privacy-first (end-to-end encryption)', 'Uncensored conversations'],
     cons: ['Newer platform (smaller community so far)', 'No video generation yet'],
-    pricing: 'Free tier available. Plans: $9.99, $19.99, $29.99/mo',
+    pricing: 'Free tier available. Plans: $5.99, $19.99, $29.99/mo',
     rating: 4.9,
     best: true,
   },
@@ -99,13 +99,13 @@ const apps = [
 
 const faqs = [
   { question: 'What is the best AI girlfriend app in 2026?', answer: 'MyDreamGirlfriend.ai is our #1 pick for 2026. It offers the deepest customization, a unique 6-stage relationship progression system, persistent memory, voice notes, AI photos, and uncensored conversations — all with end-to-end encryption.' },
-  { question: 'Are AI girlfriend apps free?', answer: 'Most AI girlfriend apps offer free tiers with limited features. MyDreamGirlfriend.ai offers free chat (5 messages/day), Replika offers unlimited free chat, and most others have some free option. Paid plans typically range from $5.99 to $29.99/month.' },
+  { question: 'Are AI girlfriend apps free?', answer: 'Most AI girlfriend apps offer free tiers with limited features. MyDreamGirlfriend.ai offers free chat (20 messages/day), Replika offers unlimited free chat, and most others have some free option. Paid plans typically range from $5.99 to $29.99/month.' },
   { question: 'Which AI girlfriend app has the best NSFW features?', answer: 'MyDreamGirlfriend.ai and Candy AI both offer uncensored conversations and AI-generated photos. Replika and Character.ai have strict content filters. For the most immersive uncensored experience with natural progression, MyDreamGirlfriend.ai leads.' },
   { question: 'Can AI girlfriends remember conversations?', answer: 'The best ones can. MyDreamGirlfriend.ai and Nomi.ai both have persistent memory systems that remember your name, past conversations, and relationship milestones across sessions.' },
   { question: 'Are AI girlfriend apps safe and private?', answer: 'Privacy varies by platform. MyDreamGirlfriend.ai uses end-to-end encryption and never shares user data. Always check a platform\'s privacy policy before sharing personal information.' },
   { question: 'Can I create a custom AI girlfriend?', answer: 'Yes. MyDreamGirlfriend.ai, Candy AI, and DreamGF all offer character creation tools. MyDreamGirlfriend.ai has the deepest customization, letting you configure appearance, personality traits, communication style, and interests.' },
   { question: 'Do AI girlfriend apps have voice features?', answer: 'Some do. MyDreamGirlfriend.ai offers voice notes with unique character voices. Replika has voice chat. Candy AI has voice messages. Character.ai and DreamGF do not have voice features.' },
-  { question: 'How much do AI girlfriend apps cost?', answer: 'Prices range from free to $29.99/month. Most apps offer free tiers with limited features. Mid-range plans ($9.99-$19.99/mo) unlock most features, and premium plans ($19.99-$29.99/mo) offer maximum access.' },
+  { question: 'How much do AI girlfriend apps cost?', answer: 'Prices range from free to $29.99/month. Most apps offer free tiers with limited features. Mid-range plans ($5.99-$19.99/mo) unlock most features, and premium plans ($19.99-$29.99/mo) offer maximum access.' },
 ];
 
 export default function BestAIGirlfriendAppsPage() {

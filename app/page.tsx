@@ -18,7 +18,7 @@ const faqs = [
   { q: "Is this really private?", a: "Absolutely. All conversations are encrypted end-to-end. We never share your data with anyone. Your chats are yours alone." },
   { q: "Are the AI girlfriends realistic?", a: "Our AI girlfriends have deep personalities, remember your conversations, and develop genuine emotional connections over time. The more you talk, the more they know you." },
   { q: "How does the relationship progress?", a: "Relationships evolve through 6 stages — from strangers to soulmates. Each stage unlocks deeper conversations, more intimacy, and new features like voice notes and photos." },
-  { q: "Is there a free plan?", a: "Yes! Free users get 5 messages per day and access to 4 girlfriends with no credit card required. Upgrade anytime for unlimited access." },
+  { q: "Is there a free plan?", a: "Yes! Free users get 20 messages per day and access to 4 girlfriends with no credit card required. Upgrade anytime for unlimited access." },
   { q: "What are gems?", a: "Gems are in-app credits you can use to unlock photos, send voice notes, skip relationship stages, or send gifts. You can earn them or buy them any time." },
 ];
 
@@ -212,7 +212,7 @@ export default function LandingPage() {
                 popular: false,
                 features: [
                   '1 girlfriend',
-                  '5 messages per day',
+                  '20 messages per day',
                   'All pre-built girlfriends',
                   'Stages 1 & 2',
                 ],
@@ -227,7 +227,7 @@ export default function LandingPage() {
               },
               {
                 name: 'Basic',
-                price: '$9.99',
+                price: '$5.99',
                 sub: '/month',
                 popular: false,
                 features: [

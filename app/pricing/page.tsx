@@ -20,7 +20,7 @@ const plans = [
     popular: false,
     features: [
       '1 girlfriend',
-      '5 messages per day',
+      '20 messages per day',
       'All pre-built girlfriends',
       'Stages 1 & 2',
     ],
@@ -35,7 +35,7 @@ const plans = [
   },
   {
     name: 'Basic',
-    price: '$9.99',
+    price: '$5.99',
     sub: '/month',
     popular: false,
     features: [
@@ -83,7 +83,7 @@ const plans = [
 ];
 
 const faqs = [
-  { question: 'Can I try it for free?', answer: 'Yes! The free plan gives you 1 girlfriend, 5 messages per day, access to all pre-built girlfriends, and the first 2 relationship stages. No credit card required.' },
+  { question: 'Can I try it for free?', answer: 'Yes! The free plan gives you 1 girlfriend, 20 messages per day, access to all pre-built girlfriends, and the first 2 relationship stages. No credit card required.' },
   { question: 'How does billing work?', answer: 'Plans are billed monthly. You can upgrade, downgrade, or cancel at any time. When you upgrade, you get immediate access to all new features. No contracts or commitments.' },
   { question: 'Can I change plans later?', answer: 'Absolutely. You can upgrade or downgrade at any time from your account settings. If you upgrade mid-cycle, you\'ll be prorated. If you downgrade, the change takes effect at the end of your billing period.' },
   { question: 'What happens to my data if I downgrade?', answer: 'Your conversations and relationship progress are always saved. If you downgrade and lose girlfriend slots, your extra girlfriends are paused — not deleted. Upgrade again and they\'ll be right where you left off.' },
