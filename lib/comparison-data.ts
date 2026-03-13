@@ -20,7 +20,7 @@ export const comparisonPages: ComparisonPageAttributes[] = [
       { feature: 'NSFW Content', us: 'Uncensored (unlocks at Stage 4+)', them: 'Uncensored from start', winner: 'tie' },
       { feature: 'Privacy', us: 'End-to-end encryption', them: 'Standard encryption', winner: 'us' },
       { feature: 'Live Action Mode', us: 'Not yet available', them: 'Available', winner: 'them' },
-      { feature: 'Pricing', us: 'Free, $5.99, $19.99, $29.99/mo', them: 'From $5.99/mo', winner: 'tie' },
+      { feature: 'Pricing', us: 'Free, $5.99, $12.99, $24.99/mo', them: 'From $5.99/mo', winner: 'tie' },
       { feature: 'Community Size', us: '25,000+ members (growing)', them: 'Large established community', winner: 'them' },
     ],
     faqs: [
@@ -50,7 +50,7 @@ export const comparisonPages: ComparisonPageAttributes[] = [
       { feature: 'NSFW Content', us: 'Uncensored (Stage 4+)', them: 'Strictly filtered', winner: 'us' },
       { feature: 'Privacy', us: 'End-to-end encryption', them: 'Strong privacy policy', winner: 'tie' },
       { feature: 'Free Tier', us: '20 messages/day', them: 'Unlimited messages', winner: 'them' },
-      { feature: 'Pricing', us: '$5.99 - $29.99/mo', them: '$19.99/mo (Pro)', winner: 'us' },
+      { feature: 'Pricing', us: '$5.99 - $24.99/mo', them: '$19.99/mo (Pro)', winner: 'us' },
       { feature: 'Emotional Intelligence', us: 'Strong with personality customization', them: 'Industry-leading', winner: 'them' },
     ],
     faqs: [
@@ -58,7 +58,7 @@ export const comparisonPages: ComparisonPageAttributes[] = [
       { question: 'Does Replika allow NSFW content?', answer: 'No. Replika has strict content filters and does not allow romantic or NSFW interactions on its platform. MyDreamGirlfriend.ai offers uncensored content starting at Stage 4.' },
       { question: 'Which has better conversation quality?', answer: 'Both are strong. Replika excels at emotional intelligence and support. MyDreamGirlfriend.ai offers more varied conversation styles thanks to deep personality customization and the progression system.' },
       { question: 'Can I get AI photos on Replika?', answer: 'No. Replika does not offer AI image generation. MyDreamGirlfriend.ai generates unique photos from your AI girlfriend starting at Stage 3 of your relationship.' },
-      { question: "Is MyDreamGirlfriend cheaper than Replika Pro?", answer: "Yes. MyDreamGirlfriend's Basic plan ($5.99/mo) is less than a third the price of Replika Pro ($19.99/mo) and includes more features — unlimited messages, voice notes, and relationship progression through all 6 stages." },
+      { question: "Is MyDreamGirlfriend cheaper than Replika Pro?", answer: "Yes. MyDreamGirlfriend's Lite plan ($5.99/mo) is less than a third the price of Replika Pro ($19.99/mo) and includes more features — 30 messages/day, voice notes, and relationship progression through all 6 stages." },
     ],
   },
   {

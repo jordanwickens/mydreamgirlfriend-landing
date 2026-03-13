@@ -49,6 +49,11 @@ Standard markdown/MDX after the frontmatter. Supports headings, bold, italic, li
 - `getBlogPosts()` — returns all posts sorted by `datePublished` desc (metadata only)
 - `getBlogPostBySlug(slug)` — returns post with compiled MDX `content` + metadata, or `null`
 
+## Analytics & Monitoring Keys
+- **PostHog**: `phc_O9Qudq3OBw9qYxoSpLkyCVjwlIZUo3pqfrtsXuG2jra` (host: `https://us.i.posthog.com`)
+- **Sentry DSN**: `https://082ddf4a28ad78e51faeb45c2e10fcf5@o4511016320237568.ingest.us.sentry.io/4511016321548288`
+- **Meta Pixel ID**: `4705360489690855`
+
 ## Environment Variables
 - `NEXT_PUBLIC_APP_URL` — public app URL
 

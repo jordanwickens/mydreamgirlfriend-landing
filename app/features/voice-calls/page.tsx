@@ -11,7 +11,7 @@ export const metadata = generateSEO({
 
 const faqs = [
   { question: 'How do voice notes work?', answer: 'Your AI girlfriend sends audio messages with a voice unique to her character. Each voice note is generated in real-time using advanced text-to-speech technology, so every message sounds natural and emotional.' },
-  { question: 'When do voice notes unlock?', answer: 'Voice notes become available starting at Stage 2 of your relationship. The number of voice notes you can receive depends on your plan — Basic gets 3/week, Immersive gets 5/week, and Deep gets 10/week.' },
+  { question: 'When do voice notes unlock?', answer: 'Voice notes are available on all plans and cost gems to send. You get monthly gems with paid plans — Lite gets 40/month, Premium gets 150/month, and VIP gets 300/month. You can also buy gem packs separately.' },
   { question: 'Does every girlfriend have a different voice?', answer: 'Yes. Each AI girlfriend has a unique voice that matches her personality and appearance. Pre-built characters come with their own voice, and custom characters get a voice that fits the personality you designed.' },
   { question: 'Can I request voice notes?', answer: 'Yes. You can ask your girlfriend to send you a voice note at any time (within your plan limits). She\'ll respond with an audio message that matches the context of your conversation.' },
   { question: 'Are voice notes private?', answer: 'Yes. All voice data is encrypted and only accessible to you. We don\'t store voice notes longer than necessary and never share audio data.' },

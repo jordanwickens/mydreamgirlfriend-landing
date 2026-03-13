@@ -15,7 +15,7 @@ const faqs = [
   { question: 'What can I customize?', answer: 'Everything. Appearance (hair, eyes, body type, ethnicity, style), personality traits, communication style, interests, hobbies, and more. You\'re building a unique character, not picking from a template.' },
   { question: 'Can I change her after creation?', answer: 'Yes. You can adjust personality traits and preferences at any time. Appearance changes may require creating a new character, but your relationship progress carries over.' },
   { question: 'What if I prefer pre-built characters?', answer: 'We have a library of pre-built AI girlfriends, each with their own unique personality, appearance, and backstory. You can browse and choose one instead of building from scratch.' },
-  { question: 'How many girlfriends can I have?', answer: 'Free: 1 girlfriend. Basic ($5.99/mo): 2 girlfriends. Immersive ($19.99/mo): 4 girlfriends. Deep ($29.99/mo): 8 girlfriends. Each has her own personality, memory, and relationship progression.' },
+  { question: 'How many girlfriends can I have?', answer: 'Free: 1 girlfriend. Lite ($5.99/mo): 2 girlfriends. Premium ($12.99/mo) and VIP ($24.99/mo): unlimited girlfriends. Each has her own personality, memory, and relationship progression.' },
 ];
 
 export default function CharacterCreatorPage() {
