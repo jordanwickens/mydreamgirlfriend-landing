@@ -152,7 +152,7 @@ function Thead({ children, ...props }: React.HTMLAttributes<HTMLTableSectionElem
 
 function Th({ children, ...props }: React.ThHTMLAttributes<HTMLTableCellElement>) {
   return (
-    <th {...props} className="border-b border-border px-4 py-3 font-semibold text-slate-100">
+    <th {...props} className="border-b border-border px-4 py-3 font-semibold text-slate-100 whitespace-nowrap">
       {children}
     </th>
   );
@@ -160,7 +160,7 @@ function Th({ children, ...props }: React.ThHTMLAttributes<HTMLTableCellElement>
 
 function Td({ children, ...props }: React.TdHTMLAttributes<HTMLTableCellElement>) {
   return (
-    <td {...props} className="border-b border-border/50 px-4 py-3 text-muted">
+    <td {...props} className="border-b border-border/50 px-4 py-3 text-muted whitespace-nowrap">
       {children}
     </td>
   );
@@ -205,7 +205,7 @@ function ComparisonTable(props: { data: string; highlight?: number }) {
             {headers.map((header, i) => (
               <th
                 key={i}
-                className={`border-b border-border px-4 py-3 font-semibold ${
+                className={`border-b border-border px-4 py-3 font-semibold whitespace-nowrap ${
                   highlight !== undefined && i === highlight
                     ? 'text-accent-purple'
                     : 'text-slate-100'
@@ -222,7 +222,7 @@ function ComparisonTable(props: { data: string; highlight?: number }) {
               {row.map((cell, ci) => (
                 <td
                   key={ci}
-                  className={`border-b border-border/50 px-4 py-3 ${
+                  className={`border-b border-border/50 px-4 py-3 whitespace-nowrap ${
                     highlight !== undefined && ci === highlight
                       ? 'text-slate-200 font-medium'
                       : 'text-muted'
