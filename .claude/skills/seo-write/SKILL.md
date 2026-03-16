@@ -126,23 +126,20 @@ Write the full article body following these rules:
    - `<KeyTakeaway>` for the single most important point (use once, maybe twice)
    - Don't overuse — the reference post uses mostly standard markdown
 
-8. **Tables:** NEVER write markdown pipe/dash tables. They render poorly in MDX. Instead, use the `<ComparisonTable>` component:
+8. **Tables:** NEVER write markdown pipe/dash tables. Use the `<ComparisonTable>` component with a JSON string `data` prop (MDX can't parse array literals in JSX attributes):
 
    ```jsx
-   <ComparisonTable
-     headers={["Feature", "Free", "Lite", "Premium", "VIP"]}
-     rows={[
-       ["Daily Messages", "15", "30", "Unlimited", "Unlimited"],
-       ["Character Slots", "1", "2", "Unlimited", "Unlimited"],
-     ]}
-     highlight={3}
-   />
+   <ComparisonTable data='{"headers":["Feature","Free","Lite","Premium","VIP"],"rows":[["Daily Messages","15","30","Unlimited","Unlimited"],["Character Slots","1","2","Unlimited","Unlimited"]],"highlight":3}' />
    ```
 
+   The `data` prop is a JSON string with:
    - `headers`: array of column header strings
    - `rows`: array of arrays (each inner array is one row)
    - `highlight` (optional): column index to highlight (e.g., to emphasize MyDreamGirlfriend in a comparison)
-   - Use this for pricing comparisons, feature matrices, app comparisons, etc.
+
+   **IMPORTANT:** The entire JSON must be on a single line inside single quotes. Do NOT use multi-line formatting or JS expressions like `{[...]}` — MDX will not parse them.
+
+   Use this for pricing comparisons, feature matrices, app comparisons, etc. Markdown tables also work (they're styled automatically) but `ComparisonTable` looks better for structured data.
 
 9. **FAQ section:** The FAQs go in the frontmatter (for schema markup), NOT in the body. The blog template renders them automatically.
 

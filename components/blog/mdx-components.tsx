@@ -129,7 +129,7 @@ function KeyTakeaway({ children }: { children: React.ReactNode }) {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Table components                                                   */
+/*  Table element overrides                                            */
 /* ------------------------------------------------------------------ */
 
 function Table({ children, ...props }: React.HTMLAttributes<HTMLTableElement>) {
@@ -152,10 +152,7 @@ function Thead({ children, ...props }: React.HTMLAttributes<HTMLTableSectionElem
 
 function Th({ children, ...props }: React.ThHTMLAttributes<HTMLTableCellElement>) {
   return (
-    <th
-      {...props}
-      className="border-b border-border px-4 py-3 font-semibold text-slate-100"
-    >
+    <th {...props} className="border-b border-border px-4 py-3 font-semibold text-slate-100">
       {children}
     </th>
   );
@@ -179,15 +176,27 @@ function Tr({ children, ...props }: React.HTMLAttributes<HTMLTableRowElement>) {
 
 /* ------------------------------------------------------------------ */
 /*  ComparisonTable — structured custom component for blog posts       */
+/*  Accepts a JSON string `data` prop for MDX compatibility,           */
+/*  since MDX can't reliably parse array literals in JSX attributes.   */
 /* ------------------------------------------------------------------ */
 
-interface ComparisonTableProps {
+interface ComparisonTableData {
   headers: string[];
   rows: string[][];
   highlight?: number;
 }
 
-function ComparisonTable({ headers, rows, highlight }: ComparisonTableProps) {
+function ComparisonTable(props: { data: string; highlight?: number }) {
+  let parsed: ComparisonTableData;
+  try {
+    parsed = JSON.parse(props.data);
+  } catch {
+    return null;
+  }
+  const { headers, rows } = parsed;
+  const highlight = props.highlight ?? parsed.highlight;
+  if (!headers || !rows) return null;
+
   return (
     <div className="my-6 overflow-x-auto rounded-lg border border-border">
       <table className="w-full border-collapse text-sm">
