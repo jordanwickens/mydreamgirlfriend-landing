@@ -129,6 +129,108 @@ function KeyTakeaway({ children }: { children: React.ReactNode }) {
 }
 
 /* ------------------------------------------------------------------ */
+/*  Table components                                                   */
+/* ------------------------------------------------------------------ */
+
+function Table({ children, ...props }: React.HTMLAttributes<HTMLTableElement>) {
+  return (
+    <div className="my-6 overflow-x-auto rounded-lg border border-border">
+      <table {...props} className="w-full border-collapse text-sm">
+        {children}
+      </table>
+    </div>
+  );
+}
+
+function Thead({ children, ...props }: React.HTMLAttributes<HTMLTableSectionElement>) {
+  return (
+    <thead {...props} className="bg-card text-left text-slate-200">
+      {children}
+    </thead>
+  );
+}
+
+function Th({ children, ...props }: React.ThHTMLAttributes<HTMLTableCellElement>) {
+  return (
+    <th
+      {...props}
+      className="border-b border-border px-4 py-3 font-semibold text-slate-100"
+    >
+      {children}
+    </th>
+  );
+}
+
+function Td({ children, ...props }: React.TdHTMLAttributes<HTMLTableCellElement>) {
+  return (
+    <td {...props} className="border-b border-border/50 px-4 py-3 text-muted">
+      {children}
+    </td>
+  );
+}
+
+function Tr({ children, ...props }: React.HTMLAttributes<HTMLTableRowElement>) {
+  return (
+    <tr {...props} className="transition-colors hover:bg-card/50">
+      {children}
+    </tr>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  ComparisonTable — structured custom component for blog posts       */
+/* ------------------------------------------------------------------ */
+
+interface ComparisonTableProps {
+  headers: string[];
+  rows: string[][];
+  highlight?: number;
+}
+
+function ComparisonTable({ headers, rows, highlight }: ComparisonTableProps) {
+  return (
+    <div className="my-6 overflow-x-auto rounded-lg border border-border">
+      <table className="w-full border-collapse text-sm">
+        <thead className="bg-card text-left">
+          <tr>
+            {headers.map((header, i) => (
+              <th
+                key={i}
+                className={`border-b border-border px-4 py-3 font-semibold ${
+                  highlight !== undefined && i === highlight
+                    ? 'text-accent-purple'
+                    : 'text-slate-100'
+                }`}
+              >
+                {header}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, ri) => (
+            <tr key={ri} className="transition-colors hover:bg-card/50">
+              {row.map((cell, ci) => (
+                <td
+                  key={ci}
+                  className={`border-b border-border/50 px-4 py-3 ${
+                    highlight !== undefined && ci === highlight
+                      ? 'text-slate-200 font-medium'
+                      : 'text-muted'
+                  }`}
+                >
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /*  Export map                                                         */
 /* ------------------------------------------------------------------ */
 
@@ -140,6 +242,12 @@ export const mdxComponents: MDXComponents = {
   ol: Ol,
   a: Anchor,
   hr: Hr,
+  table: Table,
+  thead: Thead,
+  th: Th,
+  td: Td,
+  tr: Tr,
   Callout,
   KeyTakeaway,
+  ComparisonTable,
 };

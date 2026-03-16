@@ -36,6 +36,7 @@ Read the existing blog post at `content/blog/what-is-an-ai-girlfriend.mdx`. This
 - **Frontmatter:** All fields from the `BlogPost` interface (see below)
 - **MDX components:** `<Callout type="info|tip|warning" title="Title">`, `<KeyTakeaway>`
 - **Links:** Internal links use relative paths (`/features/ai-chat/`, `/best-ai-girlfriend-apps/`). External links go to authoritative sources.
+- **Tables:** NEVER use markdown pipe tables. Use the `<ComparisonTable>` component instead (see table rules below).
 
 ### Step 4: Check SITEMAP.md
 
@@ -125,9 +126,27 @@ Write the full article body following these rules:
    - `<KeyTakeaway>` for the single most important point (use once, maybe twice)
    - Don't overuse — the reference post uses mostly standard markdown
 
-8. **FAQ section:** The FAQs go in the frontmatter (for schema markup), NOT in the body. The blog template renders them automatically.
+8. **Tables:** NEVER write markdown pipe/dash tables. They render poorly in MDX. Instead, use the `<ComparisonTable>` component:
 
-9. **Closing:** End with a strong conclusion and a blockquote callout (like the reference post). Don't repeat the CTA — the template handles that.
+   ```jsx
+   <ComparisonTable
+     headers={["Feature", "Free", "Lite", "Premium", "VIP"]}
+     rows={[
+       ["Daily Messages", "15", "30", "Unlimited", "Unlimited"],
+       ["Character Slots", "1", "2", "Unlimited", "Unlimited"],
+     ]}
+     highlight={3}
+   />
+   ```
+
+   - `headers`: array of column header strings
+   - `rows`: array of arrays (each inner array is one row)
+   - `highlight` (optional): column index to highlight (e.g., to emphasize MyDreamGirlfriend in a comparison)
+   - Use this for pricing comparisons, feature matrices, app comparisons, etc.
+
+9. **FAQ section:** The FAQs go in the frontmatter (for schema markup), NOT in the body. The blog template renders them automatically.
+
+10. **Closing:** End with a strong conclusion and a blockquote callout (like the reference post). Don't repeat the CTA — the template handles that.
 
 ### Step 6: Quality Checks Before Saving
 

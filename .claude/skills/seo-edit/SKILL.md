@@ -69,6 +69,10 @@ Check all of the following. Track each as ✅ PASS or ❌ FAIL:
 - [ ] Feature claims are accurate (no overpromising)
 - [ ] No claims from the "What NOT to Claim" section
 
+#### Tables
+- [ ] No markdown pipe/dash tables — must use `<ComparisonTable>` component instead
+- [ ] If markdown tables are found, convert them to `<ComparisonTable headers={[...]} rows={[...]} />` syntax
+
 #### Content Quality
 - [ ] No generic filler phrases ("In today's digital age", "As we all know", "It goes without saying")
 - [ ] Opening paragraph hooks the reader immediately — no throat-clearing
