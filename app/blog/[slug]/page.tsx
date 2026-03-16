@@ -44,12 +44,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     day: 'numeric',
   });
 
-  // Filter related slugs to only include published posts
+  // Resolve related posts to full metadata, filtering out unpublished
   const allPosts = await getBlogPosts();
-  const publishedSlugs = new Set(allPosts.map((p) => p.slug));
-  const validRelatedSlugs = (post.relatedSlugs || []).filter(
-    (s) => s !== slug && publishedSlugs.has(s)
-  );
+  const postsBySlug = new Map(allPosts.map((p) => [p.slug, p]));
+  const relatedPosts = (post.relatedSlugs || [])
+    .filter((s) => s !== slug && postsBySlug.has(s))
+    .map((s) => postsBySlug.get(s)!);
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -117,18 +117,35 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </section>
 
         {/* Related Posts */}
-        {validRelatedSlugs.length > 0 && (
+        {relatedPosts.length > 0 && (
           <section className="py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto">
-              <h2 className="text-2xl font-bold mb-6">Related Posts</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                {validRelatedSlugs.map((relatedSlug) => (
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-2xl font-bold mb-8 text-center">
+                Keep <span className="bg-gradient-to-r from-accent-purple to-accent-pink bg-clip-text text-transparent">Reading</span>
+              </h2>
+              <div className="grid gap-4">
+                {relatedPosts.map((related) => (
                   <Link
-                    key={relatedSlug}
-                    href={`/blog/${relatedSlug}`}
-                    className="bg-card border border-border rounded-2xl p-6 hover:border-accent-purple/50 transition-colors"
+                    key={related.slug}
+                    href={`/blog/${related.slug}`}
+                    className="group flex flex-col sm:flex-row gap-4 bg-card border border-border rounded-2xl p-5 sm:p-6 hover:border-accent-purple/50 transition-all hover:bg-card/80"
                   >
-                    <h3 className="text-sm font-bold">{relatedSlug.replace(/-/g, ' ')}</h3>
+                    <div className="flex-1 min-w-0">
+                      <span className="text-xs font-medium text-accent-purple mb-2 block">
+                        {related.category}
+                      </span>
+                      <h3 className="text-lg font-bold text-slate-100 mb-2 group-hover:text-accent-purple transition-colors">
+                        {related.title}
+                      </h3>
+                      <p className="text-sm text-muted line-clamp-2">
+                        {related.excerpt}
+                      </p>
+                    </div>
+                    <div className="flex items-center sm:pl-4 sm:border-l sm:border-border/50">
+                      <span className="text-sm text-accent-purple font-medium group-hover:translate-x-1 transition-transform whitespace-nowrap">
+                        Read more &rarr;
+                      </span>
+                    </div>
                   </Link>
                 ))}
               </div>
