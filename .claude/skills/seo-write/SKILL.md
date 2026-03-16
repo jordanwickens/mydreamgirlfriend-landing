@@ -22,7 +22,11 @@ Read the brief from: `data/seo/briefs/{slug}-brief.md`
 
 If the brief doesn't exist, tell the user to run `/seo-research` first.
 
-### Step 2: Study the Style Reference
+### Step 2: Load Product Facts
+
+Read `data/seo/product-facts.md`. This is the **single source of truth** for all product claims. Every pricing number, feature description, tier limit, and gem cost in your post MUST match this file exactly. Pay special attention to the "What NOT to Claim" section at the bottom.
+
+### Step 3: Study the Style Reference
 
 Read the existing blog post at `content/blog/what-is-an-ai-girlfriend.mdx`. This is your **style and format reference**. Match:
 
@@ -33,11 +37,11 @@ Read the existing blog post at `content/blog/what-is-an-ai-girlfriend.mdx`. This
 - **MDX components:** `<Callout type="info|tip|warning" title="Title">`, `<KeyTakeaway>`
 - **Links:** Internal links use relative paths (`/features/ai-chat/`, `/best-ai-girlfriend-apps/`). External links go to authoritative sources.
 
-### Step 3: Check SITEMAP.md
+### Step 4: Check SITEMAP.md
 
 Read `SITEMAP.md` for the post's planned metadata if it exists there. Use the planned title tag, meta description, H1, keywords, and category if available. The brief takes priority for content structure, but SITEMAP.md is authoritative for SEO metadata.
 
-### Step 4: Write the MDX File
+### Step 5: Write the MDX File
 
 Write the complete MDX file with this structure:
 
@@ -125,7 +129,7 @@ Write the full article body following these rules:
 
 9. **Closing:** End with a strong conclusion and a blockquote callout (like the reference post). Don't repeat the CTA — the template handles that.
 
-### Step 5: Quality Checks Before Saving
+### Step 6: Quality Checks Before Saving
 
 Before writing the file, verify:
 - [ ] Meta title is under 60 characters
@@ -138,11 +142,11 @@ Before writing the file, verify:
 - [ ] No generic filler ("In today's digital age...", "As we all know...")
 - [ ] Tone matches the reference post
 
-### Step 6: Save the File
+### Step 7: Save the File
 
 Write the MDX file to: `content/blog/{slug}.mdx`
 
-### Step 7: Report
+### Step 8: Report
 
 Print a summary:
 - Title and slug

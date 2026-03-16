@@ -20,6 +20,7 @@ Extract the slug from `$ARGUMENTS`. If no argument is provided, list available p
 
 Read the draft from: `content/blog/{slug}.mdx`
 Read the original brief from: `data/seo/briefs/{slug}-brief.md` (if it exists — proceed without it if not found)
+Read the product facts from: `data/seo/product-facts.md` — this is the **single source of truth** for all product claims
 
 ### Step 2: SEO Audit
 
@@ -60,6 +61,14 @@ Check all of the following. Track each as ✅ PASS or ❌ FAIL:
 - [ ] `relatedSlugs` contains 2-3 valid slugs
 - [ ] `datePublished` is in YYYY-MM-DD format
 
+#### Product Accuracy (vs product-facts.md)
+- [ ] All pricing numbers match product-facts.md exactly
+- [ ] Free tier limits are correct (15 messages/day, 1 character slot, 10 starting gems)
+- [ ] Plan names are current (Free/Lite/Premium/VIP — NOT Basic/Immersive/Deep)
+- [ ] Gem costs are accurate (SFW 5, NSFW 20, calls 40/min, etc.)
+- [ ] Feature claims are accurate (no overpromising)
+- [ ] No claims from the "What NOT to Claim" section
+
 #### Content Quality
 - [ ] No generic filler phrases ("In today's digital age", "As we all know", "It goes without saying")
 - [ ] Opening paragraph hooks the reader immediately — no throat-clearing
@@ -99,10 +108,11 @@ Score the post out of 100 using this rubric:
 | Category | Weight | Scoring |
 |----------|--------|---------|
 | Title & Meta | 15 pts | 3 pts per check (5 checks) |
-| Keyword Usage | 20 pts | 4 pts per check (5 checks) |
-| Content Structure | 15 pts | 3 pts per check (5 checks) |
-| Links | 15 pts | ~4 pts per check (4 checks) |
+| Keyword Usage | 15 pts | 3 pts per check (5 checks) |
+| Content Structure | 10 pts | 2 pts per check (5 checks) |
+| Links | 10 pts | ~3 pts per check (4 checks) |
 | Frontmatter | 10 pts | ~2 pts per check (6 checks) |
+| Product Accuracy | 15 pts | ~3 pts per check (6 checks) — any wrong pricing/feature = automatic ❌ |
 | Content Quality | 15 pts | ~2 pts per check (7 checks) |
 | Readability | 10 pts | 2 pts per check (5 checks) |
 
