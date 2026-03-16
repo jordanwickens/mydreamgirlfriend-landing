@@ -44,6 +44,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     day: 'numeric',
   });
 
+  // Filter related slugs to only include published posts
+  const allPosts = await getBlogPosts();
+  const publishedSlugs = new Set(allPosts.map((p) => p.slug));
+  const validRelatedSlugs = (post.relatedSlugs || []).filter(
+    (s) => s !== slug && publishedSlugs.has(s)
+  );
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
@@ -110,12 +117,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </section>
 
         {/* Related Posts */}
-        {post.relatedSlugs && post.relatedSlugs.length > 0 && (
+        {validRelatedSlugs.length > 0 && (
           <section className="py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto">
               <h2 className="text-2xl font-bold mb-6">Related Posts</h2>
               <div className="grid md:grid-cols-3 gap-4">
-                {post.relatedSlugs.map((relatedSlug) => (
+                {validRelatedSlugs.map((relatedSlug) => (
                   <Link
                     key={relatedSlug}
                     href={`/blog/${relatedSlug}`}

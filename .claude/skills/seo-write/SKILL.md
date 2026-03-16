@@ -152,7 +152,7 @@ Before writing the file, verify:
 - [ ] Meta description is under 160 characters and includes primary keyword
 - [ ] Primary keyword appears in: title, first paragraph, at least one H2, meta description
 - [ ] 5-6 FAQs in frontmatter
-- [ ] 2-3 related slugs that exist or are planned
+- [ ] `relatedSlugs` only references posts that ACTUALLY EXIST in `content/blog/` (check with ls). Never reference planned-but-unwritten posts — the page filters them out, but the frontmatter should be accurate
 - [ ] Category is a valid enum value
 - [ ] Internal links present (4+ links)
 - [ ] No generic filler ("In today's digital age...", "As we all know...")

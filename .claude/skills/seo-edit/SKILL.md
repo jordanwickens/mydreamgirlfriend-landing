@@ -50,7 +50,7 @@ Check all of the following. Track each as ✅ PASS or ❌ FAIL:
 #### Links
 - [ ] 4+ internal links to `/features/*`, `/compare/*`, `/blog/*`, or `/best-ai-girlfriend-apps/`
 - [ ] 2+ external links to authoritative sources
-- [ ] No broken internal links (verify paths exist or are planned in SITEMAP.md)
+- [ ] No broken internal links — verify every `/blog/*` link points to an existing MDX file in `content/blog/`, and every `/features/*`, `/compare/*`, `/best-ai-girlfriend-apps/` link points to a page that exists in `app/`
 - [ ] Anchor text is descriptive (not "click here" or "this article")
 
 #### Frontmatter Completeness
@@ -58,7 +58,7 @@ Check all of the following. Track each as ✅ PASS or ❌ FAIL:
 - [ ] `category` is a valid enum: "AI Girlfriend Guides" | "Comparisons & Alternatives" | "AI Companion Tips"
 - [ ] `faqs` array has 5-6 entries
 - [ ] Each FAQ has both `question` and `answer` fields
-- [ ] `relatedSlugs` contains 2-3 valid slugs
+- [ ] `relatedSlugs` only references posts that ACTUALLY EXIST in `content/blog/` (verify with ls — remove any that don't exist yet)
 - [ ] `datePublished` is in YYYY-MM-DD format
 
 #### Product Accuracy (vs product-facts.md)
