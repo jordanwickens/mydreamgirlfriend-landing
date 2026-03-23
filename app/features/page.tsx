@@ -5,6 +5,7 @@ import FeatureCard from '@/components/shared/FeatureCard';
 import FAQ from '@/components/shared/FAQ';
 import { generateSEO, generateSoftwareAppSchema, generateFAQSchema } from '@/lib/seo';
 import { appLinks } from '@/lib/links';
+import Link from 'next/link';
 
 export const metadata = generateSEO({
   title: 'AI Girlfriend Features — What She Can Actually Do',
@@ -100,6 +101,27 @@ export default function FeaturesPage() {
               Frequently <span className="text-gradient">Asked</span>
             </h2>
             <FAQ faqs={faqs} />
+          </div>
+        </section>
+
+        {/* Related Content */}
+        <section className="py-8 px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-xl font-bold mb-4">Explore More</h2>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <Link href="/best-ai-girlfriend-apps" className="px-4 py-2 rounded-full bg-surface border border-border text-sm text-muted hover:text-white hover:border-accent-purple/50 transition-colors">
+                Best AI Girlfriend Apps 2026
+              </Link>
+              <Link href="/blog/best-nsfw-ai-chatbots" className="px-4 py-2 rounded-full bg-surface border border-border text-sm text-muted hover:text-white hover:border-accent-purple/50 transition-colors">
+                Best NSFW AI Chatbots
+              </Link>
+              <Link href="/blog/what-is-an-ai-girlfriend" className="px-4 py-2 rounded-full bg-surface border border-border text-sm text-muted hover:text-white hover:border-accent-purple/50 transition-colors">
+                What Is an AI Girlfriend?
+              </Link>
+              <Link href="/compare" className="px-4 py-2 rounded-full bg-surface border border-border text-sm text-muted hover:text-white hover:border-accent-purple/50 transition-colors">
+                Compare Platforms
+              </Link>
+            </div>
           </div>
         </section>
 

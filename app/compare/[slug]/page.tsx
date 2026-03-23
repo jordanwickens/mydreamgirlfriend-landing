@@ -184,6 +184,12 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
               >
                 Best AI Girlfriend Apps
               </Link>
+              <Link
+                href="/blog/best-nsfw-ai-chatbots"
+                className="px-4 py-2 rounded-full bg-surface border border-border text-sm text-muted hover:text-white hover:border-accent-purple/50 transition-colors"
+              >
+                Best NSFW AI Chatbots
+              </Link>
             </div>
           </div>
         </section>

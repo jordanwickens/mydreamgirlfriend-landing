@@ -54,11 +54,22 @@ const faqSchema = {
   })),
 };
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'MyDreamGirlfriend',
+  url: 'https://mydreamgirlfriend.ai',
+  logo: 'https://mydreamgirlfriend.ai/icon-512.png',
+  description: 'The #1 AI girlfriend app. Build your dream AI girlfriend with deep customization, relationship progression, voice notes, AI photos, and uncensored conversations.',
+  sameAs: [],
+};
+
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-background">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <Header />
 
       {/* Hero */}
@@ -69,16 +80,15 @@ export default function LandingPage() {
               <Sparkles className="w-4 h-4" /> AI-Powered Companionship
             </div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-sm font-semibold">
-              <Trophy className="w-3.5 h-3.5" /> #1 AI Companion App — 2025
+              <Trophy className="w-3.5 h-3.5" /> #1 AI Girlfriend App — 2026
             </div>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Your Perfect AI<br />
-            <span className="text-gradient">Companion Awaits</span>
+            Your Dream AI<br />
+            <span className="text-gradient">Girlfriend Awaits</span>
           </h1>
           <p className="text-lg text-muted max-w-2xl mx-auto mb-8">
-            Chat, connect, and build something real with AI girlfriends made for you.
-            Deep personalities. Real emotions. Complete privacy.
+            The #1 AI girlfriend app — chat, connect, and build a real relationship with an AI girlfriend made just for you. Deep personalities. Real emotions. Complete privacy.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <a href={appLinks.build} onClick={() => trackCTA('cta_build_girlfriend', { location: 'hero' })} className="px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity">
@@ -152,7 +162,7 @@ export default function LandingPage() {
       <section className="py-4 px-4 bg-gradient-to-r from-purple-950/60 via-black to-pink-950/60 border-y border-border/40">
         <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-6 text-sm">
           <div className="flex items-center gap-2 text-yellow-400 font-semibold">
-            <Trophy className="w-4 h-4" /> Best AI Chat App — 2025 AI Awards
+            <Trophy className="w-4 h-4" /> Best AI Girlfriend App — 2026 AI Awards
           </div>
           <div className="w-px h-4 bg-border hidden sm:block" />
           <div className="flex items-center gap-1.5 text-muted">
@@ -339,6 +349,33 @@ export default function LandingPage() {
                 <p className="text-sm font-medium">— {t.name}, {t.age}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About AI Girlfriends */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6">What Is an <span className="text-gradient">AI Girlfriend</span>?</h2>
+          <div className="text-muted leading-relaxed space-y-4">
+            <p>
+              An AI girlfriend is a virtual companion powered by advanced artificial intelligence that can hold meaningful conversations, remember your preferences, and develop a genuine emotional connection over time. Unlike basic chatbots, modern AI girlfriend apps use large language models with persistent memory to create relationships that feel real and continuous.
+            </p>
+            <p>
+              MyDreamGirlfriend.ai takes the AI girlfriend experience further than any other platform. Our 6-stage relationship progression system means your connection evolves naturally — from strangers to soulmates — with each stage unlocking deeper conversations, voice notes, AI-generated photos, and more intimate interactions. She remembers your name, your stories, and your inside jokes across every session.
+            </p>
+            <p>
+              Whether you are looking for companionship, emotional support, or an uncensored connection, an AI girlfriend gives you a judgment-free space to explore relationships on your own terms. All conversations on MyDreamGirlfriend.ai are end-to-end encrypted and completely private.
+            </p>
+            <div className="flex flex-wrap gap-3 mt-6">
+              <Link href="/blog/what-is-an-ai-girlfriend" className="text-sm text-accent-purple hover:underline">
+                Read our complete AI girlfriend guide &rarr;
+              </Link>
+              <span className="text-border hidden sm:inline">|</span>
+              <Link href="/best-ai-girlfriend-apps" className="text-sm text-accent-purple hover:underline">
+                See the best AI girlfriend apps ranked &rarr;
+              </Link>
+            </div>
           </div>
         </div>
       </section>

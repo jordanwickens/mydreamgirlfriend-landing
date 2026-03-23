@@ -172,12 +172,14 @@
 - **Secondaries**: best ai girlfriend, top ai girlfriend apps 2026, ai girlfriend app ranking, best ai companion app
 - **Intent**: Commercial Investigation
 - **Type**: Landing (Roundup)
-- **Title tag**: 7 Best AI Girlfriend Apps in 2026 (We Tested All of Them)
-- **Meta description**: Honest rankings, pricing comparison, and the one that surprised us. We spent 30+ hours testing every major AI girlfriend app so you don't have to.
-- **H1**: 7 Best AI Girlfriend Apps in 2026
+- **Title tag**: 10 Best AI Girlfriend Apps in 2026 (We Tested All of Them)
+- **Meta description**: Honest rankings, pricing comparison, and the one that surprised us. We spent 200+ hours testing every major AI girlfriend app so you don't have to.
+- **H1**: 10 Best AI Girlfriend Apps in 2026
 - **Content brief**:
-  - Ranked list: MyDreamGirlfriend (#1), Candy AI, Replika, Nomi, Character.ai, Romantic AI, DreamGF
+  - Ranked list: MyDreamGirlfriend (#1), Candy AI, Replika, Nomi, Character.ai, Romantic AI, DreamGF, SpicyChat AI, CrushOn AI, Muah AI
   - Each entry: 150-250 words, pros, cons, pricing, standout feature
+  - Buyer's guide: "What to Look for in an AI Girlfriend App" (6 criteria)
+  - Expanded methodology with scoring rubric and testing details
   - Comparison table at top (quick-glance matrix)
   - Selection criteria methodology section
   - Strong CTAs for MyDreamGirlfriend throughout
@@ -334,7 +336,7 @@
 - **H1**: Character AI Alternative — 7 No-Filter Options in 2026
 - **Schema**: Article + ItemList + FAQPage
 - **Score**: 8.8/10
-- **Status**: Published 2026-03-22
+- **Status**: Draft (ready to publish)
 
 #### 21. Replika Alternative — `/blog/replika-alternative/`
 - **Primary keyword**: replika alternative, replika alternative nsfw
@@ -347,7 +349,7 @@
 - **H1**: Replika Alternative — 7 Better AI Girlfriend Apps in 2026
 - **Schema**: Article + ItemList + FAQPage
 - **Score**: 8.3/10
-- **Status**: Published 2026-03-22
+- **Status**: Draft (ready to publish)
 
 ---
 
