@@ -3,26 +3,49 @@
 ## 12-Month Plan
 
 **Date:** 2026-03-23
-**Data source:** Google Search Console (verified 2026-03-23)
-**Starting position:** DA 1, 0 referring domains, 38 clicks/28 days, 859 impressions/28 days
+**Data sources:** Google Search Console (verified 2026-03-23), Moz Links API (verified 2026-03-23)
+**Starting position:** DA 1 (Moz verified), 0 referring domains (Moz verified), 38 clicks/28 days (GSC), 859 impressions/28 days (GSC)
 
 ---
 
-## Current Reality (GSC verified, 28-day window ending 2026-03-23)
+## Current Reality
 
-**Site-level metrics:**
+### Site Metrics (verified)
+
+**GSC (28-day window ending 2026-03-23):**
 - 38 total clicks
 - 859 total impressions
 - 4.42% average CTR
 - 12.5 average position
 - Traffic is ~95% branded searches ("mydreamgirlfriend", "my dream girlfriend")
 
-**Best non-branded performance:**
+**Moz (pulled 2026-03-23):**
+- Domain Authority: 1
+- Page Authority: 1
+- Referring root domains: 0
+- External pages linking: 0
+- Spam score: N/A (insufficient data)
+
+**Best non-branded performance (GSC):**
 - "what is an ai girlfriend" cluster — position 10-17, 57 impressions, 3 clicks (our best content performer)
 - /compare/replika — position 7.1, 30 impressions, 0 clicks
 - /features — position 6.3, 49 impressions, 0 clicks
 
 **Critical issue:** /blog/best-nsfw-ai-chatbots was crawled 2026-03-23 but is **NOT indexed** (status: "Crawled - currently not indexed").
+
+### Competitor Landscape (Moz verified 2026-03-23)
+
+| Competitor | DA | PA | Referring Domains | Spam Score |
+|------------|----|----|-------------------|------------|
+| **mydreamgirlfriend.ai** | **1** | **1** | **0** | N/A |
+| character.ai | 65 | 61 | 14,147 | 14 |
+| replika.com | 63 | 58 | 9,428 | 1 |
+| nomi.ai | 41 | 46 | 1,359 | 16 |
+| candy.ai | 39 | 52 | 4,525 | 16 |
+| crushon.ai | 36 | 63 | 12,911 | 7 |
+| spicychat.ai | 27 | 51 | 2,660 | 28 |
+
+The gap is massive. Even the weakest competitor (SpicyChat, DA 27) has 2,660 referring domains vs our 0. The top competitors (Character.AI, Replika) have 9,000-14,000 referring domains and DA 63-65.
 
 ---
 
@@ -317,7 +340,19 @@ Budget remains the same as original plan — the actions don't change, just the 
 
 ## Data Verification Notes
 
-- **GSC data verified:** 2026-03-23 via Google Search Console MCP integration
-- **Search volumes:** UNVERIFIED — need Ahrefs or SEMrush subscription to confirm. Volumes quoted in original plan (30K, 60K, 150K) should not be used for budget decisions until verified.
-- **Competitor DA/backlink counts:** UNVERIFIED — need Ahrefs or Moz to confirm. Competitor metrics quoted in original plan are estimates.
-- **Next verification:** Re-pull GSC data in 2 weeks to check if /best-nsfw-ai-chatbots is indexed and track position changes after content expansion.
+| Data Point | Source | Status |
+|------------|--------|--------|
+| Site DA, PA, referring domains | Moz Links API | VERIFIED 2026-03-23 |
+| Competitor DA, PA, referring domains | Moz Links API | VERIFIED 2026-03-23 |
+| Keyword positions & impressions | Google Search Console | VERIFIED 2026-03-23 |
+| Page indexing status | Google Search Console | VERIFIED 2026-03-23 |
+| Keyword search volumes | — | **UNVERIFIED** — need Moz Keyword Explorer (separate API key) or Ahrefs/SEMrush |
+| Keyword difficulty scores | — | **UNVERIFIED** — same as above |
+| Traffic-at-#1 estimates | — | **UNVERIFIED** — derived from unverified volumes, do not use for budget decisions |
+
+**Moz API note:** The provided Moz credentials (`mozscape-yE3ZNyNtuW`) authenticate against the Moz Links API (v2) for DA/backlink data. The Keyword Explorer API (`api.moz.com/jsonrpc`) requires a separate Moz Pro API key. To verify keyword volumes, either obtain a Moz Pro API key or use Ahrefs/SEMrush.
+
+**Next verification:** Re-pull GSC + Moz data in 2 weeks to check:
+1. Is /best-nsfw-ai-chatbots indexed?
+2. Have positions changed after content expansion?
+3. Have any new referring domains appeared?
