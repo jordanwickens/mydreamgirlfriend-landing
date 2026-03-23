@@ -287,17 +287,105 @@ Given the real data, here's what I'd prioritize differently:
 | Apr 23 | candy-ai-alternative | KW1 |
 | Apr 28+ | New content from Wave 2-3 pipeline | All |
 
-### Link Building Targets by Month
+### Link Building — Quality-First Approach
 
-| Month | New Referring Domains | Cumulative | Sources |
-|-------|----------------------|------------|---------|
-| 1 | 10-15 | 10-15 | Directories (10), social profiles (3-5) |
-| 2 | 10-15 | 20-30 | Guest posts (3), Medium/dev.to (2), directories (5-10) |
-| 3 | 15-20 | 35-50 | Guest posts (5), HARO (2-3), Reddit/Quora (3), resource pages (5) |
-| 4 | 15-20 | 50-70 | Guest posts (5), digital PR (2-3), broken link building (5) |
-| 5 | 20-25 | 70-95 | Product Hunt, influencer reviews (5), guest posts (5) |
-| 6 | 20-25 | 90-120 | Guest posts (5), PR (5), podcast links (3) |
-| 7-12 | 15-20/month | 180-240 | Sustained guest posting, PR, organic editorial |
+**Philosophy:** 200 quality referring domains will outperform 12,000 junk links. CrushOn has 12,911 links and only DA 36. Nomi has 1,359 links and DA 41. Quality wins. Full target list with every domain and action item: `data/seo/backlink-targets.md`
+
+**Phase 1 — Foundations (Week 1-2): ~15-20 links**
+Focus: High-DA profiles + AI directories with NSFW categories
+
+| Site | DA | Link | What to do |
+|------|----|------|------------|
+| Product Hunt | 91 | Dofollow | Launch product page; coordinate launch day for upvotes |
+| Crunchbase | 91 | Nofollow | Create company profile with team, funding info, website URL |
+| G2 | 92 | Dofollow | Create vendor profile; solicit early user reviews |
+| Capterra | 92 | Dofollow | Create free listing (auto-syndicates to GetApp + Software Advice = 3 links) |
+| LinkedIn | 99 | Nofollow | Company page with website URL; publish articles with links |
+| AlternativeTo | 82 | Dofollow | Add as alternative to Replika, Character.AI, Candy AI |
+| There's An AI For That | 77 | Dofollow | Submit tool listing (largest AI directory, 2M+ visitors/mo) |
+| Toolify | 70 | Dofollow | Submit to NSFW AI tools category specifically |
+| AI Tool Hunt | 50 | Dofollow | Submit to dedicated NSFW chatbot category |
+| Wellfound (AngelList) | 85 | Dofollow | Create startup profile with website link |
+| About.me | 91 | Dofollow | Create founder profile with prominent website link |
+| SaaSHub | 77 | Dofollow | Free listing; position as alternative to competitors |
+| X/Twitter | 95 | Nofollow | Profile link + regular posts driving referral traffic |
+| YouTube | 100 | Nofollow | Channel with website link; upload product demo |
+| GitHub | 96 | Nofollow | Create org profile or public repo with link in README |
+
+**Phase 2 — Quick Wins (Week 3-4): ~20-25 more links**
+Focus: Dofollow directories + content platform profiles
+
+| Site | DA | Link | What to do |
+|------|----|------|------------|
+| BetaList | 75 | Dofollow | Submit as beta product ($129 for priority or free queue) |
+| SourceForge | 92 | Dofollow | Create product listing (works for non-open-source too) |
+| Futurepedia | 72 | Dofollow | Submit AI tool listing (5,000+ tools, 54 categories) |
+| FutureTools | 65 | Dofollow | Submit to Matt Wolfe's curated AI tools directory |
+| Dang AI | 80 | Dofollow | Free AI tools directory — growing fast |
+| Indie Hackers | 80 | Dofollow | Create product page and participate in community |
+| Substack | 88 | Dofollow | Start newsletter — posts are public, indexable, dofollow links |
+| Tumblr | 91 | Dofollow | Create blog with links — one of few high-DA dofollow socials |
+| Vimeo | 96 | Dofollow | Upload product demo/promo video with link |
+| Issuu | 93 | Dofollow | Upload "AI Girlfriend Guide" PDF with embedded links |
+| WordPress.com | 94 | Dofollow | Create satellite blog with links back to main site |
+| Hashnode | 76 | Dofollow | Developer blog platform — custom domain + dofollow links |
+| Slashdot | 88 | Dofollow | Submit story or create profile with link |
+| Gumroad | 85 | Dofollow | Create free product page (e.g., free guide) with link |
+| DevPost | 86 | Dofollow | Create project listing in hackathon/project showcase |
+| TinyLaunch | 71 | Dofollow | Free indie startup directory listing |
+| F6S | 81 | Dofollow | Startup profile + access to deals/accelerators |
+| Fazier | 81 | Dofollow | Freemium SaaS/startup directory listing |
+| AIxploria | 48 | Dofollow | Has dedicated "Best AI Girlfriend Apps" page — submit |
+| AI Haven | 42 | Dofollow | Has NSFW AI companions category — submit for inclusion |
+
+**Phase 3 — Build Out (Week 5-8): ~15-20 more links**
+Complete remaining directories + content platforms
+
+| Site | DA | Link | What to do |
+|------|----|------|------------|
+| Medium | 95 | Nofollow | Create publication; publish articles with in-content links |
+| Dev.to | 87 | Nofollow | Publish technical articles with profile link |
+| HackerNoon | 82 | Nofollow | Submit articles (editorial review); author profile with link |
+| Reddit | 97 | Nofollow | Profile; genuinely participate in r/CharacterAI, r/replika, r/SideProject |
+| Quora | 93 | Nofollow | Answer AI girlfriend/chatbot questions; profile has link |
+| Trustpilot | 93 | Nofollow | Claim business page; collect user reviews for social proof |
+| TrustRadius | 72 | Dofollow | Submit free vendor profile (organic reviews only — no paid ads) |
+| FinancesOnline | 87 | Dofollow | Submit for expert review (2.5M+ monthly readers) |
+| SoftwareSuggest | 77 | Dofollow | Software comparison site with free listings |
+| Crozdesk | 74 | Dofollow | Business software directory with verified reviews |
+| Ben's Bites | 60 | Dofollow | Submit for newsletter + directory exposure |
+| TopAI.tools | 55 | Dofollow | Free AI tool submission |
+| Supertools | 55 | Dofollow | AI newsletter's tool directory |
+| findly.tools | 77 | Dofollow | Freemium tools aggregator |
+| Twelve Tools | 80 | Dofollow | Quality-curated tools directory |
+| Manta | 84 | Dofollow | Free business directory listing |
+| Flipboard | 92 | Nofollow | Create magazine curating your content |
+| Pinterest | 94 | Nofollow | Create pins linking to blog posts |
+
+**Phase 4 — Earned Links (Ongoing, Month 3+): 5-10/month**
+These can't be manufactured — they require genuine outreach and quality
+
+| Activity | Expected DA range | How |
+|----------|-------------------|-----|
+| HARO/Connectively responses | 60-90 | Respond to 3-5 journalist queries/week about AI/chatbots/relationships. Free, 15 min/day. Best ROI link building tactic for new sites. |
+| Guest posts on tech publications | 40-80 | Pitch genuine analysis/opinion pieces (not ads) to Unite.AI, ReadWrite, MakeUseOf, HowToGeek. Budget: $0 if writing yourself, $200-500/post if outsourced. |
+| Roundup site outreach | 40-82 | Email sites that publish "best AI girlfriend" roundups (AI Journal, Hollywood Life, CyberLink) and pitch for inclusion. See Category 9 in backlink-targets.md. |
+| Original research / data PR | 60-95 | Publish "State of AI Girlfriends 2026" survey or safety scorecard. Pitch to tech press. This is how Replika got to DA 63 — years of press coverage from genuine stories. |
+| Podcast appearances | 30-60 | Pitch to AI/tech podcasts as guest. Host sites link to guests in show notes. |
+
+**Monthly Projections (Quality-First)**
+
+| Month | New Domains | Cumulative | Est. DA | Source |
+|-------|-------------|------------|---------|--------|
+| 1 | 15-20 | 15-20 | 2-4 | Phase 1 profiles + directories |
+| 2 | 20-25 | 35-45 | 5-8 | Phase 2 + 3 directories |
+| 3 | 10-15 | 45-60 | 8-12 | Phase 3 completion + first HARO/guest posts |
+| 4 | 8-12 | 53-72 | 10-15 | HARO, guest posts, roundup outreach |
+| 5 | 8-12 | 61-84 | 12-17 | Product Hunt launch + continued outreach |
+| 6 | 8-12 | 69-96 | 14-20 | Guest posts, PR, earned editorial |
+| 7-12 | 5-10/month | 100-160 | 20-28 | Sustained quality outreach + organic |
+
+**Target at Month 12:** 100-160 quality referring domains, DA 20-28. This is competitive with SpicyChat (DA 27, 2,660 domains but spam score 28) on a much cleaner link profile.
 
 ---
 
@@ -310,8 +398,8 @@ Given the real data, here's what I'd prioritize differently:
 | "ai girlfriend" position | 15-25 | 7-12 |
 | Total organic clicks/month | 500-1,000 | 3,000-8,000 |
 | Total impressions/month | 10,000-20,000 | 50,000-100,000 |
-| Referring domains | 90-120 | 180-240 |
-| Domain Authority | 12-18 | 22-30 |
+| Referring domains (quality) | 69-96 | 100-160 |
+| Domain Authority | 14-20 | 20-28 |
 | Blog posts published | 15-18 total | 30+ total |
 | Indexed pages | 25+ | 50+ |
 | Branded searches/month | 200-500 | 1,000-2,000 |
