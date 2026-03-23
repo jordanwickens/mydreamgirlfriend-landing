@@ -34,8 +34,8 @@ export const comparisonPages: ComparisonPageAttributes[] = [
   {
     slug: 'replika',
     competitor: 'Replika',
-    title: 'MyDreamGirlfriend vs Replika — 2026 Comparison',
-    metaDescription: 'MyDreamGirlfriend vs Replika compared. Deeper customization, uncensored chat, 6 relationship stages & more. See the full breakdown.',
+    title: 'MyDreamGirlfriend vs Replika in 2026 — Which AI Girlfriend Is Better?',
+    metaDescription: 'Replika removed NSFW. We compared both apps side by side — features, pricing, memory, and what you actually get. See the honest breakdown.',
     h1: 'MyDreamGirlfriend vs Replika',
     intro: "Replika pioneered the AI companion space and still offers one of the best free tiers available. But the AI girlfriend landscape has evolved significantly. Here's how MyDreamGirlfriend.ai compares to Replika in 2026.",
     datePublished: '2026-03-01',
@@ -64,8 +64,8 @@ export const comparisonPages: ComparisonPageAttributes[] = [
   {
     slug: 'character-ai',
     competitor: 'Character.ai',
-    title: 'MyDreamGirlfriend vs Character.ai — 2026 Comparison',
-    metaDescription: 'MyDreamGirlfriend vs Character.ai compared. Uncensored conversations, AI photos, voice calls & relationship progression. See why users switch.',
+    title: 'MyDreamGirlfriend vs Character.ai — Why Users Are Switching in 2026',
+    metaDescription: 'Character.ai has filters. We don\'t. Full feature comparison — memory, NSFW, photos, voice & pricing. See which AI companion actually delivers.',
     h1: 'MyDreamGirlfriend vs Character.ai',
     intro: "Character.ai has the largest library of AI characters and excels at creative roleplay. But it's not an AI girlfriend platform — it's a character chat tool. Here's how MyDreamGirlfriend.ai compares for users who want an actual AI relationship experience.",
     datePublished: '2026-03-01',

@@ -8,8 +8,8 @@ import { appLinks } from '@/lib/links';
 import TrackedLink from '@/components/shared/TrackedLink';
 
 export const metadata = generateSEO({
-  title: '7 Best AI Girlfriend Apps in 2026 (Tested & Ranked)',
-  description: 'We tested the top AI girlfriend apps in 2026. See our ranked comparison with pricing, features & honest reviews. #1 pick: MyDreamGirlfriend.ai.',
+  title: '7 Best AI Girlfriend Apps in 2026 (We Tested All of Them)',
+  description: 'Honest rankings, pricing comparison, and the one that surprised us. We spent 30+ hours testing every major AI girlfriend app so you don\'t have to.',
   path: '/best-ai-girlfriend-apps',
 });
 

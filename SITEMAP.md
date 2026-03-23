@@ -11,8 +11,8 @@
 - **Secondaries**: ai companion features, ai girlfriend capabilities, virtual girlfriend features
 - **Intent**: Commercial Investigation
 - **Type**: Feature (Pillar)
-- **Title tag**: AI Girlfriend Features — Everything She Can Do | MyDreamGirlfriend
-- **Meta description**: Explore all features: AI chat with memory, voice calls, AI photos, 6 relationship stages, deep customization & roleplay. Build your dream girlfriend today.
+- **Title tag**: AI Girlfriend Features — What She Can Actually Do
+- **Meta description**: Voice calls, AI photos, uncensored chat, 6 relationship stages, and memory that never forgets. See every feature — and try it free.
 - **H1**: Everything Your AI Girlfriend Can Do
 - **Content brief**:
   - Overview of all features with visual cards linking to individual pages
@@ -172,8 +172,8 @@
 - **Secondaries**: best ai girlfriend, top ai girlfriend apps 2026, ai girlfriend app ranking, best ai companion app
 - **Intent**: Commercial Investigation
 - **Type**: Landing (Roundup)
-- **Title tag**: 7 Best AI Girlfriend Apps in 2026 (Tested & Ranked)
-- **Meta description**: We tested the top AI girlfriend apps in 2026. See our ranked comparison with pricing, features & honest reviews. #1 pick: MyDreamGirlfriend.ai.
+- **Title tag**: 7 Best AI Girlfriend Apps in 2026 (We Tested All of Them)
+- **Meta description**: Honest rankings, pricing comparison, and the one that surprised us. We spent 30+ hours testing every major AI girlfriend app so you don't have to.
 - **H1**: 7 Best AI Girlfriend Apps in 2026
 - **Content brief**:
   - Ranked list: MyDreamGirlfriend (#1), Candy AI, Replika, Nomi, Character.ai, Romantic AI, DreamGF
@@ -243,8 +243,8 @@
 - **Secondaries**: mydreamgirlfriend vs replika, replika competitor, better than replika, replika alternative nsfw
 - **Intent**: Commercial Investigation
 - **Type**: Comparison
-- **Title tag**: MyDreamGirlfriend vs Replika — 2026 Comparison
-- **Meta description**: MyDreamGirlfriend vs Replika compared. Deeper customization, uncensored chat, 6 relationship stages & more. See the full breakdown.
+- **Title tag**: MyDreamGirlfriend vs Replika in 2026 — Which AI Girlfriend Is Better?
+- **Meta description**: Replika removed NSFW. We compared both apps side by side — features, pricing, memory, and what you actually get. See the honest breakdown.
 - **H1**: MyDreamGirlfriend vs Replika
 - **Schema**: Article + FAQPage
 - **Strapi-managed**: Yes
@@ -254,8 +254,8 @@
 - **Secondaries**: mydreamgirlfriend vs character ai, character ai competitor, character ai alternative nsfw
 - **Intent**: Commercial Investigation
 - **Type**: Comparison
-- **Title tag**: MyDreamGirlfriend vs Character.ai — 2026 Comparison
-- **Meta description**: MyDreamGirlfriend vs Character.ai compared. Uncensored conversations, AI photos, voice calls & relationship progression. See why users switch.
+- **Title tag**: MyDreamGirlfriend vs Character.ai — Why Users Are Switching in 2026
+- **Meta description**: Character.ai has filters. We don't. Full feature comparison — memory, NSFW, photos, voice & pricing. See which AI companion actually delivers.
 - **H1**: MyDreamGirlfriend vs Character.ai
 - **Schema**: Article + FAQPage
 - **Strapi-managed**: Yes
@@ -321,20 +321,58 @@
 
 ---
 
-### WAVE 2 — Blog Posts (Strapi-Managed, after Wave 1 is live)
+### WAVE 1.5 — High-Priority New Topics (from Mar 20 discovery report)
+
+#### 20. Character AI Alternative No Filter — `/blog/character-ai-alternative-no-filter/`
+- **Primary keyword**: character ai alternative, character ai alternative no filter
+- **Secondaries**: apps like character ai, character ai replacement, uncensored character ai
+- **Intent**: Commercial Investigation
+- **Type**: Blog Post (Listicle)
+- **Category**: Comparisons & Alternatives
+- **Title tag**: Character AI Alternative (No Filter) — 7 Best Options in 2026
+- **Meta description**: Looking for a Character AI alternative without filters? We tested 7 uncensored options — with better memory, NSFW support, and no mid-sentence interruptions.
+- **H1**: Character AI Alternative — 7 No-Filter Options in 2026
+- **Schema**: Article + ItemList + FAQPage
+- **Score**: 8.8/10
+- **Status**: Published 2026-03-22
+
+#### 21. Replika Alternative — `/blog/replika-alternative/`
+- **Primary keyword**: replika alternative, replika alternative nsfw
+- **Secondaries**: apps like replika, replika replacement, better than replika
+- **Intent**: Commercial Investigation
+- **Type**: Blog Post (Listicle)
+- **Category**: Comparisons & Alternatives
+- **Title tag**: Replika Alternative — 7 Better AI Girlfriend Apps in 2026
+- **Meta description**: Replika removed NSFW and charges $19.99/mo. We found 7 better alternatives with uncensored chat, deeper features, and lower prices.
+- **H1**: Replika Alternative — 7 Better AI Girlfriend Apps in 2026
+- **Schema**: Article + ItemList + FAQPage
+- **Score**: 8.3/10
+- **Status**: Published 2026-03-22
+
+---
+
+### WAVE 2 — Blog Posts (after Wave 1 + 1.5 are live)
 
 - AI Girlfriend Privacy & Safety Guide (`/blog/ai-girlfriend-privacy-safety/`)
 - How AI Girlfriend Memory Works (`/blog/how-ai-girlfriend-memory-works/`)
 - AI Girlfriend Roleplay Ideas & Scenarios (`/blog/ai-girlfriend-roleplay-ideas/`)
-- Candy AI Review — Is It Worth It? (`/blog/candy-ai-review/`)
-- Replika Review — Honest Take After 30 Days (`/blog/replika-review/`)
+- Candy AI Review — Is It Worth It? (`/blog/candy-ai-review/`) — Score 8.1
+- Best AI Girlfriend Apps with Memory (`/blog/best-ai-girlfriend-apps-with-memory/`) — Score 8.0 **NEW**
+- Best AI Roleplay Apps (`/blog/best-ai-roleplay-apps/`) — Score 7.9 **NEW**
+- Replika Review — Honest Take After 30 Days (`/blog/replika-review/`) — Score 7.8
+- Candy AI Alternative (`/blog/candy-ai-alternative/`) — Score 7.7 **NEW**
 - Top AI Companion Apps for 2026 (`/blog/top-ai-companion-apps/`)
+- AI Girlfriend Cost Comparison (`/blog/ai-girlfriend-cost-comparison/`) — Score 7.5 **NEW**
+- Nomi AI Review (`/blog/nomi-ai-review/`) — Score 7.4 **NEW**
 
-### WAVE 3 — Blog Posts (Strapi-Managed, ongoing content)
+### WAVE 3 — Blog Posts (ongoing content)
 
 - AI Girlfriend Voice Features Explained (`/blog/ai-girlfriend-voice-features/`)
 - How Relationship Stages Work in AI Companion Apps (`/blog/relationship-stages-explained/`)
 - AI Girlfriend Photo Generation — How It Works (`/blog/ai-girlfriend-photo-generation/`)
+- Crushon AI Alternative (`/blog/crushon-ai-alternative/`) — Score 7.0 **NEW**
+- Janitor AI Alternative (`/blog/janitor-ai-alternative/`) — Score 6.8 **NEW**
+- AI Girlfriend for Social Anxiety (`/blog/ai-girlfriend-for-social-anxiety/`) — Score 6.5 **NEW**
 - vs Nomi AI comparison (`/compare/nomi-ai/`)
 - vs Muah AI comparison (`/compare/muah-ai/`)
 - vs DreamGF comparison (`/compare/dreamgf/`)
@@ -370,16 +408,25 @@
 
 - "best ai girlfriend app" -> /best-ai-girlfriend-apps/ (ONLY this page targets this)
 - "ai girlfriend chat" -> /features/ai-chat/ (blog posts link here, don't compete)
-- "candy ai alternative" -> /compare/candy-ai/ (NOT the best-of page)
-- "replika alternative" -> /compare/replika/
+- "candy ai alternative" -> /blog/candy-ai-alternative/ (listicle captures frustration-driven intent; /compare/candy-ai/ is head-to-head)
+- "replika alternative" -> /blog/replika-alternative/ (listicle captures frustration-driven intent; /compare/replika/ is head-to-head)
+- "character ai alternative" -> /blog/character-ai-alternative-no-filter/ (listicle; /compare/character-ai/ is head-to-head)
 - "what is an ai girlfriend" -> /blog/what-is-an-ai-girlfriend/
+- "what can an ai girlfriend do" -> /blog/what-is-an-ai-girlfriend/ (expanded with dedicated H2)
 - "how to create ai girlfriend" -> /blog/how-to-create-ai-girlfriend/
 - "ai girlfriend free" -> /blog/best-free-ai-girlfriend-apps/
 - "best nsfw ai chatbot" -> /blog/best-nsfw-ai-chatbots/
+- "ai girlfriend vs real girlfriend" -> /blog/ai-girlfriend-vs-real-girlfriend/
 - "ai girlfriend images" -> /features/ai-girlfriend-images/
 - "ai girlfriend roleplay" -> /features/roleplay/
+- "ai girlfriend with memory" -> /blog/best-ai-girlfriend-apps-with-memory/ (Wave 2)
+- "best ai roleplay app" -> /blog/best-ai-roleplay-apps/ (Wave 2)
+- "ai girlfriend cost" -> /blog/ai-girlfriend-cost-comparison/ (Wave 2)
+- "nomi ai review" -> /blog/nomi-ai-review/ (Wave 2)
+- "candy ai review" -> /blog/candy-ai-review/ (Wave 2)
+- "replika review" -> /blog/replika-review/ (Wave 2)
 
-Each primary keyword maps to exactly 1 URL. No overlap.
+Each primary keyword maps to exactly 1 URL. "Alternative" listicles and "/compare/" pages serve different intent — listicles capture broader "looking for options" searches; compare pages capture direct head-to-head queries.
 
 ## Crawl Depth Verification
 

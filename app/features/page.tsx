@@ -7,8 +7,8 @@ import { generateSEO, generateSoftwareAppSchema, generateFAQSchema } from '@/lib
 import { appLinks } from '@/lib/links';
 
 export const metadata = generateSEO({
-  title: 'AI Girlfriend Features — Everything She Can Do | MyDreamGirlfriend',
-  description: 'Explore all features: AI chat with memory, voice calls, AI photos, 6 relationship stages, deep customization & roleplay. Build your dream girlfriend today.',
+  title: 'AI Girlfriend Features — What She Can Actually Do',
+  description: 'Voice calls, AI photos, uncensored chat, 6 relationship stages, and memory that never forgets. See every feature — and try it free.',
   path: '/features',
 });
 
