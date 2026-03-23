@@ -1,279 +1,303 @@
 # Top 3 Keywords Ranking Strategy — MyDreamGirlfriend.ai
 
-## 12-Month Plan to Rank #1
+## 12-Month Plan
 
 **Date:** 2026-03-23
-**Starting position:** DA 1, 0 backlinks, ~36 clicks/month
-**Goal:** #1 for "best ai girlfriend app", "nsfw ai chatbot", and "ai girlfriend"
-**Combined traffic at #1:** 40,000-77,000 organic visits/month
+**Data source:** Google Search Console (verified 2026-03-23)
+**Starting position:** DA 1, 0 referring domains, 38 clicks/28 days, 859 impressions/28 days
 
 ---
 
-## Context
+## Current Reality (GSC verified, 28-day window ending 2026-03-23)
 
-MyDreamGirlfriend.ai is a brand-new AI girlfriend platform (launched ~March 2026) with exceptional on-page SEO — 57 keywords indexed with zero backlinks. The site currently gets ~36 clicks/month from organic search. This plan identifies the 3 keywords that would bring the absolute most traffic and provides an exact roadmap to rank #1 for each, including on-page, content, backlinks, parasite SEO, digital PR, and brand building.
+**Site-level metrics:**
+- 38 total clicks
+- 859 total impressions
+- 4.42% average CTR
+- 12.5 average position
+- Traffic is ~95% branded searches ("mydreamgirlfriend", "my dream girlfriend")
 
-**Already completed (from prior work session):**
-- Meta title/description rewrites for /best-ai-girlfriend-apps, /compare/replika, /compare/character-ai, /features
-- Expanded "What Is an AI Girlfriend" post with "What Can an AI Girlfriend Do?" H2
-- Published /blog/best-nsfw-ai-chatbots (9 platforms, SEO-researched)
-- 9 blog post drafts ready in `drafts/blog/`
-- SITEMAP.md updated with full topic pipeline
+**Best non-branded performance:**
+- "what is an ai girlfriend" cluster — position 10-17, 57 impressions, 3 clicks (our best content performer)
+- /compare/replika — position 7.1, 30 impressions, 0 clicks
+- /features — position 6.3, 49 impressions, 0 clicks
+
+**Critical issue:** /blog/best-nsfw-ai-chatbots was crawled 2026-03-23 but is **NOT indexed** (status: "Crawled - currently not indexed").
 
 ---
 
 ## The Top 3 Keywords
 
-| Rank | Keyword | Global Monthly Volume | Traffic if #1 | Difficulty | Current Position |
-|------|---------|----------------------|---------------|------------|-----------------|
-| 1 | **best ai girlfriend app** | 30,000-40,000 | 9,000-14,000 clicks/mo | Medium | Pos 8.3 (already page 1!) |
-| 2 | **nsfw ai chatbot** | 60,000-100,000 | 15,000-25,000 clicks/mo | Medium | Not yet indexed (just published) |
-| 3 | **ai girlfriend** | 150,000+ (57,800 US alone) | 25,000-55,000 clicks/mo | Very Hard | Not ranking |
+| Rank | Keyword | Monthly Volume | Current Position (GSC) | Current Impressions |
+|------|---------|---------------|----------------------|---------------------|
+| 1 | **best ai girlfriend app** | UNVERIFIED (need Ahrefs/SEMrush) | **Not ranking** — 0 impressions for exact term | 0 |
+| 2 | **nsfw ai chatbot** | UNVERIFIED (need Ahrefs/SEMrush) | **Not indexed** — page crawled but not in index | 0 |
+| 3 | **ai girlfriend** | UNVERIFIED (need Ahrefs/SEMrush) | **Position 30** — 1 impression, 1 click | 1 |
 
-**Why these 3:** Together they represent ~240,000-290,000 monthly searches. Ranking #1 for all three would deliver 40,000-77,000 monthly organic visits — from the current 36 clicks/month. Keyword 1 is the most winnable (already page 1). Keyword 2 has weak competition. Keyword 3 is the hardest but the most valuable.
+> **Note on search volumes:** The volume estimates from the original plan (30K-40K, 60K-100K, 150K+) are unverified. We do not currently have Ahrefs or SEMrush access. These should be verified before making budget decisions. GSC does not report search volume — only impressions for queries we already appear for.
+
+**Why these 3 remain the right targets:** Even without verified volumes, these are clearly high-intent commercial keywords in a growing market. The strategy is sound — the timelines and position claims needed correction.
 
 ---
 
 ## KEYWORD 1: "best ai girlfriend app"
 
-**The most winnable. Already at position 8.3 with 353 impressions/28 days.**
+### Actual GSC Data
+- **Exact match "best ai girlfriend app":** 0 impressions, not ranking
+- **Page (/best-ai-girlfriend-apps) total:** 8 visible impressions across 5 long-tail queries, 2 clicks
+- **Page average position:** 8.4 (across anonymized queries — GSC suppresses low-volume individual queries but still counts them in page-level aggregates, explaining the 396 impression page-level total)
+- **Indexing status:** Indexed (last crawled 2026-03-09). Rich results (FAQ) detected.
+- **Visible related queries:**
+  - "ai girlfriend" — pos 30, 1 impression
+  - "candy.ai vs dreamgf comparison 2026" — pos 17, 4 impressions
+  - "best ai girlfriend apps 2026 candy ai" — pos 9, 1 impression
+  - "best ai girlfriend apps with persistent memory 2026" — pos 15, 1 impression
+  - "top 10 ai girlfriend apps" — pos 55, 1 impression
 
-### Why It's Winnable
-- SERPs dominated by low-DA affiliate sites (aicompanionpick.com, cyberlink.com, rabu.ai) — DA 10-25
-- No DA 30+ competitor has a dedicated, well-optimized page
-- We have first-party authority advantage (we ARE an AI girlfriend app, not an affiliate reviewer)
-- Already on page 1 — just need to climb 7 spots
+### Honest Assessment
+The page IS getting crawled and is showing up for long-tail variations, but we are **nowhere near page 1 for the head term**. The page was last crawled March 9 — before the recent content expansion to 10 apps. After recrawl with the expanded content, positioning should improve for long-tail queries. Getting to page 1 for the exact head term requires backlinks and topical authority we don't have yet.
 
-### Traffic Estimate at #1
+### Why It's Still Winnable (Medium-Term)
+- Page is indexed with FAQ rich results
+- We have first-party authority (we ARE an AI girlfriend app)
+- The expanded 10-app page with buyer's guide and methodology is now more comprehensive than most competitors
+- Long-tail queries are already appearing — the page has topical relevance
 
-| Metric | Conservative | Moderate | Aggressive |
-|--------|-------------|----------|------------|
-| Monthly global clicks | 9,000 | 14,000 | 18,000 |
-| Annual clicks | 108,000 | 168,000 | 216,000 |
+### The Plan (8-12 months to page 1, not 4-6)
 
-### The Plan (4-6 months to #1)
-
-**Week 1-2 — On-Page (DONE + remaining):**
+**Immediate (this week):**
+- [ ] Submit /best-ai-girlfriend-apps for re-indexing via GSC (content was expanded 2026-03-23, last crawl was 2026-03-09)
 - [x] Meta title/description rewrite (completed 2026-03-22)
-- [x] Expand /best-ai-girlfriend-apps from ~2,500 to 4,500-5,500 words (completed 2026-03-23)
-- [x] Add internal links TO this page from blog posts, comparison pages, and /features/
-- [ ] Submit for re-indexing via GSC
+- [x] Expand from 7 to 10 apps with buyer's guide + methodology (completed 2026-03-23)
+- [x] Add internal links from blog posts, comparison pages, /features/ (completed 2026-03-23)
 
-**Month 1 (April) — Content Cluster + Directories:**
-- [ ] Publish character-ai-alternative-no-filter (draft ready)
-- [ ] Publish replika-alternative (draft ready)
-- [ ] Publish how-to-create-ai-girlfriend
-- [ ] Publish candy-ai-review
-- [ ] Publish replika-review
-- [ ] Submit to 20 AI tool directories (ProductHunt, AlternativeTo, FutureTools, Toolify, There's An AI For That, FuturePedia, G2, Capterra, SourceForge, SaaSHub, BetaList, etc.)
-- [ ] Write + publish a Medium article: "I Tested 10 AI Girlfriend Apps So You Don't Have To" — link to /best-ai-girlfriend-apps
+**Month 1-2 (April-May) — Content Cluster + Directories:**
+- [ ] Publish supporting blog posts (staggered 2/week): character-ai-alternative-no-filter, replika-alternative, candy-ai-review, replika-review, how-to-create-ai-girlfriend
+- [ ] Submit to 20 AI tool directories
+- [ ] Write + publish Medium article linking to /best-ai-girlfriend-apps
 - **Budget:** ~$500 for premium directory listings
-- **Expected position:** 4-5
+- **Expected position for head term:** Still 50+ (Google needs time to associate the page with the head term)
 
-**Month 2-3 — Guest Posts + Parasite SEO:**
-- [ ] Land 10 guest post placements:
-  - Tier 1 (DA 50+): MakeUseOf, HowToGeek, TechRadar, PCMag
-  - Tier 2 (DA 30-50): Unite.AI, ReadWrite, Dexerto
-  - Tier 3 (DA 15-30): AI niche blogs
-- [ ] Create a YouTube video: "I Tested Every AI Girlfriend App — Ranking Them All"
-- [ ] Reddit engagement: genuinely helpful answers in r/ArtificialIntelligence, r/ChatGPT, r/singularity when people ask about AI girlfriend apps
+**Month 3-5 — Guest Posts + Parasite SEO:**
+- [ ] Land 10 guest post placements (Tier 1-3 as outlined in original plan)
+- [ ] YouTube video reviewing AI girlfriend apps
+- [ ] Reddit engagement in relevant subreddits
 - **Budget:** $1,000-2,000 for guest posts
-- **Expected position:** 2-3
+- **Expected position:** 15-30 (entering index for head term)
 
-**Month 4-6 — Digital PR + Defense:**
-- [ ] HARO/Connectively: respond to 3-5 journalist queries/week about AI, chatbots, relationships
-- [ ] Broken link building: find 404'd links to competitor reviews, offer ours as replacement
-- [ ] Quarterly content refresh: update pricing, add new apps, refresh "last tested" date
-- [ ] Create "State of AI Girlfriends 2026" data report — pitch to tech press
-- **Budget:** $500-2,000 for PR distribution
-- **Expected position:** 1
+**Month 6-9 — Authority Building:**
+- [ ] HARO/Connectively responses (3-5/week)
+- [ ] Broken link building
+- [ ] Content refresh with updated pricing/apps
+- [ ] Digital PR with data report
+- **Budget:** $500-2,000 for PR
+- **Expected position:** 8-15 (approaching page 1)
 
-### Milestones
+**Month 10-12 — Defense:**
+- [ ] Sustained link building
+- [ ] Quarterly content refreshes
+- **Expected position:** 5-10 (page 1)
 
-| Month | Position | Monthly Traffic | Key Driver |
-|-------|----------|----------------|------------|
-| 1 | 4-5 | 150-300 | Content expansion, internal links, directories |
-| 3 | 2-3 | 1,500-3,000 | 50+ backlinks, guest posts, Medium article |
-| 6 | 1-2 | 5,000-9,000 | 150+ backlinks, digital PR, content refresh |
-| 12 | 1 (defended) | 10,000-14,000 | 500+ backlinks, topical fortress |
+### Revised Milestones
+
+| Month | Position | Est. Monthly Clicks | Key Driver |
+|-------|----------|---------------------|------------|
+| 1-2 | 50+ (head term) | 5-20 (long-tail only) | Content expansion, re-indexing, directories |
+| 3-5 | 20-40 | 50-200 | Guest posts, content cluster, 30+ backlinks |
+| 6-9 | 8-15 | 200-1,000 | 80+ backlinks, digital PR |
+| 10-12 | 5-10 | 500-2,000 | 150+ backlinks, topical authority |
 
 ---
 
 ## KEYWORD 2: "nsfw ai chatbot"
 
-**Weak competition. SERPs full of DA 15-37 affiliate sites. Our post is better than what currently ranks #1.**
+### Actual GSC Data
+- **Exact match "nsfw ai chatbot":** 0 impressions — zero data for any nsfw-related query
+- **Page (/blog/best-nsfw-ai-chatbots) indexing:** **NOT INDEXED** (status: "Crawled - currently not indexed", last crawled 2026-03-23)
+- **Rich results:** None detected (not indexed)
+- **Referring URLs:** Only sitemap.xml
 
-### Why It's Winnable
-- Top results: il.ly (unknown DA), myanima.ai (DA 37), chatwithaigirl.com (low DA), aihaven.com
-- Every top-ranking article is affiliate content ranking whoever pays highest commission
-- Our post (9 apps, ~3,000 words, privacy section, FAQ schema) is more comprehensive and honest
-- The keyword cluster is MASSIVE (nsfw ai chat, uncensored ai chatbot, ai chatbot no filter, etc.)
+### Honest Assessment
+This is a **blocker**. The page was crawled but Google chose not to index it. Until it's indexed, it cannot rank for anything. Possible reasons:
+1. Google sees it as thin/duplicate relative to existing indexed content on other sites
+2. Site authority is too low for Google to index aggressively
+3. The page may need more internal links pointing to it (currently only linked from sitemap)
+4. It may just need time — new pages on new sites sometimes take weeks to get indexed
 
-### Traffic Estimate at #1
+### Immediate Actions Needed
+- [ ] Submit URL for indexing via GSC (request indexing)
+- [ ] Add more internal links TO this page (we did add some from features/compare pages — need recrawl to pick them up)
+- [ ] Consider adding the page link to the site footer or nav for stronger crawl signals
+- [ ] Monitor indexing status weekly
 
-| Metric | Conservative | Moderate | Aggressive |
-|--------|-------------|----------|------------|
-| Monthly global clicks | 15,000 | 25,000 | 40,000 |
-| Annual clicks | 180,000 | 300,000 | 480,000 |
+### The Plan (10-14 months to page 1, not 6-8)
 
-### The Plan (6-8 months to #1)
+**Month 1 — Get Indexed:**
+- [ ] Request indexing via GSC
+- [ ] Verify internal links are being crawled
+- [ ] If not indexed after 2 weeks, troubleshoot (content quality, canonicalization, crawl budget)
+- **Expected position:** Indexed at 40-80+ (if indexed at all)
 
-**Week 1-2 — Foundation:**
-- [x] Verify /blog/best-nsfw-ai-chatbots is indexed (submit via GSC)
-- [x] Add internal links from relevant pages
-- [ ] Verify first 150 words contain "nsfw ai chat", "uncensored ai chatbot", "ai chatbot no filter"
+**Month 2-3 — Topical Cluster:**
+- [ ] Publish character-ai-alternative-no-filter, replika-alternative, best-ai-roleplay-apps (all link to NSFW post)
+- [ ] Reddit seeding in r/CharacterAI, r/replika, r/AIDungeon, r/SillyTavernAI
+- **Expected position:** 20-40 (if indexed)
 
-**Month 1 (April) — Topical Cluster:**
-- [ ] Publish character-ai-alternative-no-filter (draft ready)
-- [ ] Publish replika-alternative (draft ready)
-- [ ] Publish best-ai-roleplay-apps
-- [ ] Reddit seeding in r/CharacterAI (800K members), r/replika (100K), r/AIDungeon, r/SillyTavernAI — genuinely helpful answers mentioning the blog post when directly relevant. 2-3 posts/week.
-- **Expected position:** 15-20 (newly indexed)
+**Month 4-6 — Parasite SEO + Link Building:**
+- [ ] Medium, Substack, dev.to articles linking back
+- [ ] YouTube video
+- [ ] Quora answers
+- [ ] Guest posts (5-10)
+- **Budget:** $500-2,000
+- **Expected position:** 10-20
 
-**Month 2-3 — Parasite SEO Blitz:**
-- [ ] Medium article: "The Real State of NSFW AI Chatbots in 2026 (After the Bans)" — links to our post
-- [ ] Substack: "Why AI Chatbot Censorship Is Breaking the Internet" — links back
-- [ ] dev.to: "Building Uncensored AI: The Technical Challenges" — links back
-- [ ] YouTube: "I Tested 9 NSFW AI Chatbots — Here's What's Actually Uncensored"
-- [ ] 10-15 Quora answers on NSFW AI chatbot questions — link to post when relevant
-- **Budget:** $0-500 for video production
-- **Expected position:** 6-10
+**Month 7-10 — Direct Link Building:**
+- [ ] Guest posts targeting AI/dating/tech publications
+- [ ] Skyscraper outreach
+- [ ] Resource page link building
+- **Budget:** $1,000-2,000
+- **Expected position:** 5-10
 
-**Month 4-6 — Direct Link Building:**
-- [ ] Guest posts targeting NSFW/dating/AI publications
-- [ ] Skyscraper outreach: find who links to competing posts, email offering our more comprehensive version
-- [ ] Resource page link building: find "Best AI Tools" pages, request inclusion
-- [ ] Target: 30-50 backlinks directly to this URL
-- **Budget:** $1,000-2,000 for guest posts + $50/mo for Hunter.io
-- **Expected position:** 2-4
-
-**Month 7-12 — Defend + Expand:**
+**Month 11-14 — Defend + Expand:**
 - [ ] Content refresh every 6-8 weeks
-- [ ] Expand NSFW cluster with new posts
-- [ ] Continue link building: 10-15 new referring domains/month
-- **Expected position:** 1
+- [ ] Expand NSFW cluster
+- [ ] Sustained link building
+- **Expected position:** 3-5
 
-### Milestones
+### Revised Milestones
 
-| Month | Position | Monthly Traffic | Key Driver |
-|-------|----------|----------------|------------|
-| 1 | 15-20 | 50-150 | Indexing, internal links, Reddit |
-| 3 | 6-10 | 500-2,000 | Parasite SEO, content cluster, 30+ backlinks |
-| 6 | 2-4 | 5,000-12,000 | 80+ backlinks, guest posts, content refresh |
-| 9 | 1-2 | 12,000-20,000 | 150+ backlinks, topical authority |
-| 12 | 1 | 15,000-25,000 | 250+ backlinks, established authority |
+| Month | Position | Est. Monthly Clicks | Key Driver |
+|-------|----------|---------------------|------------|
+| 1 | Not indexed → 50+ | 0 | Get indexed, internal links |
+| 3 | 20-40 | 10-100 | Content cluster, Reddit, 20+ backlinks |
+| 6 | 10-20 | 100-500 | Parasite SEO, 50+ backlinks |
+| 9 | 5-12 | 500-2,000 | 100+ backlinks, guest posts |
+| 12 | 3-8 | 1,000-5,000 | 150+ backlinks, topical authority |
 
 ---
 
 ## KEYWORD 3: "ai girlfriend"
 
-**The hardest keyword. The biggest payoff. Character.AI (DA 65), Replika (DA 59), Candy.AI (DA 39) control this SERP.**
+### Actual GSC Data
+- **Exact match "ai girlfriend":** Position 30, 1 impression, 1 click (on /best-ai-girlfriend-apps page)
+- **Homepage (/) performance:** 28 clicks, 152 impressions — but almost entirely branded queries ("mydreamgirlfriend", "my dream girlfriend")
+- **No non-branded homepage traffic** for "ai girlfriend" as a head term
 
-### Realistic Timeline
-Top 5 in 12 months, #1 in 18-24 months. But top 5 alone delivers 5,000-15,000 clicks/month.
+### Honest Assessment
+Position 30 with 1 impression means we are barely in Google's awareness for this term. This is the hardest keyword — Character.AI, Replika, and Candy.AI have years of brand equity and thousands of backlinks. This is a 18-24 month minimum to top 10, and reaching #1 may take 2-3 years.
 
-### Traffic Estimate at #1
+The homepage optimization we did (H1 change, About section, Organization schema) is necessary groundwork but won't move the needle on its own. This keyword requires DA 30+ and hundreds of referring domains.
 
-| Metric | Conservative | Moderate | Aggressive |
-|--------|-------------|----------|------------|
-| Monthly global clicks | 25,000 | 40,000 | 55,000 |
-| Annual clicks | 300,000 | 480,000 | 660,000 |
+### The Plan (18-24 months to top 10)
 
-### The Plan (12-18 months to top 3)
+Same as originally outlined — the original plan's assessment of this keyword as "Very Hard" with an 18-24 month timeline was the most accurate part of the document. The plan of action remains valid:
+1. Homepage optimization (done)
+2. Topical fortress (publish all drafts + new content)
+3. Brand building (Product Hunt, YouTube, social, PR)
+4. Sustained link building (20-30 new referring domains/month)
 
-**Month 1 — Target Page + Topical Fortress:**
-- [x] Optimize homepage (/) for "ai girlfriend" — H1 updated, content added (completed 2026-03-23)
-- [x] Publish character-ai-alternative-no-filter and replika-alternative (completed 2026-03-24)
-- [ ] Publish remaining 7 drafts from `drafts/blog/`
-- [ ] Create Crunchbase, AngelList, LinkedIn company, and X/Twitter profiles (DA 85-98 links)
+### Revised Milestones
 
-**Month 2-3 — Content Velocity + Link Sprint:**
-- [ ] Publish 2-3 new blog posts per month
-- [ ] Aggressive directory submission blitz (20-30 links)
-- [ ] Launch 3 parasite SEO articles (Medium, LinkedIn Articles, HackerNoon)
-- [ ] Begin guest post outreach (15-25 placements over months 2-6)
-- **Target:** 80-120 referring domains by end of month 3
-- **Expected position:** 20-30
+| Month | Position | Est. Monthly Clicks | DA | Referring Domains |
+|-------|----------|---------------------|----|-------------------|
+| 1 | 30+ | 0-1 | 1 | 5-10 |
+| 3 | 25-35 | 5-20 | 5-8 | 30-60 |
+| 6 | 15-25 | 50-200 | 12-18 | 80-150 |
+| 9 | 10-18 | 200-1,000 | 18-25 | 150-250 |
+| 12 | 7-12 | 500-3,000 | 22-30 | 250-400 |
+| 18 | 4-8 | 2,000-8,000 | 30-38 | 400-700 |
+| 24 | 2-5 | 5,000-15,000 | 35-45 | 600-1,000 |
 
-**Month 4-6 — Brand Building + Digital PR:**
-- [ ] Product Hunt launch
-- [ ] YouTube channel: 2 videos/month
-- [ ] TikTok/Reels: 3-5 short videos/week
-- [ ] Create linkable assets (market report, safety scorecard)
-- [ ] Podcast appearances: 2-3/month
-- [ ] Influencer partnerships: 10-20 AI/tech creators
-- [ ] Expand comparison pages from 3 to 10+
-- **Target:** 200-300 referring domains by end of month 6
-- **Expected position:** 8-12
+---
 
-**Month 7-12 — Authority Compound:**
-- [ ] Sustained link building: 20-30 new referring domains/month
-- [ ] Continue publishing 2-3 blog posts/month (target: 35+ total by month 12)
-- [ ] Consider international SEO (hreflang + translated landing pages)
-- **Target:** 450-600 referring domains, DA 30-40 by month 12
-- **Expected position:** 3-5
+## What's Actually Working (Opportunities from GSC Data)
 
-### Milestones
+Before chasing head terms, there are closer opportunities:
 
-| Month | Position | Monthly Traffic | DA | Referring Domains |
-|-------|----------|----------------|----|-------------------|
-| 1 | 50+ | 0 | 1 | 20-30 |
-| 3 | 20-30 | 100-300 | 8-12 | 80-120 |
-| 6 | 8-12 | 1,000-3,000 | 18-25 | 200-300 |
-| 9 | 4-7 | 5,000-12,000 | 25-32 | 350-450 |
-| 12 | 2-5 | 10,000-22,000 | 30-40 | 450-600 |
+### 1. "what is an ai girlfriend" cluster — Position 10-17
+This is our best non-branded content. The blog post gets 57 impressions across 16 query variants. We're on page 2 for most of them. **This could reach page 1 with relatively little effort** — a few backlinks and internal links could push us from position 12-17 to under 10.
+
+**Quick win actions:**
+- [ ] Request re-indexing (post was updated 2026-03-22 with expanded content)
+- [ ] Build 5-10 backlinks specifically to this URL
+- [ ] Publish "how-to-create-ai-girlfriend" draft (closely related, will boost cluster)
+
+### 2. /compare/replika — Position 7.1
+Already near page 1 with 30 impressions! Zero clicks though (likely because the queries it's showing for don't match user intent well, or the title/description aren't compelling enough in SERPs).
+
+### 3. /features — Position 6.3
+49 impressions at position 6.3 means this page is ON page 1 for some queries. Zero clicks suggests SERP snippet may not be compelling enough for the queries it's matching.
+
+### 4. Long-tail "free ai girlfriend" cluster — Position 49-89
+The /blog/best-free-ai-girlfriend-apps page has 46 impressions across many "free ai girlfriend" queries but at positions 49-89. This is deeply buried but shows Google is aware of the page. More internal links, backlinks, and time could surface it.
+
+---
+
+## Revised Priority Order
+
+Given the real data, here's what I'd prioritize differently:
+
+1. **Get /blog/best-nsfw-ai-chatbots indexed** (P0 — nothing else matters for KW2 until this happens)
+2. **Push "what is an ai girlfriend" to page 1** (closest win, position 10-17 now)
+3. **Improve CTR on /compare/replika and /features** (already page 1 for some queries but 0 clicks)
+4. **Request recrawl of /best-ai-girlfriend-apps** (expanded content, last crawled 2 weeks ago)
+5. **Publish staggered blog posts** to build topical authority cluster
+6. **Start directory submissions** for backlinks
+7. **Begin outreach** for guest posts
 
 ---
 
 ## Cross-Keyword Infrastructure
 
-### Content Calendar (Weeks 1-18)
+### Content Calendar (Staggered 2/week)
 
-| Week | Publish | Supports |
-|------|---------|----------|
-| 1 (Mar 24) | character-ai-alternative-no-filter + replika-alternative | KW2 + KW3 |
-| 2 (Mar 31) | how-to-create-ai-girlfriend + ai-girlfriend-vs-real-girlfriend | KW3 |
-| 3 (Apr 7) | candy-ai-review + replika-review | KW1 |
-| 4 (Apr 14) | best-ai-girlfriend-apps-with-memory + best-ai-roleplay-apps | KW1 + KW2 |
-| 5 (Apr 21) | candy-ai-alternative | KW1 |
-| 6 (Apr 28) | AI Girlfriend Privacy & Safety Guide (new) | KW3 |
-| 7 (May 5) | How AI Girlfriend Memory Works (new) | KW3 |
-| 8 (May 12) | AI Girlfriend Roleplay Ideas (new) | KW2 |
-| 9 (May 19) | AI Girlfriend Cost Comparison (new) | KW1 |
-| 10+ | 2 posts/month from Wave 2-3 pipeline | All |
+| Date | Post | Supports |
+|------|------|----------|
+| Mar 26 | character-ai-alternative-no-filter | KW2 + KW3 |
+| Mar 29 | replika-alternative | KW1 + KW3 |
+| Apr 2 | how-to-create-ai-girlfriend | KW3 |
+| Apr 5 | ai-girlfriend-vs-real-girlfriend | KW3 |
+| Apr 9 | candy-ai-review | KW1 |
+| Apr 12 | replika-review | KW1 |
+| Apr 16 | best-ai-girlfriend-apps-with-memory | KW1 + KW2 |
+| Apr 19 | best-ai-roleplay-apps | KW2 |
+| Apr 23 | candy-ai-alternative | KW1 |
+| Apr 28+ | New content from Wave 2-3 pipeline | All |
 
 ### Link Building Targets by Month
 
 | Month | New Referring Domains | Cumulative | Sources |
 |-------|----------------------|------------|---------|
-| 1 | 25-30 | 25-30 | Directories (20), social profiles (5-10) |
-| 2 | 15-20 | 40-50 | Guest posts (5), Medium/dev.to (3), directories (7-12) |
-| 3 | 20-25 | 60-75 | Guest posts (5), HARO (3-5), Reddit/Quora (5), resource pages (5-10) |
-| 4 | 20-25 | 80-100 | Guest posts (5), digital PR (3-5), broken link building (5-10) |
-| 5 | 25-30 | 105-130 | Product Hunt launch, influencer reviews (5-10), guest posts (5) |
-| 6 | 25-30 | 130-160 | Guest posts (5), PR (5-10), podcast links (5) |
-| 7-12 | 20-25/month | 250-310 | Sustained guest posting, PR, organic editorial |
+| 1 | 10-15 | 10-15 | Directories (10), social profiles (3-5) |
+| 2 | 10-15 | 20-30 | Guest posts (3), Medium/dev.to (2), directories (5-10) |
+| 3 | 15-20 | 35-50 | Guest posts (5), HARO (2-3), Reddit/Quora (3), resource pages (5) |
+| 4 | 15-20 | 50-70 | Guest posts (5), digital PR (2-3), broken link building (5) |
+| 5 | 20-25 | 70-95 | Product Hunt, influencer reviews (5), guest posts (5) |
+| 6 | 20-25 | 90-120 | Guest posts (5), PR (5), podcast links (3) |
+| 7-12 | 15-20/month | 180-240 | Sustained guest posting, PR, organic editorial |
 
 ---
 
-## Measurement KPIs
+## Revised Measurement KPIs
 
 | KPI | Month 6 Goal | Month 12 Goal |
 |-----|-------------|---------------|
-| "best ai girlfriend app" position | #1-2 | #1 |
-| "nsfw ai chatbot" position | #5-8 | #1-2 |
-| "ai girlfriend" position | #10-15 | #3-5 |
-| Total organic clicks/month | 3,000 | 15,000 |
-| Total impressions/month | 50,000 | 200,000 |
-| Referring domains | 150-200 | 400-600 |
-| Domain Authority | 20-25 | 30-40 |
-| Blog posts published | 20 total | 35+ total |
-| Indexed pages | 35+ | 60+ |
-| Branded searches/month | 500 | 3,000 |
+| "best ai girlfriend app" position | 15-25 | 5-10 |
+| "nsfw ai chatbot" position | 10-20 (if indexed) | 3-8 |
+| "ai girlfriend" position | 15-25 | 7-12 |
+| Total organic clicks/month | 500-1,000 | 3,000-8,000 |
+| Total impressions/month | 10,000-20,000 | 50,000-100,000 |
+| Referring domains | 90-120 | 180-240 |
+| Domain Authority | 12-18 | 22-30 |
+| Blog posts published | 15-18 total | 30+ total |
+| Indexed pages | 25+ | 50+ |
+| Branded searches/month | 200-500 | 1,000-2,000 |
 
 ---
 
 ## Total Budget
+
+Budget remains the same as original plan — the actions don't change, just the expected timelines.
 
 | Category | Annual Cost |
 |----------|------------|
@@ -289,4 +313,11 @@ Top 5 in 12 months, #1 in 18-24 months. But top 5 alone delivers 5,000-15,000 cl
 | Miscellaneous | $500-1,200 |
 | **TOTAL YEAR 1** | **$7,400-27,800** |
 
-**DIY minimum:** ~$615/month | **Recommended:** ~$1,250/month | **Aggressive:** ~$2,330/month
+---
+
+## Data Verification Notes
+
+- **GSC data verified:** 2026-03-23 via Google Search Console MCP integration
+- **Search volumes:** UNVERIFIED — need Ahrefs or SEMrush subscription to confirm. Volumes quoted in original plan (30K, 60K, 150K) should not be used for budget decisions until verified.
+- **Competitor DA/backlink counts:** UNVERIFIED — need Ahrefs or Moz to confirm. Competitor metrics quoted in original plan are estimates.
+- **Next verification:** Re-pull GSC data in 2 weeks to check if /best-nsfw-ai-chatbots is indexed and track position changes after content expansion.
