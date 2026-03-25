@@ -34,6 +34,7 @@ export default function RootLayout({
           autocapture: true,
           capture_pageview: true,
           capture_pageleave: true,
+          cross_subdomain_cookie: true,
           enable_heatmaps: true,
           enable_recording_console_log: true,
           session_recording: {
