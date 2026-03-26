@@ -1,123 +1,80 @@
+'use client';
+
+import { useState } from 'react';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
-import FAQ from '@/components/shared/FAQ';
-import { generateSEO, generateFAQSchema } from '@/lib/seo';
 import { appLinks } from '@/lib/links';
-import TrackedLink from '@/components/shared/TrackedLink';
-import { X as XIcon } from 'lucide-react';
+import { trackCTA } from '@/components/shared/TrackedLink';
+import { Check, Shield, Zap, ChevronDown } from 'lucide-react';
 
-export const metadata = generateSEO({
-  title: 'Pricing — Plans & Pricing | MyDreamGirlfriend',
-  description: 'Simple, transparent pricing. Start free with no credit card required. Upgrade to Lite, Premium, or VIP for unlimited messages, voice notes, AI photos & more.',
-  path: '/pricing',
-});
+const billingPeriods = [
+  { id: '12mo', label: '12 months', price: '$3.99', total: '$47.88', badge: 'BEST CHOICE', discount: '70% OFF' },
+  { id: '3mo', label: '3 months', price: '$8.49', total: '$25.47', badge: null, discount: '35% OFF' },
+  { id: '1mo', label: '1 month', price: '$12.99', total: '$12.99', badge: null, discount: null },
+] as const;
 
-const plans = [
-  {
-    name: 'Free',
-    price: '$0',
-    sub: 'forever',
-    popular: false,
-    features: [
-      '1 girlfriend',
-      '15 messages per day',
-      'All pre-built girlfriends',
-      '10 free gems to start',
-    ],
-    excluded: [
-      'Unlimited messages',
-      'Monthly gems',
-      'Multiple girlfriends',
-    ],
-    cta: 'Start Free',
-    tier: null as string | null,
-  },
-  {
-    name: 'Lite',
-    price: '$5.99',
-    sub: '/month',
-    popular: false,
-    features: [
-      '30 messages per day',
-      '2 girlfriend slots',
-      'All 6 relationship stages',
-      '40 gems/month',
-    ],
-    excluded: [
-      'Unlimited messages',
-    ],
-    cta: 'Get Lite',
-    tier: 'lite',
-  },
-  {
-    name: 'Premium',
-    price: '$12.99',
-    sub: '/month',
-    popular: true,
-    features: [
-      'Unlimited messages',
-      'Unlimited girlfriends',
-      '150 gems/month',
-      'Voice notes & photos',
-    ],
-    excluded: [] as string[],
-    cta: 'Get Premium',
-    tier: 'premium',
-  },
-  {
-    name: 'VIP',
-    price: '$24.99',
-    sub: '/month',
-    popular: false,
-    features: [
-      'Everything in Premium',
-      '300 gems/month',
-      'Voice calls',
-      'Priority support',
-    ],
-    excluded: [] as string[],
-    cta: 'Get VIP',
-    tier: 'vip',
-  },
+const premiumBenefits = [
+  'Unlimited girlfriends',
+  'Unlimited messages',
+  '100 FREE gems every month',
+  'Fast response time',
+  'Access all photos & content',
+  'Priority support',
 ];
 
 const faqs = [
-  { question: 'Can I try it for free?', answer: 'Yes! The free plan gives you 1 girlfriend, 15 messages per day, 10 free gems, and access to all pre-built girlfriends. No credit card required.' },
-  { question: 'How does billing work?', answer: 'Plans are billed monthly. You can upgrade, downgrade, or cancel at any time. When you upgrade, you get immediate access to all new features. No contracts or commitments.' },
-  { question: 'Can I change plans later?', answer: 'Absolutely. You can upgrade or downgrade at any time from your account settings. If you upgrade mid-cycle, you\'ll be prorated. If you downgrade, the change takes effect at the end of your billing period.' },
-  { question: 'What happens to my data if I downgrade?', answer: 'Your conversations and relationship progress are always saved. If you downgrade and lose girlfriend slots, your extra girlfriends are paused — not deleted. Upgrade again and they\'ll be right where you left off.' },
-  { question: 'Do you offer refunds?', answer: 'Yes. If you\'re not satisfied within the first 7 days of a paid plan, contact us for a full refund. No questions asked.' },
-  { question: 'What payment methods do you accept?', answer: 'We accept all major credit cards (Visa, Mastercard, Amex) and PayPal. All payments are processed securely.' },
-  { question: 'What are gems?', answer: 'Gems are in-app credits you can use to unlock photos, send voice notes, skip relationship stages, or send gifts. You can earn them through daily activity or purchase them separately.' },
+  { q: 'Can I try it for free?', a: 'Yes! The free plan gives you 1 girlfriend, 15 messages per day, and 10 free gems. No credit card required.' },
+  { q: 'How does billing work?', a: 'Choose a billing period — monthly, 3-month, or 12-month. You can cancel at any time. Longer plans give you a bigger discount.' },
+  { q: 'Can I change plans later?', a: 'Absolutely. You can upgrade or cancel at any time from your account settings. If you cancel, you keep access until the end of your billing period.' },
+  { q: 'What happens if I cancel?', a: 'Your conversations and girlfriends are always saved. If you cancel, you revert to the free plan at the end of your billing period. Upgrade again and everything is right where you left it.' },
+  { q: 'Do you offer refunds?', a: "Yes. If you're not satisfied within the first 7 days of a paid plan, contact us for a full refund. No questions asked." },
+  { q: 'What payment methods do you accept?', a: 'We accept all major credit cards (Visa, Mastercard, Amex). All payments are processed securely through Stripe.' },
+  { q: 'What are gems?', a: 'Gems are in-app credits you can use to unlock photos, send voice notes, make calls, or send gifts. Premium subscribers get 100 free gems every month.' },
 ];
 
 const pricingSchema = {
   '@context': 'https://schema.org',
   '@type': 'Product',
   name: 'MyDreamGirlfriend',
-  description: 'AI girlfriend with deep customization, relationship progression, voice notes & photos.',
+  description: 'AI girlfriend with deep customization, persistent memory, voice notes & photos.',
   brand: { '@type': 'Brand', name: 'MyDreamGirlfriend' },
-  offers: plans.filter(p => p.tier).map(p => ({
-    '@type': 'Offer',
-    name: `${p.name} Plan`,
-    price: p.price.replace('$', ''),
-    priceCurrency: 'USD',
-    priceValidUntil: '2027-12-31',
-    availability: 'https://schema.org/InStock',
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Free Plan',
+      price: '0',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Premium Plan',
+      price: '3.99',
+      priceCurrency: 'USD',
+      priceValidUntil: '2027-12-31',
+      availability: 'https://schema.org/InStock',
+    },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: { '@type': 'Answer', text: faq.a },
   })),
 };
 
 export default function PricingPage() {
+  const [selected, setSelected] = useState<string>('12mo');
+  const current = billingPeriods.find((p) => p.id === selected)!;
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Header />
       <main className="flex-1 pt-24 pb-16">
         {/* Hero */}
@@ -132,61 +89,115 @@ export default function PricingPage() {
           </div>
         </section>
 
-        {/* Pricing Grid */}
-        <section className="px-4 mb-16">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
-            {plans.map(plan => (
-              <div key={plan.name} className={`relative bg-card border rounded-2xl p-6 flex flex-col ${plan.popular ? 'border-accent-purple shadow-lg shadow-accent-purple/10' : 'border-border'}`}>
-                {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-accent text-xs font-bold text-white whitespace-nowrap">
-                    Most Popular
-                  </div>
-                )}
-                <div className="mb-4">
-                  <h2 className="text-lg font-bold mb-1">{plan.name}</h2>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold text-gradient">{plan.price}</span>
-                    <span className="text-xs text-muted">{plan.sub}</span>
-                  </div>
-                </div>
-                <ul className="space-y-2 text-sm text-left flex-1 mb-6">
-                  {plan.features.map(f => (
-                    <li key={f} className="flex items-start gap-2">
-                      <span className="text-accent-purple mt-0.5 flex-shrink-0">✓</span>
-                      <span className="text-white/90">{f}</span>
-                    </li>
-                  ))}
-                  {plan.excluded.map(f => (
-                    <li key={f} className="flex items-start gap-2">
-                      <XIcon className="w-4 h-4 flex-shrink-0 mt-0.5 text-muted/30" />
-                      <span className="line-through text-muted/30">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <TrackedLink
-                  href={plan.tier ? appLinks.signupWithTier(plan.tier) : appLinks.signup}
-                  eventName="cta_pricing_tier"
-                  eventProps={{ tier: plan.name.toLowerCase(), location: 'pricing-page' }}
-                  className={`block w-full py-2.5 rounded-xl text-center font-semibold text-sm transition-colors ${
-                    plan.popular
-                      ? 'bg-gradient-accent text-white'
-                      : 'bg-surface border border-border text-white hover:border-accent-purple/50'
+        <div className="max-w-4xl mx-auto px-4 space-y-8">
+          {/* Free Tier */}
+          <div className="bg-card border border-border rounded-2xl p-6">
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <div>
+                <h2 className="text-lg font-bold mb-1">Free</h2>
+                <p className="text-sm text-muted">1 girlfriend · 15 messages/day · 10 starter gems</p>
+              </div>
+              <a
+                href={appLinks.signup}
+                onClick={() => trackCTA('cta_start_free', { location: 'pricing-page' })}
+                className="px-6 py-2.5 rounded-xl bg-surface border border-border text-white font-semibold text-sm hover:border-accent-purple/50 transition-colors"
+              >
+                Start Free
+              </a>
+            </div>
+          </div>
+
+          {/* Premium Card */}
+          <div className="relative bg-card border border-accent-purple rounded-2xl p-6 md:p-8 shadow-lg shadow-accent-purple/10">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-accent text-xs font-bold text-white whitespace-nowrap">
+              Most Popular
+            </div>
+
+            <h2 className="text-2xl font-bold mb-1">Premium</h2>
+            <p className="text-sm text-muted mb-6">Everything you need for the full experience</p>
+
+            {/* Billing Period Selector */}
+            <div className="space-y-3 mb-8">
+              {billingPeriods.map((period) => (
+                <button
+                  key={period.id}
+                  onClick={() => setSelected(period.id)}
+                  className={`w-full flex items-center justify-between p-4 rounded-xl border transition-colors text-left ${
+                    selected === period.id
+                      ? 'border-accent-purple bg-accent-purple/10'
+                      : 'border-border hover:border-accent-purple/30'
                   }`}
                 >
-                  {plan.cta}
-                </TrackedLink>
-              </div>
-            ))}
+                  <div className="flex items-center gap-3">
+                    <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
+                      selected === period.id ? 'border-accent-purple' : 'border-border'
+                    }`}>
+                      {selected === period.id && <div className="w-2.5 h-2.5 rounded-full bg-accent-purple" />}
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="font-semibold text-white">{period.label}</span>
+                        {period.badge && (
+                          <span className="px-2 py-0.5 rounded-full bg-gradient-accent text-[10px] font-bold text-white">
+                            {period.badge}
+                          </span>
+                        )}
+                      </div>
+                      <span className="text-xs text-muted">Billed {period.total}</span>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="font-bold text-white">{period.price}<span className="text-xs text-muted font-normal">/mo</span></div>
+                    {period.discount && <div className="text-xs text-green-400 font-semibold">{period.discount}</div>}
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Benefits */}
+            <ul className="space-y-3 mb-8">
+              {premiumBenefits.map((benefit) => (
+                <li key={benefit} className="flex items-center gap-3 text-sm">
+                  <Check className="w-4 h-4 text-accent-purple flex-shrink-0" />
+                  <span className="text-white/90">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* CTA */}
+            <a
+              href={appLinks.subscriptions}
+              onClick={() => trackCTA('cta_get_premium', { period: current.id, location: 'pricing-page' })}
+              className="block w-full py-3.5 rounded-xl text-center font-semibold bg-gradient-accent text-white hover:opacity-90 transition-opacity"
+            >
+              Get Premium — {current.price}/mo
+            </a>
+
+            {/* Trust Signals */}
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-4 text-xs text-muted">
+              <span className="flex items-center gap-1"><Shield className="w-3.5 h-3.5" /> 7-day money-back guarantee</span>
+              <span className="flex items-center gap-1"><Zap className="w-3.5 h-3.5" /> Cancel anytime</span>
+            </div>
           </div>
-        </section>
+        </div>
 
         {/* FAQ */}
-        <section className="py-16 px-4 bg-surface/50">
+        <section className="py-16 px-4 mt-8">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">
               Pricing <span className="text-gradient">FAQ</span>
             </h2>
-            <FAQ faqs={faqs} />
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <details key={i} className="group bg-card border border-border rounded-xl overflow-hidden">
+                  <summary className="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+                    <span className="font-medium text-sm">{faq.q}</span>
+                    <ChevronDown className="w-4 h-4 text-muted group-open:rotate-180 transition-transform" />
+                  </summary>
+                  <div className="px-6 pb-4 text-sm text-muted">{faq.a}</div>
+                </details>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -195,14 +206,13 @@ export default function PricingPage() {
           <div className="max-w-2xl mx-auto text-center bg-card border border-border rounded-2xl p-8">
             <h2 className="text-2xl font-bold mb-3">Ready to Get Started?</h2>
             <p className="text-muted mb-6">Start for free today. Upgrade anytime.</p>
-            <TrackedLink
+            <a
               href={appLinks.signup}
-              eventName="cta_signup_free"
-              eventProps={{ location: 'pricing-page-cta' }}
+              onClick={() => trackCTA('cta_signup_free', { location: 'pricing-page-cta' })}
               className="inline-block px-8 py-3.5 rounded-full bg-gradient-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity"
             >
               Sign Up Free
-            </TrackedLink>
+            </a>
           </div>
         </section>
       </main>

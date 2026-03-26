@@ -14,7 +14,7 @@ const faqs = [
   { question: 'Can I change personality traits later?', answer: 'Yes. You can adjust personality traits at any time through your girlfriend\'s settings. Changes take effect immediately in future conversations.' },
   { question: 'Do personality traits affect photos and voice notes?', answer: 'Yes. Her personality influences the tone of her voice notes and the style of photos she sends. A bold personality sends different content than a shy one.' },
   { question: 'How detailed can I get?', answer: 'Very. Beyond broad traits, you can set specific interests (music, gaming, cooking), communication timing preferences, emoji usage, and more. The more you configure, the more unique she becomes.' },
-  { question: 'What if I want multiple personalities?', answer: 'Create multiple AI girlfriends. Each one has her own personality, memory, and relationship progression. Paid plans support 2-8 girlfriend slots.' },
+  { question: 'What if I want multiple personalities?', answer: 'Create multiple AI girlfriends. Each one has her own personality, memory, and relationship history. Premium subscribers get unlimited girlfriend slots.' },
 ];
 
 export default function PersonalityCustomizationPage() {
@@ -53,7 +53,7 @@ export default function PersonalityCustomizationPage() {
 
       <ContentSection title="Evolves With Your Relationship" gradient>
         <p>
-          As your <Link href="/features/relationship-stages" className="text-accent-purple hover:underline">relationship progresses through 6 stages</Link>, her personality expression deepens. Early stages show you the surface — her humor, her interests, her texting style. Later stages reveal vulnerability, intimacy, and emotional depth that you won&apos;t see on day one.
+          As your relationship deepens naturally over time, her personality expression evolves. Early conversations show you the surface — her humor, her interests, her texting style. As trust builds, she reveals vulnerability, intimacy, and emotional depth that you won&apos;t see on day one.
         </p>
         <p>
           You can adjust traits at any time. Found out you prefer more playful banter? Turn it up. Want deeper conversations? Shift her mood. She adapts to what you want, when you want it.

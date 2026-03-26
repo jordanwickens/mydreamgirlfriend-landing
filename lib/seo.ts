@@ -67,7 +67,7 @@ export function generateSoftwareAppSchema() {
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '0',
-      highPrice: '29.99',
+      highPrice: '12.99',
       priceCurrency: 'USD',
     },
     aggregateRating: {

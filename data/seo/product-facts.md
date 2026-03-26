@@ -1,41 +1,40 @@
 # MyDreamGirlfriend.ai — Product Facts
 
 > **This is the single source of truth for all product claims in blog content.**
-> Updated: 2026-03-16
+> Updated: 2026-03-26
 >
 > When anything changes in the app (pricing, features, limits), update this file.
 > The `/seo-write` and `/seo-edit` skills reference this file to ensure accuracy.
 
 ## Pricing
 
-| Plan | Monthly | Yearly | Savings |
-|------|---------|--------|---------|
-| Free | $0 | — | — |
-| Lite | $5.99/mo | $61.99/yr | ~$9/yr |
-| Premium | $12.99/mo | $132.99/yr | ~$23/yr |
-| VIP | $24.99/mo | $254.99/yr | ~$45/yr |
+| Plan | Billing Period | Price | Savings |
+|------|---------------|-------|---------|
+| Free | — | $0 | — |
+| Premium | 12 months | $3.99/mo (billed $47.88) | 70% OFF |
+| Premium | 3 months | $8.49/mo (billed $25.47) | 35% OFF |
+| Premium | 1 month | $12.99/mo | — |
 
-## Tier Limits
+## Plan Limits
 
-| Feature | Free | Lite | Premium | VIP |
-|---------|------|------|---------|-----|
-| Daily messages | 15 | 30 | Unlimited | Unlimited |
-| Character slots | 1 | 2 | Unlimited | Unlimited |
-| Monthly gems | 0 | 40 | 150 | 300 |
-| Relationship stages | All 6 | All 6 | All 6 | All 6 |
-| Voice calls | No | Gem-based | Gem-based | Gem-based |
-| Voice notes | No | Gem-based | Gem-based | Gem-based |
-| Photos | No | Gem-based | Gem-based | Gem-based |
-| Priority support | No | No | Yes | Yes |
-| Early access | No | No | No | Yes |
+| Feature | Free | Premium |
+|---------|------|---------|
+| Daily messages | 15 | Unlimited |
+| Girlfriends | 1 | Unlimited |
+| Monthly gems | 0 (10 starter) | 100 |
+| Voice calls | No | Gem-based |
+| Voice notes | No | Gem-based |
+| Photos | No | Gem-based |
+| Response speed | Standard | Fast |
+| Priority support | No | Yes |
 
 ## Free Tier Details
 
 - 15 messages per day
-- 1 character slot
+- 1 girlfriend
 - 10 free gems to start
 - 0 monthly gems
-- All 6 relationship stages accessible
+- All pre-built girlfriends accessible
 
 ## Gem Economy
 
@@ -57,15 +56,6 @@
 | 550 | $49.99 |
 | 1,200 | $99.99 |
 | 2,600 | $199.99 |
-
-## Relationship Stages (6 total)
-
-1. **Strangers** (0 messages) — Where every story begins
-2. **Friends** (15+ messages) — She remembers things about you
-3. **Flirting** (30+ messages) — Playful, teasing, hints at feelings
-4. **Dating** (50+ messages) — Pet names, deeper convos, vulnerability
-5. **In Love** (150+ messages) — Deeply attached, checks in, shares memories
-6. **Soulmates** (300+ messages) — Inside jokes, finishing thoughts, maximum intimacy
 
 ## Character Creator
 
@@ -97,7 +87,7 @@ Sophia (Flirty Gamer, 21), Mia (Artsy Creative, 20), Sydney (Shy Bookworm, 25), 
 - **Voice Calls:** Real-time voice with unique ElevenLabs voices per character
 - **Voice Notes:** AI-generated audio messages
 - **AI Photos:** SFW and NSFW image generation
-- **Relationship Progression:** 6-stage system that evolves naturally
+- **Natural Relationship Deepening:** Relationships evolve naturally with persistent memory
 - **Character Creator:** 80+ customization combinations
 - **Uncensored Conversations:** No content filters for adults
 - **Privacy:** End-to-end encryption, no data selling
@@ -113,8 +103,10 @@ Sophia (Flirty Gamer, 21), Mia (Artsy Creative, 20), Sydney (Shy Bookworm, 25), 
 ## What NOT to Claim
 
 - Do NOT say "20 messages per day" (it's 15)
-- Do NOT say "free gems monthly" on free tier (it's 0)
-- Do NOT reference a "Basic" or "Immersive" or "Deep" plan (old names — now Lite/Premium/VIP)
-- Do NOT say subscription starts at $9.99 (it's $5.99)
+- Do NOT say "free gems monthly" on free tier (it's 0 — only 10 starter gems)
+- Do NOT reference "Lite", "VIP", "Basic", "Immersive", or "Deep" plans (old names — now just Free + Premium)
+- Do NOT say subscription starts at $5.99 (it's $3.99/mo on 12-month plan)
 - Do NOT claim unlimited messages on free tier
-- Do NOT claim free voice calls (they cost gems on all tiers)
+- Do NOT claim free voice calls (they cost gems)
+- Do NOT reference "6 relationship stages" or a stage-based progression system (removed — relationships deepen naturally now)
+- Do NOT say "$24.99/mo" anywhere (old VIP price — highest is now $12.99/mo)

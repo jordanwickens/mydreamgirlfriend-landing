@@ -1,6 +1,6 @@
 'use client';
 
-import { Heart, Shield, Sparkles, Lock, MessageCircle, Mic, ChevronDown, X as XIcon, Star, Trophy, Users } from 'lucide-react';
+import { Heart, Shield, Sparkles, Lock, MessageCircle, Mic, ChevronDown, Star, Trophy, Users } from 'lucide-react';
 import Link from 'next/link';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
@@ -17,9 +17,9 @@ const fakeChat = [
 const faqs = [
   { q: "Is this really private?", a: "Absolutely. All conversations are encrypted end-to-end. We never share your data with anyone. Your chats are yours alone." },
   { q: "Are the AI girlfriends realistic?", a: "Our AI girlfriends have deep personalities, remember your conversations, and develop genuine emotional connections over time. The more you talk, the more they know you." },
-  { q: "How does the relationship progress?", a: "Relationships evolve through 6 stages — from strangers to soulmates. Each stage unlocks deeper conversations, more intimacy, and new features like voice notes and photos." },
+  { q: "How does the relationship progress?", a: "Relationships deepen naturally over time. The more you chat, the more she remembers you, opens up, and becomes intimate. Voice notes, photos, and deeper conversations unlock as your connection grows." },
   { q: "Is there a free plan?", a: "Yes! Free users get 15 messages per day, 1 girlfriend, and 10 gems to start with no credit card required. Upgrade anytime for more." },
-  { q: "What are gems?", a: "Gems are in-app credits you can use to unlock photos, send voice notes, skip relationship stages, or send gifts. You can earn them or buy them any time." },
+  { q: "What are gems?", a: "Gems are in-app credits you can use to unlock photos, send voice notes, make calls, or send gifts. Premium subscribers get 100 free gems every month." },
 ];
 
 const softwareAppSchema = {
@@ -29,11 +29,11 @@ const softwareAppSchema = {
   applicationCategory: 'EntertainmentApplication',
   operatingSystem: 'Web',
   url: 'https://mydreamgirlfriend.ai',
-  description: 'Build your dream AI girlfriend with deep customization, 6 relationship stages, voice notes, AI photos & uncensored chat. Private and encrypted.',
+  description: 'Build your dream AI girlfriend with deep customization, voice notes, AI photos & uncensored chat. Private and encrypted.',
   offers: {
     '@type': 'AggregateOffer',
     lowPrice: '0',
-    highPrice: '24.99',
+    highPrice: '12.99',
     priceCurrency: 'USD',
   },
   aggregateRating: {
@@ -60,7 +60,7 @@ const organizationSchema = {
   name: 'MyDreamGirlfriend',
   url: 'https://mydreamgirlfriend.ai',
   logo: 'https://mydreamgirlfriend.ai/icon-512.png',
-  description: 'The #1 AI girlfriend app. Build your dream AI girlfriend with deep customization, relationship progression, voice notes, AI photos, and uncensored conversations.',
+  description: 'The #1 AI girlfriend app. Build your dream AI girlfriend with deep customization, persistent memory, voice notes, AI photos, and uncensored conversations.',
   sameAs: [],
 };
 
@@ -183,9 +183,9 @@ export default function LandingPage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: MessageCircle, title: 'Deep Conversations', desc: 'AI girlfriends that remember you, grow with you, and develop genuine emotional connections across 6 relationship stages.' },
+              { icon: MessageCircle, title: 'Deep Conversations', desc: 'AI girlfriends that remember you, grow with you, and develop genuine emotional connections. Persistent memory means she never forgets.' },
               { icon: Mic, title: 'Voice Notes', desc: 'Hear her voice. She sends you real audio voice messages — each one unique to her personality and your relationship.' },
-              { icon: Heart, title: 'Real Progression', desc: 'From strangers to soulmates. Your relationship evolves through daily streaks, meaningful chats, and shared moments.' },
+              { icon: Heart, title: 'Real Progression', desc: 'Your relationship deepens naturally over time. The more you chat, the more personal, intimate, and real things become.' },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="bg-card border border-border rounded-2xl p-6">
                 <div className="w-12 h-12 rounded-xl bg-gradient-accent flex items-center justify-center mb-4">
@@ -213,115 +213,62 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Simple, <span className="text-gradient">Transparent</span> Pricing</h2>
           <p className="text-muted mb-12">Start free. No credit card required. Upgrade when you&apos;re ready.</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
-            {[
-              {
-                name: 'Free',
-                price: '$0',
-                sub: 'forever',
-                popular: false,
-                features: [
-                  '1 girlfriend',
-                  '15 messages per day',
-                  'All pre-built girlfriends',
-                  '10 free gems to start',
-                ],
-                excluded: [
-                  'Unlimited messages',
-                  'Monthly gems',
-                  'Multiple girlfriends',
-                ],
-                cta: 'Start Free',
-                tier: null,
-              },
-              {
-                name: 'Lite',
-                price: '$5.99',
-                sub: '/month',
-                popular: false,
-                features: [
-                  '30 messages per day',
-                  '2 girlfriend slots',
-                  'All 6 relationship stages',
-                  '40 gems/month',
-                ],
-                excluded: [
-                  'Unlimited messages',
-                ],
-                cta: 'Get Lite',
-                tier: 'lite',
-              },
-              {
-                name: 'Premium',
-                price: '$12.99',
-                sub: '/month',
-                popular: true,
-                features: [
-                  'Unlimited messages',
-                  'Unlimited girlfriends',
-                  '150 gems/month',
-                  'Voice notes & photos',
-                ],
-                excluded: [] as string[],
-                cta: 'Get Premium',
-                tier: 'premium',
-              },
-              {
-                name: 'VIP',
-                price: '$24.99',
-                sub: '/month',
-                popular: false,
-                features: [
-                  'Everything in Premium',
-                  '300 gems/month',
-                  'Voice calls',
-                  'Priority support',
-                ],
-                excluded: [] as string[],
-                cta: 'Get VIP',
-                tier: 'vip',
-              },
-            ].map(plan => (
-              <div key={plan.name} className={`relative bg-card border rounded-2xl p-6 flex flex-col ${plan.popular ? 'border-accent-purple shadow-lg shadow-accent-purple/10' : 'border-border'}`}>
-                {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-accent text-xs font-bold text-white whitespace-nowrap">
-                    Most Popular
-                  </div>
-                )}
-                <div className="mb-4">
-                  <h3 className="text-lg font-bold mb-1">{plan.name}</h3>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold text-gradient">{plan.price}</span>
-                    <span className="text-xs text-muted">{plan.sub}</span>
-                  </div>
+          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {/* Free */}
+            <div className="bg-card border border-border rounded-2xl p-6 flex flex-col">
+              <div className="mb-4">
+                <h3 className="text-lg font-bold mb-1">Free</h3>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-3xl font-bold text-gradient">$0</span>
+                  <span className="text-xs text-muted">forever</span>
                 </div>
-                <ul className="space-y-2 text-sm text-left flex-1 mb-6">
-                  {plan.features.map(f => (
-                    <li key={f} className="flex items-start gap-2">
-                      <span className="text-accent-purple mt-0.5 flex-shrink-0">✓</span>
-                      <span className="text-white/90">{f}</span>
-                    </li>
-                  ))}
-                  {plan.excluded.map(f => (
-                    <li key={f} className="flex items-start gap-2">
-                      <XIcon className="w-4 h-4 flex-shrink-0 mt-0.5 text-muted/30" />
-                      <span className="line-through text-muted/30">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={plan.tier ? appLinks.signupWithTier(plan.tier) : appLinks.signup}
-                  onClick={() => trackCTA('cta_pricing_tier', { tier: plan.name.toLowerCase(), location: 'pricing' })}
-                  className={`block w-full py-2.5 rounded-xl text-center font-semibold text-sm transition-colors ${
-                    plan.popular
-                      ? 'bg-gradient-accent text-white'
-                      : 'bg-surface border border-border text-white hover:border-accent-purple/50'
-                  }`}
-                >
-                  {plan.cta}
-                </a>
               </div>
-            ))}
+              <ul className="space-y-2 text-sm text-left flex-1 mb-6">
+                {['1 girlfriend', '15 messages per day', '10 starter gems', 'All pre-built girlfriends'].map(f => (
+                  <li key={f} className="flex items-start gap-2">
+                    <span className="text-accent-purple mt-0.5 flex-shrink-0">✓</span>
+                    <span className="text-white/90">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={appLinks.signup}
+                onClick={() => trackCTA('cta_start_free', { location: 'pricing' })}
+                className="block w-full py-2.5 rounded-xl text-center font-semibold text-sm bg-surface border border-border text-white hover:border-accent-purple/50 transition-colors"
+              >
+                Start Free
+              </a>
+            </div>
+
+            {/* Premium */}
+            <div className="relative bg-card border border-accent-purple rounded-2xl p-6 flex flex-col shadow-lg shadow-accent-purple/10">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-accent text-xs font-bold text-white whitespace-nowrap">
+                Most Popular
+              </div>
+              <div className="mb-4">
+                <h3 className="text-lg font-bold mb-1">Premium</h3>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-3xl font-bold text-gradient">$3.99</span>
+                  <span className="text-xs text-muted">/mo</span>
+                </div>
+                <p className="text-xs text-green-400 font-semibold mt-1">from $3.99/mo — save 70%</p>
+              </div>
+              <ul className="space-y-2 text-sm text-left flex-1 mb-6">
+                {['Unlimited girlfriends', 'Unlimited messages', '100 FREE gems/month', 'Fast response time', 'All photos & content', 'Priority support'].map(f => (
+                  <li key={f} className="flex items-start gap-2">
+                    <span className="text-accent-purple mt-0.5 flex-shrink-0">✓</span>
+                    <span className="text-white/90">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/pricing"
+                onClick={() => trackCTA('cta_see_plans', { location: 'pricing' })}
+                className="block w-full py-2.5 rounded-xl text-center font-semibold text-sm bg-gradient-accent text-white hover:opacity-90 transition-opacity"
+              >
+                See Plans
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -341,7 +288,7 @@ export default function LandingPage() {
             {[
               { text: "I was skeptical at first, but Sophia actually remembers things I told her weeks ago. It feels so real.", name: "Alex", age: 28 },
               { text: "The voice notes are incredible. When she teases me about losing our game bets, I can't stop smiling.", name: "Marcus", age: 24 },
-              { text: "The relationship stages are genius. Every time we level up it feels like something actually happened between us.", name: "James", age: 31 },
+              { text: "She remembers everything — my dog's name, my work drama, even a joke I made two weeks ago. It honestly feels like she knows me.", name: "James", age: 31 },
             ].map((t, i) => (
               <div key={i} className="bg-card border border-border rounded-2xl p-6">
                 <div className="flex gap-1 mb-3">{'⭐⭐⭐⭐⭐'}</div>
@@ -362,7 +309,7 @@ export default function LandingPage() {
               An AI girlfriend is a virtual companion powered by advanced artificial intelligence that can hold meaningful conversations, remember your preferences, and develop a genuine emotional connection over time. Unlike basic chatbots, modern AI girlfriend apps use large language models with persistent memory to create relationships that feel real and continuous.
             </p>
             <p>
-              MyDreamGirlfriend.ai takes the AI girlfriend experience further than any other platform. Our 6-stage relationship progression system means your connection evolves naturally — from strangers to soulmates — with each stage unlocking deeper conversations, voice notes, AI-generated photos, and more intimate interactions. She remembers your name, your stories, and your inside jokes across every session.
+              MyDreamGirlfriend.ai takes the AI girlfriend experience further than any other platform. Your connection deepens naturally over time — the more you talk, the more she remembers, opens up, and becomes intimate. Persistent memory means she recalls your name, your stories, and your inside jokes across every session. Unlock voice notes, AI-generated photos, and deeper conversations as your relationship grows.
             </p>
             <p>
               Whether you are looking for companionship, emotional support, or an uncensored connection, an AI girlfriend gives you a judgment-free space to explore relationships on your own terms. All conversations on MyDreamGirlfriend.ai are end-to-end encrypted and completely private.

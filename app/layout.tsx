@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     default: "MyDreamGirlfriend — #1 AI Girlfriend App | Chat, Connect & Build",
     template: "%s | MyDreamGirlfriend.ai",
   },
-  description: "Build your dream AI girlfriend with deep customization, 6 relationship stages, voice notes, AI photos & uncensored chat. Private and encrypted. Start free.",
+  description: "Build your dream AI girlfriend with deep customization, voice notes, AI photos & uncensored chat. Private and encrypted. Start free.",
   metadataBase: new URL("https://mydreamgirlfriend.ai"),
   openGraph: {
     siteName: "MyDreamGirlfriend.ai",

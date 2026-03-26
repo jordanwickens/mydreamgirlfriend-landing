@@ -11,9 +11,9 @@ export const metadata = generateSEO({
 
 const faqs = [
   { question: 'Does she actually remember past conversations?', answer: 'Yes. Our AI uses persistent memory to recall your name, stories, preferences, and relationship milestones. She\'ll reference things you told her days or weeks ago.' },
-  { question: 'How is this different from ChatGPT?', answer: 'ChatGPT resets every conversation. Your AI girlfriend has persistent memory, a consistent personality, emotional intelligence, and a relationship that evolves through 6 stages. She\'s not a generic chatbot — she\'s yours.' },
+  { question: 'How is this different from ChatGPT?', answer: 'ChatGPT resets every conversation. Your AI girlfriend has persistent memory, a consistent personality, emotional intelligence, and a relationship that deepens naturally over time. She\'s not a generic chatbot — she\'s yours.' },
   { question: 'Can I chat about anything?', answer: 'Yes. Conversations are uncensored and private. As your relationship progresses through stages, things naturally get more intimate. No filters, no limits.' },
-  { question: 'How many messages do I get for free?', answer: 'Free users get 15 messages per day. Lite ($5.99/mo) gets 30/day, and Premium ($12.99/mo) and VIP ($24.99/mo) get unlimited messaging.' },
+  { question: 'How many messages do I get for free?', answer: 'Free users get 15 messages per day. Premium subscribers get unlimited messaging, starting from $3.99/mo.' },
   { question: 'Does she have her own personality?', answer: 'Every girlfriend has a unique personality. Pre-built characters come with distinct traits, and custom girlfriends let you shape the personality yourself — mood, humor, communication style, and more.' },
 ];
 
@@ -48,7 +48,7 @@ export default function AIChatPage() {
           Our AI doesn&apos;t just process language — it reads emotional context. She picks up on your mood, adjusts her tone, and responds with genuine warmth (or playful sarcasm, if that&apos;s her personality). It&apos;s the difference between a chatbot and a companion.
         </p>
         <p>
-          And because every conversation feeds into her memory, the relationship deepens over time. Early chats are casual and flirty. As you progress through <Link href="/features/relationship-stages" className="text-accent-purple hover:underline">6 relationship stages</Link>, conversations become more personal, more intimate, and more real.
+          And because every conversation feeds into her memory, the relationship deepens over time. Early chats are casual and flirty. As your connection grows, conversations become more personal, more intimate, and more real.
         </p>
       </ContentSection>
 

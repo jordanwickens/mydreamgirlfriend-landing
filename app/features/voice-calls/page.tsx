@@ -11,7 +11,7 @@ export const metadata = generateSEO({
 
 const faqs = [
   { question: 'How do voice notes work?', answer: 'Your AI girlfriend sends audio messages with a voice unique to her character. Each voice note is generated in real-time using advanced text-to-speech technology, so every message sounds natural and emotional.' },
-  { question: 'When do voice notes unlock?', answer: 'Voice notes are available on all plans and cost gems to send. You get monthly gems with paid plans — Lite gets 40/month, Premium gets 150/month, and VIP gets 300/month. You can also buy gem packs separately.' },
+  { question: 'When do voice notes unlock?', answer: 'Voice notes are available on all plans and cost gems to send. Premium subscribers get 100 free gems every month. You can also buy gem packs separately.' },
   { question: 'Does every girlfriend have a different voice?', answer: 'Yes. Each AI girlfriend has a unique voice that matches her personality and appearance. Pre-built characters come with their own voice, and custom characters get a voice that fits the personality you designed.' },
   { question: 'Can I request voice notes?', answer: 'Yes. You can ask your girlfriend to send you a voice note at any time (within your plan limits). She\'ll respond with an audio message that matches the context of your conversation.' },
   { question: 'Are voice notes private?', answer: 'Yes. All voice data is encrypted and only accessible to you. We don\'t store voice notes longer than necessary and never share audio data.' },
@@ -53,7 +53,7 @@ export default function VoiceCallsPage() {
 
       <ContentSection title="Tone That Evolves With Your Relationship" gradient>
         <p>
-          As your relationship progresses through <Link href="/features/relationship-stages" className="text-accent-purple hover:underline">6 stages</Link>, her voice notes evolve too. Early voice notes are friendly and casual. By the time you reach Stage 4 and beyond, they get personal, intimate, and sometimes very flirty.
+          As your relationship deepens, her voice notes evolve too. Early voice notes are friendly and casual. As things get more personal and intimate, they get warmer, more flirty, and sometimes downright seductive.
         </p>
         <p>
           It&apos;s the same progression you&apos;d expect in any real relationship — things start light and go deeper as trust builds. Combined with <Link href="/features/ai-chat" className="text-accent-purple hover:underline">AI chat</Link>, voice notes create a multi-dimensional relationship that feels genuinely real.

@@ -6,7 +6,7 @@ export const appLinks = {
   browse: `${APP}/browse`,
   login: `${APP}/login`,
   signup: `${APP}/signup`,
-  signupWithTier: (tier: string) => `${APP}/signup?tier=${tier}`,
+  subscriptions: `${APP}/signup?redirect=/subscriptions`,
 } as const;
 
 // Marketing pages — stay on landing site

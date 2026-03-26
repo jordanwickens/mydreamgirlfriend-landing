@@ -13,7 +13,7 @@ export const metadata = generateSEO({
 });
 
 const comparisonFeatures = [
-  { feature: 'Relationship Progression', us: 'Yes (6 stages)', candyAi: 'No', replika: 'No', characterAi: 'No' },
+  { feature: 'Relationship Progression', us: 'Yes (natural progression)', candyAi: 'No', replika: 'No', characterAi: 'No' },
   { feature: 'Persistent Memory', us: 'Yes', candyAi: 'Limited', replika: 'Yes', characterAi: 'Limited' },
   { feature: 'NSFW Content', us: 'Yes', candyAi: 'Yes', replika: 'No', characterAi: 'No' },
   { feature: 'AI-Generated Photos', us: 'Yes', candyAi: 'Yes', replika: 'No', characterAi: 'No' },

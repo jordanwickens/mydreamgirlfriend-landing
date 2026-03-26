@@ -11,11 +11,11 @@ export const metadata = generateSEO({
 });
 
 const faqs = [
-  { question: 'Is the character creator free?', answer: 'Yes. You can create a custom AI girlfriend on the free plan. Free users get 1 girlfriend slot. Paid plans unlock 2-8 girlfriend slots depending on your tier.' },
+  { question: 'Is the character creator free?', answer: 'Yes. You can create a custom AI girlfriend on the free plan. Free users get 1 girlfriend slot. Premium subscribers get unlimited girlfriend slots.' },
   { question: 'What can I customize?', answer: 'Everything. Appearance (hair, eyes, body type, ethnicity, style), personality traits, communication style, interests, hobbies, and more. You\'re building a unique character, not picking from a template.' },
   { question: 'Can I change her after creation?', answer: 'Yes. You can adjust personality traits and preferences at any time. Appearance changes may require creating a new character, but your relationship progress carries over.' },
   { question: 'What if I prefer pre-built characters?', answer: 'We have a library of pre-built AI girlfriends, each with their own unique personality, appearance, and backstory. You can browse and choose one instead of building from scratch.' },
-  { question: 'How many girlfriends can I have?', answer: 'Free: 1 girlfriend. Lite ($5.99/mo): 2 girlfriends. Premium ($12.99/mo) and VIP ($24.99/mo): unlimited girlfriends. Each has her own personality, memory, and relationship progression.' },
+  { question: 'How many girlfriends can I have?', answer: 'Free: 1 girlfriend. Premium (from $3.99/mo): unlimited girlfriends. Each has her own personality, memory, and relationship history.' },
 ];
 
 export default function CharacterCreatorPage() {
@@ -41,7 +41,7 @@ export default function CharacterCreatorPage() {
           The character creator is where it all starts. Choose her appearance — hair color, eye color, body type, ethnicity, personal style, and more. Then shape her personality using our trait system. Want someone witty and sarcastic? Done. Sweet and nurturing? Easy. Bold and dominant? You got it.
         </p>
         <p>
-          This isn&apos;t a template picker. You&apos;re building a unique AI character from the ground up. Every choice you make affects how she talks, how she reacts, and how your relationship develops through <Link href="/features/relationship-stages" className="text-accent-purple hover:underline">6 stages</Link>.
+          This isn&apos;t a template picker. You&apos;re building a unique AI character from the ground up. Every choice you make affects how she talks, how she reacts, and how your relationship develops over time.
         </p>
       </ContentSection>
 
