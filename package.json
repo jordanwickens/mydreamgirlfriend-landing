@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare-poster": "ffmpeg -y -i public/bg-hero.mp4 -vf \"select=eq(n\\,0)\" -vframes 1 -q:v 3 public/bg-hero-poster.jpg"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",

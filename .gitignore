@@ -3,6 +3,11 @@ node_modules
 out
 .env*
 .DS_Store
+tsconfig.tsbuildinfo
+
+# Local Claude Code skills & data
+.claude/skills/
+data/seo/status/
 
 # Strapi CMS
 cms/.tmp

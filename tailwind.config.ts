@@ -21,6 +21,9 @@ const config: Config = {
       backgroundImage: {
         "gradient-accent": "linear-gradient(135deg, #c084fc, #f472b6)",
       },
+      fontFamily: {
+        display: ["var(--font-display)", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
       typography: {
         DEFAULT: {
           css: {
