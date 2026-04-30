@@ -25,6 +25,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/terms" className="text-muted hover:text-white transition-colors">Terms &amp; Policies</Link></li>
               <li><Link href="/contact-us" className="text-muted hover:text-white transition-colors">Contact Us</Link></li>
+              <li><Link href="/complaints" className="text-muted hover:text-white transition-colors">Complaints &amp; Content Removal</Link></li>
             </ul>
           </div>
         </div>
