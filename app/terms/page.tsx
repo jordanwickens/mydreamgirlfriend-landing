@@ -12,7 +12,7 @@ export default function TermsPage() {
       <main className="flex-1 pt-20 px-4 pb-16 max-w-3xl mx-auto w-full">
         <h1 className="text-3xl font-bold mb-2">Terms of Service &amp; Policies</h1>
         <p className="text-muted text-sm mb-10">
-          Effective Date: March 5, 2026 &mdash; Last Updated: March 5, 2026
+          Effective Date: March 5, 2026 &mdash; Last Updated: April 29, 2026
         </p>
 
         <div className="space-y-10 text-sm leading-relaxed text-gray-300">
@@ -20,7 +20,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">1. Refund &amp; Cancellation Policy</h2>
             <p className="mb-3">
-              Black Bear Leads Inc. (&ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our&rdquo;), operating the MyDreamGirlfriend.ai platform (&ldquo;My Dream Girlfriend&rdquo;), offers subscription-based access to AI companion services. By purchasing a subscription, you agree to the following:
+              Black Bear Digital LLC (&ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our&rdquo;), operating the MyDreamGirlfriend.ai platform (&ldquo;My Dream Girlfriend&rdquo;), offers subscription-based access to AI companion services. By purchasing a subscription, you agree to the following:
             </p>
             <ul className="list-disc pl-5 space-y-2">
               <li>
@@ -31,7 +31,7 @@ export default function TermsPage() {
               </li>
               <li>
                 <strong className="text-white">Billing disputes.</strong> If you believe a charge was made in error, contact us at{' '}
-                <a href="mailto:jordan@blackbearleads.com" className="text-accent-purple hover:underline">jordan@blackbearleads.com</a>{' '}
+                <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>{' '}
                 within 7 days of the charge. We will review and respond within 48 hours.
               </li>
               <li>
@@ -119,7 +119,7 @@ export default function TermsPage() {
               </li>
               <li>
                 <strong className="text-white">User reporting.</strong> If you encounter content or behavior that violates these terms, please contact us at{' '}
-                <a href="mailto:jordan@blackbearleads.com" className="text-accent-purple hover:underline">jordan@blackbearleads.com</a>.
+                <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>.
               </li>
             </ul>
           </section>
@@ -133,7 +133,7 @@ export default function TermsPage() {
               </li>
               <li>
                 <strong className="text-white">Customer support.</strong> For billing inquiries, account issues, or general support, contact us at{' '}
-                <a href="mailto:jordan@blackbearleads.com" className="text-accent-purple hover:underline">jordan@blackbearleads.com</a>.
+                <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>.
                 We aim to respond to all inquiries within 48 hours.
               </li>
               <li>
@@ -156,9 +156,201 @@ export default function TermsPage() {
                 <strong className="text-white">Severability.</strong> If any provision of these terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.
               </li>
               <li>
-                <strong className="text-white">Entire agreement.</strong> These terms, together with our Privacy Policy, constitute the entire agreement between you and Black Bear Leads Inc. regarding your use of the My Dream Girlfriend service.
+                <strong className="text-white">Entire agreement.</strong> These terms, together with our Privacy Policy, constitute the entire agreement between you and Black Bear Digital LLC regarding your use of the My Dream Girlfriend service.
               </li>
             </ul>
+          </section>
+
+          {/* 8 */}
+          <section>
+            <h2 className="text-xl font-semibold text-white mb-3">8. Complaints &amp; Content Removal Policy</h2>
+            <p className="mb-4">
+              MyDreamGirlfriend.ai is committed to operating in full compliance with applicable
+              laws, card-scheme rules, and CCBill&rsquo;s standards. We take all complaints about
+              content on our service seriously.
+            </p>
+
+            <h3 className="text-base font-semibold text-white mb-2">How to report content</h3>
+            <p className="mb-3">
+              If you believe that any content on MyDreamGirlfriend.ai may be illegal, violates our
+              policies, or otherwise should not appear on our service, you can report it by:
+            </p>
+            <ul className="list-disc pl-5 space-y-2 mb-4">
+              <li>Using the in-app report function (where available), or</li>
+              <li>
+                Emailing us at{' '}
+                <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>{' '}
+                with a description of the issue, relevant screenshots, and any URLs or timestamps.
+              </li>
+            </ul>
+            <p className="mb-2">
+              You may also submit a complaint or takedown request through CCBill&rsquo;s content
+              removal form:
+            </p>
+            <a
+              href="https://www.ccbillcomplaintform.com/ccbill/form/CCBillContentRemovalRequest1/formperma/sBK2jfIoZWAFw2hRRt5Rv2PQncscFzpvOH6bPcwopas"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block break-all text-accent-purple hover:underline"
+            >
+              CCBill Content Removal Form &rarr;
+            </a>
+
+            <h3 className="text-base font-semibold text-white mt-6 mb-2">Review and response time</h3>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>We review all complaints and content removal requests promptly and fairly.</li>
+              <li>
+                We aim to review and resolve reported complaints within{' '}
+                <strong className="text-white">five (5) business days</strong> of receiving all
+                necessary information.
+              </li>
+              <li>
+                If the complaint relates to potentially illegal content, we will prioritize our
+                review and remove such content immediately once confirmed.
+              </li>
+            </ul>
+
+            <h3 className="text-base font-semibold text-white mt-6 mb-2">Review process and possible outcomes</h3>
+            <p className="mb-3">When we receive a complaint, we will:</p>
+            <ol className="list-decimal pl-5 space-y-2 mb-4">
+              <li>Review the reported content and relevant context.</li>
+              <li>Compare it against our Terms of Service, content standards, and applicable card-scheme rules.</li>
+              <li>
+                Decide whether to:
+                <ul className="list-disc pl-5 space-y-1.5 mt-2">
+                  <li>Remove or restrict access to the content;</li>
+                  <li>Apply technical or policy changes to prevent similar issues;</li>
+                  <li>Take action against the user account involved (warnings, suspension, or termination); or</li>
+                  <li>Determine that no violation has occurred.</li>
+                </ul>
+              </li>
+            </ol>
+
+            <h3 className="text-base font-semibold text-white mt-6 mb-2">Appeals</h3>
+            <p className="mb-4">
+              If you disagree with our decision, you may appeal by replying to our decision email or
+              contacting{' '}
+              <a href="mailto:support@email.mydreamgirlfriend.ai?subject=Appeal" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>{' '}
+              with &ldquo;Appeal&rdquo; in the subject and any additional information you would like
+              us to consider. We will re-review the matter and communicate our final decision.
+            </p>
+
+            <p className="border-l-2 border-red-500/50 pl-4 italic text-gray-200">
+              We do not tolerate any content that involves minors, non-consensual activities,
+              exploitation, human trafficking or sex trafficking, or any other illegal material. Any
+              such content will be removed immediately once identified, and we may report it to the
+              appropriate authorities.
+            </p>
+          </section>
+
+          {/* 9 */}
+          <section>
+            <h2 className="text-xl font-semibold text-white mb-3">9. Subscription Cancellation Policy</h2>
+            <p className="mb-4">
+              If you purchase a recurring membership or subscription through MyDreamGirlfriend.ai,
+              you may cancel future rebilling at any time.
+            </p>
+            <p className="mb-3">To cancel:</p>
+            <ul className="list-disc pl-5 space-y-2 mb-4">
+              <li>
+                You can cancel your subscription directly at{' '}
+                <a href="https://mydreamgf.cc" target="_blank" rel="noopener noreferrer" className="text-accent-purple hover:underline">mydreamgf.cc</a>, or
+              </li>
+              <li>
+                You can contact us directly at{' '}
+                <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>{' '}
+                with the email address used on your account and your request to cancel future rebills, or
+              </li>
+              <li>
+                You can contact CCBill&rsquo;s Consumer Support and request cancellation of your
+                subscription at{' '}
+                <a href="https://support.ccbill.com/" target="_blank" rel="noopener noreferrer" className="text-accent-purple hover:underline">support.ccbill.com</a>{' '}
+                or by phone at{' '}
+                <a href="tel:+18885969279" className="text-accent-purple hover:underline whitespace-nowrap">1-888-596-9279</a>.
+              </li>
+            </ul>
+            <p>
+              Cancellations stop future rebilling. Access typically remains active until the end of
+              the already-paid billing period. We recommend submitting cancellation requests at
+              least 24 hours before the next scheduled rebill.
+            </p>
+          </section>
+
+          {/* 10 */}
+          <section>
+            <h2 className="text-xl font-semibold text-white mb-3">10. Anti&ndash;Human Trafficking &amp; Exploitation Policy</h2>
+            <p className="mb-4">
+              MyDreamGirlfriend.ai has a zero-tolerance policy for any form of human trafficking,
+              sex trafficking, sexual exploitation, or physical abuse. We are committed to ensuring
+              that our service cannot be used to promote, facilitate, or profit from these
+              activities, consistent with Mastercard&rsquo;s and Visa&rsquo;s standards for adult
+              content merchants.
+            </p>
+            <p className="mb-4">
+              Our service provides AI-generated, fictional chat experiences only. We do not host
+              real-world performers, cam models, escorts, or third-party content creators, and we do
+              not allow users to advertise or arrange in-person services.
+            </p>
+
+            <h3 className="text-base font-semibold text-white mb-2">Prohibited uses</h3>
+            <p className="mb-3">Users may not use MyDreamGirlfriend.ai to:</p>
+            <ul className="list-disc pl-5 space-y-2 mb-4">
+              <li>Recruit, advertise, or solicit any person for commercial sex or sexual services.</li>
+              <li>Exploit or attempt to exploit minors or vulnerable persons in any way.</li>
+              <li>Promote, glorify, or coordinate human trafficking, sex trafficking, or physical abuse.</li>
+              <li>Share links, contact details, or instructions intended to facilitate any of the above.</li>
+            </ul>
+
+            <h3 className="text-base font-semibold text-white mt-6 mb-2">Monitoring and enforcement</h3>
+            <p className="mb-3">
+              We use a combination of technical safeguards, content rules, and manual review to
+              prevent and detect abusive or exploitative behavior on our platform. Violations of
+              this policy may result in:
+            </p>
+            <ul className="list-disc pl-5 space-y-2 mb-4">
+              <li>Immediate removal of offending content;</li>
+              <li>Suspension or termination of user accounts; and/or</li>
+              <li>Reporting of suspected illegal activity to payment partners and/or appropriate law enforcement authorities.</li>
+            </ul>
+
+            <h3 className="text-base font-semibold text-white mt-6 mb-2">Reporting concerns</h3>
+            <p className="mb-3">
+              If you believe any activity on MyDreamGirlfriend.ai may be connected to human
+              trafficking, sex trafficking, or exploitation, please contact us immediately at{' '}
+              <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>{' '}
+              and provide as much detail as possible (timestamps, screenshots, URLs). We investigate
+              all such reports as a priority.
+            </p>
+            <p>
+              If you or someone you know may be a victim of human trafficking, we encourage you to
+              contact local law enforcement or a recognized anti-trafficking hotline in your country.
+            </p>
+          </section>
+
+          {/* 11 */}
+          <section>
+            <h2 className="text-xl font-semibold text-white mb-3">11. 18 U.S.C. &sect; 2257 Exemption Statement</h2>
+            <p className="mb-3">
+              MyDreamGirlfriend.ai provides AI-generated, fictional chat experiences. We do not
+              produce, host, or distribute visual depictions of actual human beings engaged in
+              actual or simulated sexually explicit conduct.
+            </p>
+            <p className="mb-3">
+              All characters and scenarios appearing on MyDreamGirlfriend.ai are entirely fictional
+              and generated by artificial intelligence. Any images or avatars that may appear on the
+              site are AI-generated or otherwise computer-generated and do not depict real persons.
+            </p>
+            <p className="mb-3">
+              Because there are no visual depictions of actual human performers,
+              MyDreamGirlfriend.ai is exempt from the record-keeping and labeling requirements of{' '}
+              <strong className="text-white">18 U.S.C. &sect; 2257</strong>,{' '}
+              <strong className="text-white">&sect; 2257A</strong>, and{' '}
+              <strong className="text-white">28 C.F.R. Part 75</strong>.
+            </p>
+            <p>
+              If you have any questions about this statement, please contact us at{' '}
+              <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>.
+            </p>
           </section>
 
           {/* Contact */}
@@ -166,7 +358,7 @@ export default function TermsPage() {
             <h2 className="text-xl font-semibold text-white mb-3">Contact Us</h2>
             <p>
               If you have any questions about these policies, please contact us at{' '}
-              <a href="mailto:jordan@blackbearleads.com" className="text-accent-purple hover:underline">jordan@blackbearleads.com</a>.
+              <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>.
             </p>
           </section>
         </div>

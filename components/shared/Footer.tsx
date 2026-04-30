@@ -24,6 +24,7 @@ export default function Footer() {
             <h4 className="text-sm font-semibold text-white mb-3">Legal</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/terms" className="text-muted hover:text-white transition-colors">Terms &amp; Policies</Link></li>
+              <li><Link href="/contact-us" className="text-muted hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>
         </div>
@@ -32,7 +33,7 @@ export default function Footer() {
             All characters are AI-generated and entirely fictional. No real persons are depicted.
           </p>
           <p className="text-xs text-muted/40">
-            &copy; 2026 Black Bear Leads Inc. All rights reserved.
+            &copy; 2026 Black Bear Digital LLC. All rights reserved.
           </p>
         </div>
       </div>
