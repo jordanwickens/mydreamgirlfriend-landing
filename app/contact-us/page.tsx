@@ -31,10 +31,10 @@ export default function ContactUsPage() {
             <h2 className="text-xl font-semibold text-white mb-3">Support Email</h2>
             <p>
               <a
-                href="mailto:support@email.mydreamgirlfriend.ai"
+                href="mailto:support@mydreamgirlfriend.ai"
                 className="text-accent-purple hover:underline"
               >
-                support@email.mydreamgirlfriend.ai
+                support@mydreamgirlfriend.ai
               </a>
             </p>
             <p className="text-muted text-xs mt-2">

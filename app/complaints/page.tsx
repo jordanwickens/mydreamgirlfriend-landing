@@ -32,7 +32,7 @@ export default function ComplaintsPage() {
               <li>Using the in-app report function (where available), or</li>
               <li>
                 Emailing us at{' '}
-                <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>{' '}
+                <a href="mailto:support@mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@mydreamgirlfriend.ai</a>{' '}
                 with a description of the issue, relevant screenshots, and any URLs or timestamps.
               </li>
             </ul>
@@ -83,7 +83,7 @@ export default function ComplaintsPage() {
             <p className="mb-4">
               If you disagree with our decision, you may appeal by replying to our decision email or
               contacting{' '}
-              <a href="mailto:support@email.mydreamgirlfriend.ai?subject=Appeal" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>{' '}
+              <a href="mailto:support@mydreamgirlfriend.ai?subject=Appeal" className="text-accent-purple hover:underline">support@mydreamgirlfriend.ai</a>{' '}
               with &ldquo;Appeal&rdquo; in the subject and any additional information you would like
               us to consider. We will re-review the matter and communicate our final decision.
             </p>

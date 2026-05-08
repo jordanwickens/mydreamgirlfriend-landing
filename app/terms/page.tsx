@@ -31,7 +31,7 @@ export default function TermsPage() {
               </li>
               <li>
                 <strong className="text-white">Billing disputes.</strong> If you believe a charge was made in error, contact us at{' '}
-                <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>{' '}
+                <a href="mailto:support@mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@mydreamgirlfriend.ai</a>{' '}
                 within 7 days of the charge. We will review and respond within 48 hours.
               </li>
               <li>
@@ -119,7 +119,7 @@ export default function TermsPage() {
               </li>
               <li>
                 <strong className="text-white">User reporting.</strong> If you encounter content or behavior that violates these terms, please contact us at{' '}
-                <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>.
+                <a href="mailto:support@mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@mydreamgirlfriend.ai</a>.
               </li>
             </ul>
           </section>
@@ -133,7 +133,7 @@ export default function TermsPage() {
               </li>
               <li>
                 <strong className="text-white">Customer support.</strong> For billing inquiries, account issues, or general support, contact us at{' '}
-                <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>.
+                <a href="mailto:support@mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@mydreamgirlfriend.ai</a>.
                 We aim to respond to all inquiries within 48 hours.
               </li>
               <li>
@@ -176,7 +176,7 @@ export default function TermsPage() {
               </li>
               <li>
                 You can contact us directly at{' '}
-                <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>{' '}
+                <a href="mailto:support@mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@mydreamgirlfriend.ai</a>{' '}
                 with the email address used on your account and your request to cancel future rebills, or
               </li>
               <li>
@@ -235,7 +235,7 @@ export default function TermsPage() {
             <p className="mb-3">
               If you believe any activity on MyDreamGirlfriend.ai may be connected to human
               trafficking, sex trafficking, or exploitation, please contact us immediately at{' '}
-              <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>{' '}
+              <a href="mailto:support@mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@mydreamgirlfriend.ai</a>{' '}
               and provide as much detail as possible (timestamps, screenshots, URLs). We investigate
               all such reports as a priority.
             </p>
@@ -267,7 +267,7 @@ export default function TermsPage() {
             </p>
             <p>
               If you have any questions about this statement, please contact us at{' '}
-              <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>.
+              <a href="mailto:support@mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@mydreamgirlfriend.ai</a>.
             </p>
           </section>
 
@@ -276,7 +276,7 @@ export default function TermsPage() {
             <h2 className="text-xl font-semibold text-white mb-3">Contact Us</h2>
             <p>
               If you have any questions about these policies, please contact us at{' '}
-              <a href="mailto:support@email.mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@email.mydreamgirlfriend.ai</a>.
+              <a href="mailto:support@mydreamgirlfriend.ai" className="text-accent-purple hover:underline">support@mydreamgirlfriend.ai</a>.
             </p>
           </section>
         </div>
