@@ -235,29 +235,47 @@
   </style>
 </head>
 <body>
-  <!-- Meta Pixel -->
+  <!-- Tracking source gate. Decides which ad pixels are allowed to fire.
+       Meta: fires only if utm_source=meta OR fbclid in URL.
+       TikTok: fires only if utm_source=tiktok OR ttclid in URL.
+       PostHog: always fires (universal analytics, not ad-network attribution). -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '4705360489690855');
-    fbq('track', 'PageView');
+    (function () {
+      var p = new URLSearchParams(window.location.search);
+      var src = (p.get('utm_source') || '').toLowerCase();
+      window.__TRACK = {
+        meta:   src === 'meta'   || !!p.get('fbclid'),
+        tiktok: src === 'tiktok' || !!p.get('ttclid'),
+      };
+    })();
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4705360489690855&ev=PageView&noscript=1" alt=""></noscript>
 
-  <!-- TikTok Pixel -->
+  <!-- Meta Pixel (gated) -->
   <script>
-    !function (w, d, t) {
-      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-      ttq.load('D6UN3D3C77U4GR00EOMG');
-      ttq.page();
-    }(window, document, 'ttq');
+    if (window.__TRACK && window.__TRACK.meta) {
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '4705360489690855');
+      fbq('track', 'PageView');
+    }
+  </script>
+
+  <!-- TikTok Pixel (gated) -->
+  <script>
+    if (window.__TRACK && window.__TRACK.tiktok) {
+      !function (w, d, t) {
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+        var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+        ttq.load('D6UN3D3C77U4GR00EOMG');
+        ttq.page();
+      }(window, document, 'ttq');
+    }
   </script>
 
   <!-- PostHog -->
@@ -346,25 +364,26 @@
 
       // Generate event ID for dedup between pixel + CAPI
       var eventID = 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      var track = window.__TRACK || { meta: false, tiktok: false };
 
-      // Fire Meta Pixel Lead event with eventID
-      if (typeof fbq === 'function') {
-        fbq('track', 'Lead', { content_name: 'companion_type_selection', content_category: type, source: 'lp1' }, { eventID: eventID });
+      // Fire Meta Pixel + server CAPI only for Meta-sourced traffic.
+      if (track.meta) {
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', { content_name: 'companion_type_selection', content_category: type, source: 'lp1' }, { eventID: eventID });
+        }
+        fetch('/api/meta/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ type: type, event_id: eventID, source_url: window.location.href }),
+        }).catch(function () {});
       }
 
-      // Fire TikTok Pixel event
-      if (typeof ttq !== 'undefined' && ttq.track) {
+      // Fire TikTok Pixel only for TikTok-sourced traffic.
+      if (track.tiktok && typeof ttq !== 'undefined' && ttq.track) {
         ttq.track('SubmitForm', { content_name: 'companion_type_selection', content_category: type, source: 'lp1' });
       }
 
-      // Fire server-side CAPI Lead event (fire-and-forget)
-      fetch('/api/meta/lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type: type, event_id: eventID, source_url: window.location.href }),
-      }).catch(function() {});
-
-      // Fire PostHog event
+      // PostHog fires for every visitor — it's our universal analytics.
       if (typeof posthog !== 'undefined' && posthog.capture) {
         posthog.capture('lp_card_click', { type: type });
       }
