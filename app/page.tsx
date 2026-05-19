@@ -12,7 +12,7 @@ const faqs = [
   { q: "Is this really private?", a: "Absolutely. All conversations are encrypted end-to-end. We never share your data with anyone. Your chats are yours alone." },
   { q: "Are the AI girlfriends realistic?", a: "Our AI girlfriends have deep personalities, remember your conversations, and develop genuine emotional connections over time. The more you talk, the more they know you." },
   { q: "How does the relationship progress?", a: "Relationships deepen naturally over time. The more you chat, the more she remembers you, opens up, and becomes intimate. Voice notes, photos, and deeper conversations unlock as your connection grows." },
-  { q: "Is there a free plan?", a: "Yes! Free users get 15 messages per day, 1 girlfriend, and 10 gems to start with no credit card required. Upgrade anytime for more." },
+  { q: "Is there a free plan?", a: "Yes! Free users get 5 messages to try her out, 1 girlfriend, and starter gems with no credit card required. Upgrade anytime to keep chatting." },
   { q: "What are gems?", a: "Gems are in-app credits you can use to unlock photos, send voice notes, make calls, or send gifts. Premium subscribers get 100 free gems every month." },
 ];
 
@@ -134,7 +134,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <ul className="space-y-2 text-sm text-left flex-1 mb-6">
-                {['1 girlfriend', '15 messages per day', '10 starter gems', 'All pre-built girlfriends'].map(f => (
+                {['1 girlfriend', '5 free messages', 'Starter gems', 'All pre-built girlfriends'].map(f => (
                   <li key={f} className="flex items-start gap-2">
                     <span className="text-accent-purple mt-0.5 flex-shrink-0">✓</span>
                     <span className="text-white/90">{f}</span>

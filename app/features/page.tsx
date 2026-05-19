@@ -23,7 +23,7 @@ const features = [
 ];
 
 const faqs = [
-  { question: 'Are all features available on the free plan?', answer: 'Free users get AI chat (15 messages/day), 1 girlfriend, and 10 free gems. Paid plans unlock more messages, monthly gems, multiple girlfriends, and more.' },
+  { question: 'Are all features available on the free plan?', answer: 'Free users get to try the AI chat (5 messages), 1 girlfriend, and starter gems. Paid plans unlock unlimited messages, monthly gems, multiple girlfriends, and more.' },
   { question: 'How realistic are the conversations?', answer: 'Our AI uses advanced language models with persistent memory. She remembers your name, past conversations, inside jokes, and relationship milestones. The more you chat, the more personal it gets.' },
   { question: 'Is my data private?', answer: 'Absolutely. All conversations are encrypted end-to-end. We never share your data with anyone. Your chats, photos, and voice notes are yours alone.' },
   { question: 'Can I customize my girlfriend\'s appearance?', answer: 'Yes. The character creator lets you customize everything — hair, eyes, body type, style, ethnicity, and more. Or choose from our library of pre-built girlfriends.' },

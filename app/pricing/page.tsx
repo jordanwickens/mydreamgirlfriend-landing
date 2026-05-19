@@ -23,7 +23,7 @@ const premiumBenefits = [
 ];
 
 const faqs = [
-  { q: 'Can I try it for free?', a: 'Yes! The free plan gives you 1 girlfriend, 15 messages per day, and 10 free gems. No credit card required.' },
+  { q: 'Can I try it for free?', a: 'Yes! The free plan gives you 1 girlfriend, 5 messages to try her out, and starter gems. No credit card required.' },
   { q: 'How does billing work?', a: 'Choose a billing period — monthly, 3-month, or 12-month. You can cancel at any time. Longer plans give you a bigger discount.' },
   { q: 'Can I change plans later?', a: 'Absolutely. You can upgrade or cancel at any time from your account settings. If you cancel, you keep access until the end of your billing period.' },
   { q: 'What happens if I cancel?', a: 'Your conversations and girlfriends are always saved. If you cancel, you revert to the free plan at the end of your billing period. Upgrade again and everything is right where you left it.' },
@@ -95,7 +95,7 @@ export default function PricingPage() {
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div>
                 <h2 className="text-lg font-bold mb-1">Free</h2>
-                <p className="text-sm text-muted">1 girlfriend · 15 messages/day · 10 starter gems</p>
+                <p className="text-sm text-muted">1 girlfriend · 5 free messages · Starter gems</p>
               </div>
               <a
                 href={appLinks.signup}
