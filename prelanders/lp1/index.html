@@ -233,6 +233,14 @@
       margin-bottom: 8px;
     }
   </style>
+
+  <!-- Anderro affiliate tracking. Captures ?ref=CODE → sets first-party
+       cookie scoped to lp1.mydreamgirlfriend.ai. The existing
+       handleSelection() forwards ?ref=CODE to the app domain via URL
+       params, so signups attribute via the app-side visitor ID.
+       The test referral code `test1pmcmj` still verifies against the
+       live key (Anderro routes test refs to the test workspace). -->
+  <script src="https://track.anderro.com/a.js" data-key="pk_5022edbfacb6d353817510449fcb642b4dab718b1c199cc3" data-auto="true"></script>
 </head>
 <body>
   <!-- Tracking source gate. Decides which ad pixels are allowed to fire.
