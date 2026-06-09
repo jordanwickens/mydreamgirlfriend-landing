@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Your Fantasy Awaits | MyDreamGirlfriend</title>
+  <meta name="description" content="Step into your fantasy. Press play and make the first move.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Your Fantasy Awaits | MyDreamGirlfriend">
+  <meta property="og:description" content="Step into your fantasy. Press play and make the first move.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://mydreamgirlfriend.ai/og-default.png">
+  <link rel="dns-prefetch" href="https://connect.facebook.net">
+  <link rel="dns-prefetch" href="https://analytics.tiktok.com">
+  <link rel="dns-prefetch" href="https://us.i.posthog.com">
+  <link rel="dns-prefetch" href="https://r2.mydreamgirlfriend.ai">
+  <link rel="dns-prefetch" href="https://mydreamgirlfriend.ai">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0a0a0f;
+      color: #f1f5f9;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .top-bar { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px; }
+    .top-bar svg { width: 28px; height: 28px; }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px 32px;
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      font-weight: 700;
+      color: #c084fc;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(26px, 6vw, 40px);
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.12;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    h1 .gradient {
+      background: linear-gradient(135deg, #c084fc, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      font-size: clamp(14px, 3.5vw, 17px);
+      text-align: center;
+      margin-bottom: 22px;
+      font-weight: 400;
+      min-height: 1.2em;
+    }
+
+    /* Video card — portrait 2:3 to match the runtime opening clips */
+    .media {
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 2 / 3;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #1a1a24;
+      border: 1px solid #2a2a3a;
+      position: relative;
+      margin-bottom: 24px;
+      box-shadow: 0 12px 40px rgba(192, 132, 252, 0.12);
+    }
+    .media video, .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .media .skeleton {
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, #2d1b4e 0%, #1a1a24 50%, #3b1538 100%);
+    }
+
+    .cta {
+      display: block;
+      width: 100%;
+      max-width: 360px;
+      text-align: center;
+      padding: 16px 24px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #c084fc, #f472b6);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+      box-shadow: 0 8px 28px rgba(244, 114, 182, 0.28);
+      -webkit-tap-highlight-color: transparent;
+    }
+    .cta:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(244, 114, 182, 0.38); }
+    .cta:active { transform: translateY(0); }
+    .cta[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+
+    .loading-overlay {
+      position: fixed; inset: 0;
+      background: rgba(10, 10, 15, 0.85);
+      display: none; align-items: center; justify-content: center;
+      z-index: 100;
+      backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+    }
+    .loading-overlay.active { display: flex; }
+    .spinner {
+      width: 40px; height: 40px;
+      border: 3px solid #2a2a3a; border-top-color: #c084fc;
+      border-radius: 50%; animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .fade-in { animation: fadeIn 0.4s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+    footer { text-align: center; padding: 20px 16px; font-size: 12px; color: #94a3b8; }
+    footer a { color: #94a3b8; text-decoration: none; transition: color 0.15s; }
+    footer a:hover { color: #c084fc; }
+    .footer-links { display: flex; gap: 16px; justify-content: center; margin-bottom: 8px; }
+  </style>
+
+  <!-- Tracking source gate. Decides which ad pixels are allowed to fire.
+       Meta: fires only if utm_source=meta OR fbclid in URL.
+       TikTok: fires only if utm_source=tiktok OR ttclid in URL.
+       PostHog: always fires (universal analytics, not ad-network attribution). -->
+  <script>
+    (function () {
+      var p = new URLSearchParams(window.location.search);
+      var src = (p.get('utm_source') || '').toLowerCase();
+      window.__TRACK = {
+        meta:   src === 'meta'   || !!p.get('fbclid'),
+        tiktok: src === 'tiktok' || !!p.get('ttclid'),
+      };
+    })();
+  </script>
+
+  <!-- Meta Pixel (gated) -->
+  <script>
+    if (window.__TRACK && window.__TRACK.meta) {
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '4705360489690855');
+      fbq('track', 'PageView');
+    }
+  </script>
+
+  <!-- TikTok Pixel (gated) -->
+  <script>
+    if (window.__TRACK && window.__TRACK.tiktok) {
+      !function (w, d, t) {
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+        var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+        ttq.load('D6UN3D3C77U4GR00EOMG');
+        ttq.page();
+      }(window, document, 'ttq');
+    }
+  </script>
+
+  <!-- PostHog -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_O9Qudq3OBw9qYxoSpLkyCVjwlIZUo3pqfrtsXuG2jra', {
+      api_host: 'https://us.i.posthog.com',
+      person_profiles: 'identified_only',
+      autocapture: false,
+      capture_pageview: true,
+      capture_pageleave: true,
+      cross_subdomain_cookie: true,
+    });
+  </script>
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="top-bar fade-in">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#heartGrad)"/>
+      <defs>
+        <linearGradient id="heartGrad" x1="2" y1="3" x2="22" y2="21" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#c084fc"/>
+          <stop offset="1" stop-color="#f472b6"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <!-- Main content -->
+  <main class="fade-in">
+    <p class="eyebrow">Your fantasy awaits</p>
+    <h1 id="headline"><span class="gradient">Step into your fantasy</span></h1>
+    <p class="subtitle" id="subtitle">She set the scene. Press play and make the first move.</p>
+
+    <div class="media" id="media">
+      <div class="skeleton" id="skeleton"></div>
+      <video id="fantasy-video" playsinline muted loop autoplay preload="metadata" style="display:none"></video>
+      <img id="fantasy-poster" alt="" style="display:none">
+    </div>
+
+    <a class="cta" id="cta" role="button" aria-disabled="true" tabindex="0">Try this Fantasy</a>
+  </main>
+
+  <!-- Loading overlay -->
+  <div class="loading-overlay" id="loadingOverlay" aria-live="assertive" aria-label="Loading">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://mydreamgirlfriend.ai/privacy">Privacy</a>
+      <a href="https://mydreamgirlfriend.ai/terms">Terms</a>
+    </div>
+    <p>&copy; 2026 MyDreamGirlfriend.ai</p>
+  </footer>
+
+  <script>
+    var isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+    var APP_BASE = isLocal ? 'http://localhost:3000' : 'https://mydreamgirlfriend.ai';
+
+    // Fantasy slug from the path: lp3.mydreamgirlfriend.ai/<slug>
+    var SLUG = decodeURIComponent((location.pathname || '').replace(/^\/+|\/+$/g, '').split('/')[0] || '');
+
+    function getUrlParams() {
+      var params = {};
+      new URLSearchParams(window.location.search).forEach(function (value, key) { params[key] = value; });
+      return params;
+    }
+
+    function setText(id, text) { var el = document.getElementById(id); if (el) el.textContent = text; }
+
+    // Build the destination: the anonymous fantasy preview. The app's middleware
+    // captures the forwarded utm params; the signup gate fires on first reply.
+    function buildRedirectUrl() {
+      var params = getUrlParams();
+      params.lp = 'lp3';
+      if (SLUG) params.utm_content = params.utm_content || SLUG;
+      var qs = new URLSearchParams(params).toString();
+      var path = SLUG ? '/preview/fantasy/' + encodeURIComponent(SLUG) : '/browse';
+      return APP_BASE + path + (qs ? ('?' + qs) : '');
+    }
+
+    function renderFantasy(f) {
+      document.getElementById('skeleton').style.display = 'none';
+
+      if (f.title) {
+        var h = document.getElementById('headline');
+        h.innerHTML = '<span class="gradient"></span>';
+        h.firstChild.textContent = f.title;
+        document.title = f.title + ' — My Dream Girlfriend';
+      }
+      var who = f.girl_name ? (f.girl_name + ' is waiting.') : 'She set the scene.';
+      setText('subtitle', who + ' Step in and make the first move.');
+
+      var video = document.getElementById('fantasy-video');
+      var poster = document.getElementById('fantasy-poster');
+      if (f.video_url) {
+        if (f.reference_image_url) video.poster = f.reference_image_url;
+        video.src = f.video_url;
+        video.style.display = 'block';
+        video.play().catch(function () {});
+      } else if (f.reference_image_url) {
+        poster.src = f.reference_image_url;
+        poster.alt = f.title || 'Fantasy';
+        poster.style.display = 'block';
+      } else {
+        document.getElementById('skeleton').style.display = 'block';
+      }
+    }
+
+    function enableCta() {
+      var cta = document.getElementById('cta');
+      cta.setAttribute('aria-disabled', 'false');
+      cta.addEventListener('click', handleCta);
+      cta.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleCta(); }
+      });
+    }
+
+    function handleCta() {
+      document.getElementById('loadingOverlay').classList.add('active');
+
+      var eventID = 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      var track = window.__TRACK || { meta: false, tiktok: false };
+
+      // Meta Pixel + server CAPI (deduped via eventID) — Meta-sourced traffic only.
+      if (track.meta) {
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', { content_name: 'fantasy_intent', content_category: SLUG || 'fantasy', source: 'lp3' }, { eventID: eventID });
+        }
+        fetch('/api/meta/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fantasy: SLUG, event_id: eventID, source_url: window.location.href }),
+        }).catch(function () {});
+      }
+
+      // TikTok Pixel — TikTok-sourced traffic only.
+      if (track.tiktok && typeof ttq !== 'undefined' && ttq.track) {
+        ttq.track('ClickButton', { content_name: 'fantasy_intent', content_category: SLUG || 'fantasy', source: 'lp3' });
+      }
+
+      // PostHog — every visitor.
+      if (typeof posthog !== 'undefined' && posthog.capture) {
+        posthog.capture('lp_fantasy_cta_click', { fantasy: SLUG });
+      }
+
+      var redirectUrl = buildRedirectUrl();
+      setTimeout(function () { window.location.href = redirectUrl; }, 300);
+    }
+
+    // Fetch the fantasy and wire everything up.
+    (function init() {
+      if (!SLUG) {
+        // No slug — generic invite, CTA falls back to /browse.
+        document.getElementById('skeleton').style.display = 'block';
+        enableCta();
+        return;
+      }
+      fetch(APP_BASE + '/api/fantasies/' + encodeURIComponent(SLUG))
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) {
+          if (d && d.fantasy) renderFantasy(d.fantasy);
+          else document.getElementById('skeleton').style.display = 'block';
+          enableCta();
+        })
+        .catch(function () {
+          document.getElementById('skeleton').style.display = 'block';
+          enableCta();
+        });
+    })();
+  </script>
+</body>
+</html>
