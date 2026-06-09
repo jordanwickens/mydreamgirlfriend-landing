@@ -414,7 +414,11 @@
       var params = getUrlParams();
       params.lp = 'lp2';
 
-      var redirectPath = type === 'browse' ? '/browse' : '/build';
+      // Browse → home page with a marker that smooth-scrolls to the "Browse
+      // Girlfriends" section (browse lives on the home page now, not a separate
+      // route). Build → the builder.
+      if (type === 'browse') params.view = 'browse';
+      var redirectPath = type === 'browse' ? '/' : '/build';
       var redirectUrl = 'https://mydreamgirlfriend.ai' + redirectPath + '?' + new URLSearchParams(params).toString();
 
       // Short delay to let pixels fire before redirect
