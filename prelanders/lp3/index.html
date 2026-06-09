@@ -222,7 +222,7 @@
   <main class="fade-in">
     <p class="eyebrow">Your fantasy awaits</p>
     <h1 id="headline"><span class="gradient">Step into your fantasy</span></h1>
-    <p class="subtitle" id="subtitle">She set the scene. Press play and make the first move.</p>
+    <p class="subtitle" id="subtitle">Not all fantasies are meant to stay in your head</p>
 
     <div class="media" id="media">
       <div class="skeleton" id="skeleton"></div>
@@ -230,7 +230,7 @@
       <img id="fantasy-poster" alt="" style="display:none">
     </div>
 
-    <a class="cta" id="cta" role="button" aria-disabled="true" tabindex="0">Try this Fantasy</a>
+    <a class="cta" id="cta" role="button" aria-disabled="true" tabindex="0">Decide What Happens Next</a>
   </main>
 
   <!-- Loading overlay -->
@@ -282,8 +282,6 @@
         h.firstChild.textContent = f.title;
         document.title = f.title + ' — My Dream Girlfriend';
       }
-      var who = f.girl_name ? (f.girl_name + ' is waiting.') : 'She set the scene.';
-      setText('subtitle', who + ' Step in and make the first move.');
 
       var video = document.getElementById('fantasy-video');
       var poster = document.getElementById('fantasy-poster');
