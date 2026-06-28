@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Meet Your Dream Girlfriend | MyDreamGirlfriend</title>
+  <meta name="description" content="Browse our hottest AI girlfriends. Pick one and start chatting in seconds — she's online right now.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Meet Your Dream Girlfriend | MyDreamGirlfriend">
+  <meta property="og:description" content="Browse our hottest AI girlfriends. Pick one and start chatting in seconds — she's online right now.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://mydreamgirlfriend.ai/og-default.png">
+  <link rel="dns-prefetch" href="https://connect.facebook.net">
+  <link rel="dns-prefetch" href="https://analytics.tiktok.com">
+  <link rel="dns-prefetch" href="https://us.i.posthog.com">
+  <link rel="dns-prefetch" href="https://r2.mydreamgirlfriend.ai">
+  <link rel="preconnect" href="https://mydreamgirlfriend.ai">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0a0a0f;
+      color: #f1f5f9;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Top bar */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px;
+    }
+
+    .top-bar svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    /* Main content */
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 8px 16px 32px;
+    }
+
+    h1 {
+      font-size: clamp(26px, 5.5vw, 40px);
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    h1 .gradient {
+      background: linear-gradient(135deg, #c084fc, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      font-size: clamp(14px, 3.5vw, 17px);
+      text-align: center;
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+
+    /* Filter bar */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .filters select,
+    .filters input {
+      appearance: none;
+      -webkit-appearance: none;
+      background: #1a1a24;
+      color: #f1f5f9;
+      border: 1px solid #2a2a3a;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+
+    .filters input {
+      cursor: text;
+      min-width: 160px;
+    }
+
+    .filters select {
+      /* custom chevron */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 34px;
+    }
+
+    .filters select:focus,
+    .filters input:focus {
+      outline: none;
+      border-color: #c084fc;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @media (min-width: 560px) {
+      .grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    }
+
+    @media (min-width: 860px) {
+      .grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    /* Card — mirrors the app's GirlfriendCard (2:3 portrait, gradient overlay) */
+    .card {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #2a2a3a;
+      background: #1a1a24;
+      cursor: pointer;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
+      text-align: left;
+      display: block;
+    }
+
+    .card:hover, .card:focus-visible {
+      border-color: rgba(192, 132, 252, 0.5);
+      box-shadow: 0 8px 32px rgba(192, 132, 252, 0.12);
+    }
+
+    .card:active { transform: scale(0.99); }
+
+    .card:focus-visible {
+      outline: 2px solid #c084fc;
+      outline-offset: 2px;
+    }
+
+    .card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover img { transform: scale(1.02); }
+
+    /* Bottom gradient — guarantees overlay text readability */
+    .card-overlay {
+      position: absolute;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+      height: 42%;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.35) 45%, transparent);
+      pointer-events: none;
+    }
+
+    .card-meta {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.85);
+    }
+
+    .card-name-row {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .card-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .online-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 6px rgba(34, 197, 94, 0.8);
+      flex-shrink: 0;
+    }
+
+    .card-age {
+      font-size: 12px;
+      color: rgba(255,255,255,0.75);
+      margin-top: 2px;
+    }
+
+    .card-location {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.85);
+      margin-top: 2px;
+    }
+
+    .card-count {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      flex-shrink: 0;
+    }
+
+    /* Loading / empty states */
+    .status {
+      text-align: center;
+      color: #94a3b8;
+      padding: 48px 16px;
+      font-size: 15px;
+    }
+
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid #2a2a3a;
+      border-top-color: #c084fc;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Full-screen redirect overlay */
+    .loading-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 15, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .loading-overlay.active { display: flex; }
+
+    /* Fade in */
+    .fade-in { animation: fadeIn 0.4s ease-out; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 16px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    footer a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    footer a:hover { color: #c084fc; }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+  </style>
+
+  <!-- Anderro affiliate tracking. Captures ?ref=CODE → first-party cookie scoped
+       to lp5.mydreamgirlfriend.ai. goToGirl() forwards ?ref=CODE to the app domain
+       so signups attribute via the app-side visitor ID. -->
+  <script src="https://track.anderro.com/a.js" data-key="pk_5022edbfacb6d353817510449fcb642b4dab718b1c199cc3" data-auto="true"></script>
+</head>
+<body>
+  <!-- Tracking source gate. Decides which ad pixels are allowed to fire.
+       Meta: fires only if utm_source=meta OR fbclid in URL.
+       TikTok: fires only if utm_source=tiktok OR ttclid in URL.
+       PostHog: always fires (universal analytics, not ad-network attribution). -->
+  <script>
+    (function () {
+      var p = new URLSearchParams(window.location.search);
+      var src = (p.get('utm_source') || '').toLowerCase();
+      window.__TRACK = {
+        meta:   src === 'meta'   || !!p.get('fbclid'),
+        tiktok: src === 'tiktok' || !!p.get('ttclid'),
+      };
+    })();
+  </script>
+
+  <!-- Meta Pixel (gated) -->
+  <script>
+    if (window.__TRACK && window.__TRACK.meta) {
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '4705360489690855');
+      fbq('track', 'PageView');
+    }
+  </script>
+
+  <!-- TikTok Pixel (gated) -->
+  <script>
+    if (window.__TRACK && window.__TRACK.tiktok) {
+      !function (w, d, t) {
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+        var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+        ttq.load('D6UN3D3C77U4GR00EOMG');
+        ttq.page();
+      }(window, document, 'ttq');
+    }
+  </script>
+
+  <!-- PostHog -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_O9Qudq3OBw9qYxoSpLkyCVjwlIZUo3pqfrtsXuG2jra', {
+      api_host: 'https://us.i.posthog.com',
+      person_profiles: 'identified_only',
+      autocapture: false,
+      capture_pageview: true,
+      capture_pageleave: true,
+      cross_subdomain_cookie: true,
+    });
+  </script>
+
+  <!-- Top bar -->
+  <div class="top-bar fade-in">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#heartGrad)"/>
+      <defs>
+        <linearGradient id="heartGrad" x1="2" y1="3" x2="22" y2="21" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#c084fc"/>
+          <stop offset="1" stop-color="#f472b6"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <!-- Main content -->
+  <main class="fade-in">
+    <h1>Meet Your <span class="gradient">Dream Girlfriend</span></h1>
+    <p class="subtitle">Tap any girl to start chatting — she's online right now</p>
+
+    <div class="filters">
+      <input type="text" id="searchInput" placeholder="Search by name" aria-label="Search by name" autocomplete="off">
+      <select id="hairFilter" aria-label="Filter by hair color">
+        <option value="">Any hair</option>
+        <option value="blonde">Blonde</option>
+        <option value="brunette">Brunette</option>
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="pink">Pink</option>
+      </select>
+      <select id="ethnicityFilter" aria-label="Filter by ethnicity">
+        <option value="">Any ethnicity</option>
+        <option value="caucasian">Caucasian</option>
+        <option value="asian">Asian</option>
+        <option value="african">African</option>
+        <option value="latina">Latina</option>
+        <option value="arab">Arab</option>
+      </select>
+    </div>
+
+    <div id="status" class="status"><div class="spinner"></div></div>
+    <div id="grid" class="grid"></div>
+  </main>
+
+  <!-- Loading overlay (shown during the redirect to the app) -->
+  <div class="loading-overlay" id="loadingOverlay" aria-live="assertive" aria-label="Loading">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://mydreamgirlfriend.ai/privacy">Privacy</a>
+      <a href="https://mydreamgirlfriend.ai/terms">Terms</a>
+    </div>
+    <p>&copy; 2026 MyDreamGirlfriend.ai</p>
+  </footer>
+
+  <script>
+    var APP_BASE = 'https://mydreamgirlfriend.ai';
+
+    // ───────────────────────────────────────────────────────────────────────
+    // SPICY CARD IMAGES — manually curated per girl (owner-selected, 2026-06-28).
+    // The app's /api/girlfriends returns each girl's SFW profile_image_url; for
+    // this adult prelander we override the card art with a hand-picked spicy
+    // image. These are downsized 480px WebP copies of the owner's chosen full-res
+    // originals, hosted at lp/lp5/<slug>.webp (≈30-94KB each vs 5-7MB originals)
+    // so the grid stays fast on paid mobile traffic. Empty / missing slug = fall
+    // back to the SFW profile image.
+    // ───────────────────────────────────────────────────────────────────────
+    var LP5_IMG = 'https://r2.mydreamgirlfriend.ai/lp/lp5/';
+    var SPICY_IMAGES = {
+      sophia:   LP5_IMG + 'sophia.webp',
+      mia:      LP5_IMG + 'mia.webp',
+      sydney:   LP5_IMG + 'sydney.webp',
+      zoe:      LP5_IMG + 'zoe.webp',
+      amelia:   LP5_IMG + 'amelia.webp',
+      isabella: LP5_IMG + 'isabella.webp',
+      chloe:    LP5_IMG + 'chloe.webp',
+      talia:    LP5_IMG + 'talia.webp',
+      madison:  LP5_IMG + 'madison.webp',
+      jamie:    LP5_IMG + 'jamie.webp',
+      sab:      LP5_IMG + 'sab.webp',
+      tatum:    LP5_IMG + 'tatum.webp',
+      maya:     LP5_IMG + 'maya.webp',
+      kiara:    LP5_IMG + 'kiara.webp',
+      jane:     LP5_IMG + 'jane.webp',
+      jessie:   LP5_IMG + 'jessie.webp',
+      lucia:    LP5_IMG + 'lucia.webp',
+      lindsay:  LP5_IMG + 'lindsay.webp',
+      gia:      LP5_IMG + 'gia.webp',
+      camila:   LP5_IMG + 'camila.webp',
+      hana:     LP5_IMG + 'hana.webp',
+      amira:    LP5_IMG + 'amira.webp',
+      jordyn:   LP5_IMG + 'jordyn.webp',
+      kelly:    LP5_IMG + 'kelly.webp',
+    };
+
+    var ALL_GIRLS = [];
+
+    function getUrlParams() {
+      var params = {};
+      var searchParams = new URLSearchParams(window.location.search);
+      searchParams.forEach(function (value, key) { params[key] = value; });
+      return params;
+    }
+
+    // Mirror lib/format.ts formatCount: 950 → "950", 2600 → "2.6K", 1.5M → "1.5M".
+    function formatCount(n) {
+      if (!n || n < 0) return '0';
+      if (n < 1000) return String(n);
+      if (n < 1000000) {
+        var v = n / 1000;
+        return (v >= 10 ? Math.floor(v) : v.toFixed(1).replace(/\.0$/, '')) + 'K';
+      }
+      var m = n / 1000000;
+      return (m >= 10 ? Math.floor(m) : m.toFixed(1).replace(/\.0$/, '')) + 'M';
+    }
+
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+
+    function cardImageFor(girl) {
+      return (SPICY_IMAGES[girl.slug] && SPICY_IMAGES[girl.slug].trim())
+        || girl.profile_image_url
+        || '';
+    }
+
+    function renderGrid(girls) {
+      var grid = document.getElementById('grid');
+      var status = document.getElementById('status');
+
+      if (!girls.length) {
+        grid.innerHTML = '';
+        status.style.display = 'block';
+        status.textContent = 'No girls match those filters.';
+        return;
+      }
+
+      status.style.display = 'none';
+      grid.innerHTML = girls.map(function (g) {
+        var img = cardImageFor(g);
+        var showCount = typeof g.chat_count === 'number';
+        var locationHtml = g.location
+          ? '<div class="card-location">'
+            + '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'
+            + esc(g.location) + '</div>'
+          : '';
+        var countHtml = showCount
+          ? '<span class="card-count">'
+            + '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>'
+            + formatCount(g.chat_count) + '</span>'
+          : '';
+
+        return ''
+          + '<button type="button" class="card" aria-label="Chat with ' + esc(g.name) + '"'
+          + ' data-slug="' + esc(g.slug) + '" data-name="' + esc(g.name) + '">'
+          + (img ? '<img src="' + esc(img) + '" alt="' + esc(g.name) + '" loading="lazy" '
+              + 'onerror="this.style.display=\'none\'">' : '')
+          + '<div class="card-overlay"></div>'
+          + '<div class="card-meta">'
+          + '<div style="min-width:0">'
+          + '<div class="card-name-row"><span class="card-name">' + esc(g.name) + '</span><span class="online-dot"></span></div>'
+          + locationHtml
+          + (g.age ? '<div class="card-age">' + esc(g.age) + ' years old</div>' : '')
+          + '</div>'
+          + countHtml
+          + '</div>'
+          + '</button>';
+      }).join('');
+    }
+
+    function applyFilters() {
+      var hair = document.getElementById('hairFilter').value.toLowerCase();
+      var eth = document.getElementById('ethnicityFilter').value.toLowerCase();
+      var q = document.getElementById('searchInput').value.trim().toLowerCase();
+
+      var filtered = ALL_GIRLS.filter(function (g) {
+        if (hair) {
+          var traits = (g.physical_traits || []).map(function (t) { return String(t).toLowerCase(); });
+          if (traits.indexOf(hair) === -1) return false;
+        }
+        if (eth && String(g.ethnicity || '').toLowerCase() !== eth) return false;
+        if (q && String(g.name || '').toLowerCase().indexOf(q) === -1) return false;
+        return true;
+      });
+      renderGrid(filtered);
+    }
+
+    function goToGirl(slug, name) {
+      document.getElementById('loadingOverlay').classList.add('active');
+
+      var eventID = 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      var track = window.__TRACK || { meta: false, tiktok: false };
+
+      // Fire Meta Pixel + server CAPI only for Meta-sourced traffic.
+      if (track.meta) {
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', { content_name: 'girl_card_click', content_category: slug, source: 'lp5' }, { eventID: eventID });
+        }
+        fetch('/api/meta/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug: slug, event_id: eventID, source_url: window.location.href }),
+        }).catch(function () {});
+      }
+
+      // Fire TikTok Pixel only for TikTok-sourced traffic.
+      if (track.tiktok && typeof ttq !== 'undefined' && ttq.track) {
+        ttq.track('SubmitForm', { content_name: 'girl_card_click', content_category: slug, source: 'lp5' });
+      }
+
+      // PostHog fires for every visitor — universal analytics.
+      if (typeof posthog !== 'undefined' && posthog.capture) {
+        posthog.capture('lp_card_click', { slug: slug, lp: 'lp5' });
+      }
+
+      // Deep-link into the anonymous chat preview for this girl. A significant
+      // action there fires the signup gate. All inbound ad params (utm_*, fbclid,
+      // ttclid, exotracker, zone, country, device, ref) ride along for attribution.
+      var params = getUrlParams();
+      params.lp = 'lp5';
+      var redirectUrl = APP_BASE + '/preview/girl/' + encodeURIComponent(slug) + '?' + new URLSearchParams(params).toString();
+
+      setTimeout(function () { window.location.href = redirectUrl; }, 300);
+    }
+
+    // Load the live premade roster, then render. Unauthenticated → premade only.
+    (function init() {
+      fetch(APP_BASE + '/api/girlfriends')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) {
+          var girls = (d && d.girlfriends) ? d.girlfriends : [];
+          // Premade only (defensive — the unauth API already excludes customs),
+          // ordered by the API's sort_order.
+          ALL_GIRLS = girls.filter(function (g) { return !g.is_custom; });
+          if (!ALL_GIRLS.length) {
+            var status = document.getElementById('status');
+            status.textContent = 'No girls available right now. Try again soon.';
+            return;
+          }
+          applyFilters();
+        })
+        .catch(function () {
+          document.getElementById('status').textContent = 'Could not load girls. Please refresh.';
+        });
+
+      document.getElementById('hairFilter').addEventListener('change', applyFilters);
+      document.getElementById('ethnicityFilter').addEventListener('change', applyFilters);
+      document.getElementById('searchInput').addEventListener('input', applyFilters);
+
+      // Delegated card clicks — avoids inline-onclick quoting issues with names.
+      document.getElementById('grid').addEventListener('click', function (e) {
+        var card = e.target.closest ? e.target.closest('.card') : null;
+        if (!card) return;
+        goToGirl(card.getAttribute('data-slug'), card.getAttribute('data-name'));
+      });
+    })();
+  </script>
+</body>
+</html>
