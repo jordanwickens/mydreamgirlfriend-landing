@@ -16,7 +16,18 @@
 //   400 { error: 'bad_request' }                  — malformed body
 //   502 { error: 'meta_capi_failed', details }   — Meta rejected the event
 
-export async function onRequestPost({ request, env }) {
+// Single catch-all handler. Cloudflare Pages gives a catch-all `onRequest`
+// precedence over method-specific handlers (onRequestPost), so exporting both
+// made every POST fall through to the 405 branch and the CAPI relay never ran.
+// We therefore dispatch by method inside one onRequest.
+export async function onRequest({ request, env }) {
+  if (request.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'method_not_allowed', method: request.method }), {
+      status: 405,
+      headers: { 'Content-Type': 'application/json', 'Allow': 'POST' },
+    });
+  }
+
   const PIXEL_ID = env.META_PIXEL_ID;
   const ACCESS_TOKEN = env.META_CAPI_TOKEN;
   const TEST_CODE = env.META_TEST_CODE;
@@ -112,12 +123,4 @@ export async function onRequestPost({ request, env }) {
   } catch (e) {
     return jsonResp(502, { error: 'capi_fetch_failed', message: String(e?.message || e) });
   }
-}
-
-// Reject other methods cleanly (no more silent 405s).
-export async function onRequest({ request }) {
-  return new Response(JSON.stringify({ error: 'method_not_allowed', method: request.method }), {
-    status: 405,
-    headers: { 'Content-Type': 'application/json', 'Allow': 'POST' },
-  });
 }
