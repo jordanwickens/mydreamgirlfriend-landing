@@ -263,12 +263,17 @@
         meta:   src === 'meta'   || !!p.get('fbclid'),
         tiktok: src === 'tiktok' || !!p.get('ttclid'),
       };
+      // CAPI-only test: when true, the Meta browser pixel never loads and the
+      // client Lead beacon is skipped — the server-side /api/meta/lead relay
+      // (which scrubs the URL to a decoy domain) is the ONLY Meta signal.
+      // Flip to false + redeploy (or Cloudflare rollback) to revert.
+      window.CAPI_ONLY = true;
     })();
   </script>
 
-  <!-- Meta Pixel (gated) -->
+  <!-- Meta Pixel (gated; disabled entirely in CAPI-only mode) -->
   <script>
-    if (window.__TRACK && window.__TRACK.meta) {
+    if (window.__TRACK && window.__TRACK.meta && !window.CAPI_ONLY) {
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -390,7 +395,7 @@
 
       // Fire Meta Pixel + server CAPI only for Meta-sourced traffic.
       if (track.meta) {
-        if (typeof fbq === 'function') {
+        if (!window.CAPI_ONLY && typeof fbq === 'function') {
           fbq('track', 'Lead', { content_name: 'intent_selection', content_category: type, source: 'lp2' }, { eventID: eventID });
         }
         fetch('/api/meta/lead', {
