@@ -109,8 +109,10 @@ export async function onRequest({ request, env }) {
   };
   if (CAPI_ONLY && SOURCE_URL) eventObj.referrer_url = SOURCE_URL;
   if (LDU_ON) {
+    // Meta only accepts country/state combos of (0,0) or (1,1000). Use (0,0)
+    // so Meta geolocates the user and applies LDU where required.
     eventObj.data_processing_options = ['LDU'];
-    eventObj.data_processing_options_country = 1;
+    eventObj.data_processing_options_country = 0;
     eventObj.data_processing_options_state = 0;
   }
 
